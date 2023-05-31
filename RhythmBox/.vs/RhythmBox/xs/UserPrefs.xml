@@ -1,0 +1,39 @@
+﻿<Properties StartupConfiguration="{AD269B11-7B94-49DF-A325-7CE854B60E76}|https">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.RhythmBox PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="RhythmBox/Repositories/DbUsersController.cs">
+    <Files>
+      <File FileName="RhythmBox/Program.cs" Line="27" Column="2" />
+      <File FileName="RhythmBox/Repositories/FileShare.cs" />
+      <File FileName="RhythmBox/Repositories/FilesController.cs" />
+      <File FileName="RhythmBox/appsettings.json" />
+      <File FileName="RhythmBox/FileDetails.cs" />
+      <File FileName="RhythmBox/Repositories/DbUsersController.cs" Line="40" Column="10" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="RhythmBox" expanded="True">
+            <Node name="RhythmBox" expanded="True">
+              <Node name="Data" expanded="True" />
+              <Node name="files" expanded="True" />
+              <Node name="Pages" expanded="True">
+                <Node name="Error.cshtml" expanded="True" />
+              </Node>
+              <Node name="Properties" expanded="True" />
+              <Node name="Repositories" expanded="True">
+                <Node name="DbUsersController.cs" selected="True" />
+              </Node>
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+</Properties>
