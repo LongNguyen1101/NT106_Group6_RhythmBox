@@ -28,12 +28,10 @@
     <None Remove="Repositories\" />
     <None Remove="Repositories\Controller\" />
     <None Remove="Repositories\Interface\" />
-    <None Remove="Repositories\Class\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Repositories\" />
     <Folder Include="Repositories\Controller\" />
     <Folder Include="Repositories\Interface\" />
-    <Folder Include="Repositories\Class\" />
   </ItemGroup>
 </Project>

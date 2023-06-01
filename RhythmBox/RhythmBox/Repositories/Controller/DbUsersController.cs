@@ -27,7 +27,7 @@ namespace RhythmBox.Repositories
             {
                 try
                 {
-                    await _dbUsers.postNewUserUploadAsync(_context, userName, email, password, birthday, gender);
+                    await _dbUsers.postNewUserUploadAsync(_context, userName, email.ToLower(), password, birthday, gender);
                 }
                 catch
                 {
@@ -40,13 +40,13 @@ namespace RhythmBox.Repositories
         }
 
         [HttpGet("DownloadUser")]
-        public async Task<IActionResult> UserDownload(string userName, string email)
+        public async Task<IActionResult> UserDownload(string authenticString, string password)
         {
-            if (!string.IsNullOrEmpty(userName) && !string.IsNullOrEmpty(email))
+            if (!string.IsNullOrEmpty(authenticString) && !string.IsNullOrEmpty(password))
             {
                 try
                 {
-                    await _dbUsers.getUserDownloadAsync(_context, userName, email);
+                    await _dbUsers.getUserDownloadAsync(_context, authenticString, password);
                 }
                 catch
                 {
