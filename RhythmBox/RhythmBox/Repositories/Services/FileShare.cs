@@ -59,7 +59,7 @@ namespace RhythmBox.Repositories
             }
         }
 
-        public async Task fileDownloadAsync(string fileSharePath)
+        public async Task<ShareFileDownloadInfo> fileDownloadAsync(string fileSharePath)
         {
 			fileSharePath = fileSharePath.Replace("https://rhythmboxstorage.file.core.windows.net/resource/", "");
 
@@ -85,6 +85,8 @@ namespace RhythmBox.Repositories
             {
                 await download.Content.CopyToAsync(stream);
             }
+
+			return download;
         }
     }
 }

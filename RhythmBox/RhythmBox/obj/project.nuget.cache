@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QQV/D890gXR2CVTDjDGVlV+KKWnPLMzTM9F7Zq6okzMBHmppypUdoRKfFwYlL4BV8aInsotWF1vw1IqTJr5JIA==",
+  "dgSpecHash": "i9vOyvjHhKBCxx6341hoTHoY4HLolQ7fzc8UYQP2Tq4l9muFMGptG502EdiV37wiPzayP/LiUfPrI/YTmaGSYQ==",
   "success": true,
-  "projectFilePath": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/RhythmBox/RhythmBox/RhythmBox.csproj",
+  "projectFilePath": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/RhythmBox.csproj",
   "expectedPackageFiles": [
     "/Users/longnguyen/.nuget/packages/azure.core/1.31.0/azure.core.1.31.0.nupkg.sha512",
     "/Users/longnguyen/.nuget/packages/azure.identity/1.6.0/azure.identity.1.6.0.nupkg.sha512",

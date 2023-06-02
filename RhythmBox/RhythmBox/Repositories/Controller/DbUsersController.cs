@@ -21,7 +21,7 @@ namespace RhythmBox.Repositories
 		}
 
         [HttpPost("CreateUser")]
-        public async Task<IActionResult> Create(string userName, string email, string password, string birthday, string gender)
+        public async Task<IActionResult> createUser(string userName, string email, string password, string birthday, string gender)
         {
             if (!string.IsNullOrEmpty(userName) && !string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(password) && !string.IsNullOrEmpty(gender))
             {
@@ -30,16 +30,16 @@ namespace RhythmBox.Repositories
                     int check = await _dbUsers.postCreateUserAsync(_context, userName, email.ToLower(), password, birthday, gender);
 
                     if (check == 0) return NotFound("User is alreary exist");
-                    else if (check == -1) return NotFound("Error adding new user");
+                    else if (check == -1) return BadRequest("Error");
                 }
-                catch
+                catch (Exception ex)
                 {
-                    return BadRequest();
+                    return BadRequest(ex.Message);
                 }
-                
+
             }
 
-            return Ok();
+            return StatusCode(201);
         }
 
         [HttpGet("GetUser")]
@@ -49,15 +49,38 @@ namespace RhythmBox.Repositories
             {
                 try
                 {
-                    await _dbUsers.getUserAsync(_context, authenticString, password);
+                    var userInfo = await _dbUsers.getUserAsync(_context, authenticString, password);
+
+                    return Ok(userInfo.Item1);
                 }
-                catch
+                catch (Exception ex)
                 {
-                    return BadRequest();
+                    return BadRequest(ex.Message);
                 }
             }
 
-            return Ok();
+            return BadRequest();
+        }
+
+        [HttpPost("ChangePassword")]
+        public async Task<IActionResult> changePassword(int userId, string oldPassword, string newPassword)
+        {
+            if (!string.IsNullOrEmpty(oldPassword) && !string.IsNullOrEmpty(newPassword))
+            {
+                try
+                {
+                    int check = await _dbUsers.postChangePasswordAsync(_context, userId, oldPassword, newPassword);
+
+                    if (check == 0) return BadRequest("Wrong id or password");
+                    else if (check == -1) return BadRequest("Error");
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+            }
+
+            return StatusCode(201);
         }
 	}
 }

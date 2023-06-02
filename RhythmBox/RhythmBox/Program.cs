@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Components.Web;
 using RhythmBox.Data;
 using Microsoft.EntityFrameworkCore;
 using RhythmBox.Repositories;
+using Azure;
+using Azure.Storage.Files.Shares;
+using Azure.Storage.Files.Shares.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

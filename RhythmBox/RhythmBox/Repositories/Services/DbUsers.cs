@@ -40,16 +40,17 @@ namespace RhythmBox.Repositories
 
 						context.Users.Add(user);
 						context.SaveChanges();
+
+						return 1;
 					});
 				}
 				catch { return -1; } // Handling error when adding new user to database
 			}
-			else return 0; // return if userName or email is exist
 
-			return 1; // return if adding new user successfull
+			return 0; // return if userName or email is exist
 		}
 
-		public async Task<User?> getUserAsync(RhythmboxdbContext context, string authenticString, string password)
+		public async Task<(User?, ShareFileDownloadInfo?)> getUserAsync(RhythmboxdbContext context, string authenticString, string password)
 		{
 			try
 			{
@@ -57,24 +58,34 @@ namespace RhythmBox.Repositories
 									.Where(con => (con.UserPassword == password && (con.UserName == authenticString || con.Email == authenticString.ToLower())))
 									.Select(con => new User
 									{
+										UsersId = con.UsersId,
 										UserName = con.UserName,
 										Email = con.Email,
 										AvaUrl = con.AvaUrl,
 										Birthday = con.Birthday,
 										Gender = con.Gender
 									})
-									.SingleOrDefault());
+									.SingleOrDefault()); 
 
+				if (user != null && user.AvaUrl != null)
+				{
+					ShareFileDownloadInfo ava = await _fileShare.fileDownloadAsync(user.AvaUrl);
+					return (user, ava);
+				}
 
+			} catch { return (null, null); }
 
-				return user;
-			} catch { return null; }
+			return (null, null);
 		}
 
-		public async Task<Boolean> postChangePasswordAsync(RhythmboxdbContext context, User user, string newPassword)
+		public async Task<int> postChangePasswordAsync(RhythmboxdbContext context, int userId, string oldPassword, string newPassword)
 		{
 			try
 			{
+				var user = await Task.Run(() => context.Users
+									.Where(con => con.UsersId == userId && con.UserPassword == oldPassword)
+									.SingleOrDefault());
+
 				if (user != null)
 				{
 					await Task.Run(() =>
@@ -85,10 +96,11 @@ namespace RhythmBox.Repositories
 						context.SaveChanges();
 					});
 				}
+				else return 0; // Wrong id or password
 			}
-			catch { return false; }
+			catch { return -1; } // Error
 
-			return true;
+			return 1; // Change password successfull
 		}
 
 		public async Task<User?> getInfoOtherUserAsync(RhythmboxdbContext context, int userId)

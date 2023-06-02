@@ -11477,11 +11477,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/RhythmBox/RhythmBox/RhythmBox.csproj",
+      "projectUniqueName": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/RhythmBox.csproj",
       "projectName": "RhythmBox",
-      "projectPath": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/RhythmBox/RhythmBox/RhythmBox.csproj",
+      "projectPath": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/RhythmBox.csproj",
       "packagesPath": "/Users/longnguyen/.nuget/packages/",
-      "outputPath": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/RhythmBox/RhythmBox/obj/",
+      "outputPath": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/longnguyen/.nuget/NuGet/NuGet.Config"
