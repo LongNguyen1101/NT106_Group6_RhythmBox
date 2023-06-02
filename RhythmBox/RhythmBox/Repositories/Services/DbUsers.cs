@@ -18,15 +18,15 @@ namespace RhythmBox.Repositories
 			_fileShare = fileShare;
 		}
 
-		public async Task postNewUserUploadAsync(RhythmboxdbContext context, string userName, string email, string password, string birthday, string gender)
+		public async Task<int> postCreateUserAsync(RhythmboxdbContext context, string userName, string email, string password, string birthday, string gender)
 		{
-			bool userExist = context.Users.Any(con => (con.UserName == userName || con.Email == email));
+			bool userExist = await Task.Run(() => context.Users.Any(con => (con.UserName == userName || con.Email == email)));
 
-			await Task.Run(() =>
+			if (!userExist)
 			{
-				if (!userExist)
+				try
 				{
-					try
+					await Task.Run(() =>
 					{
 						var user = new User()
 						{
@@ -40,46 +40,79 @@ namespace RhythmBox.Repositories
 
 						context.Users.Add(user);
 						context.SaveChanges();
-					}
-					catch { return; }
-				};
-			});
-		}
-
-		public async Task getUserDownloadAsync(RhythmboxdbContext context, string authenticString, string password)
-		{
-			var users = context.Users
-								.Where(con => (con.UserPassword == password && (con.UserName == authenticString || con.Email == authenticString.ToLower())));
-
-			var user = users.SingleOrDefault();
-
-			if (user != null && user.AvaUrl != null)
-			{
-				try
-				{
-					await _fileShare.fileDownloadAsync(user.AvaUrl);
+					});
 				}
-				catch { return; }
+				catch { return -1; } // Handling error when adding new user to database
 			}
+			else return 0; // return if userName or email is exist
+
+			return 1; // return if adding new user successfull
 		}
 
-		public async Task postChangePassword(RhythmboxdbContext context, User user, string newPassword)
+		public async Task<User?> getUserAsync(RhythmboxdbContext context, string authenticString, string password)
 		{
-			await Task.Run(() =>
+			try
 			{
-				try
+				var user = await Task.Run(() => context.Users
+									.Where(con => (con.UserPassword == password && (con.UserName == authenticString || con.Email == authenticString.ToLower())))
+									.Select(con => new User
+									{
+										UserName = con.UserName,
+										Email = con.Email,
+										AvaUrl = con.AvaUrl,
+										Birthday = con.Birthday,
+										Gender = con.Gender
+									})
+									.SingleOrDefault());
+
+
+
+				return user;
+			} catch { return null; }
+		}
+
+		public async Task<Boolean> postChangePasswordAsync(RhythmboxdbContext context, User user, string newPassword)
+		{
+			try
+			{
+				if (user != null)
 				{
-					if (user != null)
+					await Task.Run(() =>
 					{
 						user.UserPassword = newPassword;
 
 						context.Users.Update(user);
 						context.SaveChanges();
-					}
+					});
 				}
-				catch { return; }
-			});
+			}
+			catch { return false; }
+
+			return true;
 		}
-	}
+
+		public async Task<User?> getInfoOtherUserAsync(RhythmboxdbContext context, int userId)
+		{
+			try
+			{
+				var user = await Task.Run(() => context.Users
+									.Where(con => (con.UsersId == userId))
+									.Select(con => new User
+									{
+										UserName = con.UserName,
+										Email = con.Email,
+										AvaUrl = con.AvaUrl,
+										Birthday = con.Birthday,
+										Gender = con.Gender
+									})
+									.SingleOrDefault());
+
+				return user;
+			}
+			catch { return null; }
+		}
+
+
+    }
 }
 

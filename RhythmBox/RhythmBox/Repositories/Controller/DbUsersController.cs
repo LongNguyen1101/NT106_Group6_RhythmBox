@@ -20,14 +20,17 @@ namespace RhythmBox.Repositories
             _dbUsers = dbUsers;
 		}
 
-        [HttpPost("UploadNewUser")]
-        public async Task<IActionResult> NewUserUpload(string userName, string email, string password, string birthday, string gender)
+        [HttpPost("CreateUser")]
+        public async Task<IActionResult> Create(string userName, string email, string password, string birthday, string gender)
         {
             if (!string.IsNullOrEmpty(userName) && !string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(password) && !string.IsNullOrEmpty(gender))
             {
                 try
                 {
-                    await _dbUsers.postNewUserUploadAsync(_context, userName, email.ToLower(), password, birthday, gender);
+                    int check = await _dbUsers.postCreateUserAsync(_context, userName, email.ToLower(), password, birthday, gender);
+
+                    if (check == 0) return NotFound("User is alreary exist");
+                    else if (check == -1) return NotFound("Error adding new user");
                 }
                 catch
                 {
@@ -39,14 +42,14 @@ namespace RhythmBox.Repositories
             return Ok();
         }
 
-        [HttpGet("DownloadUser")]
-        public async Task<IActionResult> UserDownload(string authenticString, string password)
+        [HttpGet("GetUser")]
+        public async Task<IActionResult> getUser(string authenticString, string password)
         {
             if (!string.IsNullOrEmpty(authenticString) && !string.IsNullOrEmpty(password))
             {
                 try
                 {
-                    await _dbUsers.getUserDownloadAsync(_context, authenticString, password);
+                    await _dbUsers.getUserAsync(_context, authenticString, password);
                 }
                 catch
                 {
