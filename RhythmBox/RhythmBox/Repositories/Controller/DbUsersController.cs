@@ -82,6 +82,109 @@ namespace RhythmBox.Repositories
 
             return StatusCode(201);
         }
-	}
+
+        [HttpGet("GetInfoOtherUser")]
+        public async Task<IActionResult> getInfo(int userId)
+        {
+            if (userId != 0)
+            {
+                try
+                {
+                    var user = await _dbUsers.getInfoOtherUserAsync(_context, userId);
+
+                    if (user != null) return Ok(user);
+                    else return BadRequest("User not found");
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+            }
+
+            return BadRequest("Error");
+        }
+
+        [HttpPost("ChangeInfo")]
+        public async Task<IActionResult> changeInfo(int userId, string newUserName, string newEmail, [FromForm] FileDetails newAva, string newBirthday, string newGender)
+        {
+            if (userId != 0)
+            {
+                try
+                {
+                    int check = await _dbUsers.postChangeInformationAsync(_context, userId, newUserName, newEmail, newAva, newBirthday, newGender);
+
+                    if (check == 0) return BadRequest("Error");
+                    else if (check == -1) return BadRequest("User not found");
+                    else return StatusCode(201);
+                }
+                catch(Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+            }
+
+            return BadRequest("User not found");
+        }
+
+        [HttpGet("getPlaylist")]
+        public async Task<IActionResult> getPlaylist(RhythmboxdbContext context, int userId)
+        {
+            if (userId != 0)
+            {
+                try
+                {
+                    var playlist = await _dbUsers.getPlaylistAsync(_context, userId);
+
+                    return Ok(playlist);
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+            }
+
+            return BadRequest("User not found");
+        }
+
+        [HttpGet("getAlbumsLib")]
+        public async Task<IActionResult> getAlbumsLib(RhythmboxdbContext context, int userId)
+        {
+            if (userId != 0)
+            {
+                try
+                {
+                    var albumsLib = await _dbUsers.getAlbumsLibraryAsync(_context, userId);
+
+                    return Ok(albumsLib);
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+            }
+
+            return BadRequest("User not found");
+        }
+
+        [HttpGet("getArtistsLib")]
+        public async Task<IActionResult> getArtistsLib(RhythmboxdbContext context, int userId)
+        {
+            if (userId != 0)
+            {
+                try
+                {
+                    var artistsLib = await _dbUsers.getArtistsLibraryAsync(_context, userId);
+
+                    return Ok(artistsLib);
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+            }
+
+            return BadRequest("User not found");
+        }
+    }
 }
 

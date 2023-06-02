@@ -35,7 +35,7 @@ namespace RhythmBox.Repositories
 							UserPassword = password,
 							AvaUrl = "https://rhythmboxstorage.file.core.windows.net/resource/users/Defaut/defaultAva.jpeg",
 							Birthday = DateTime.Parse(birthday),
-							Gender = gender
+							Gender = gender.ToLower()
 						};
 
 						context.Users.Add(user);
@@ -111,6 +111,7 @@ namespace RhythmBox.Repositories
 									.Where(con => (con.UsersId == userId))
 									.Select(con => new User
 									{
+										UsersId = con.UsersId,
 										UserName = con.UserName,
 										Email = con.Email,
 										AvaUrl = con.AvaUrl,
@@ -124,7 +125,76 @@ namespace RhythmBox.Repositories
 			catch { return null; }
 		}
 
+		public async Task<int> postChangeInformationAsync(RhythmboxdbContext context, int userId, string newUserName, string newEmail, FileDetails newAva, string newBirthday, string newGender)
+		{
+			var user = await Task.Run(() => context.Users
+												.Where(con => con.UsersId == userId)
+												.SingleOrDefault());
 
+			string? avaUrl = await _fileShare.fileUploadAsync(newAva, "users", userId.ToString(), true);
+
+			if (user != null && avaUrl != null)
+			{
+				try
+				{
+					await Task.Run(() =>
+					{
+						if (user.UserName != newUserName) user.UserName = newUserName;
+						if (user.Email != newEmail) user.Email = newEmail;
+						user.AvaUrl = avaUrl;
+						if (user.Birthday != DateTime.Parse(newBirthday)) user.Birthday = DateTime.Parse(newBirthday);
+						if (user.Gender != newGender.ToLower()) user.Gender = newGender.ToLower();
+
+						context.Users.Update(user);
+						context.SaveChanges();
+					});
+
+					return 1; // change succecssful
+				}
+				catch { return 0; } // Error
+			}
+
+			return -1; // User not found
+		}
+
+		public async Task<List<Playlist>?> getPlaylistAsync(RhythmboxdbContext context, int userId)
+		{
+			try
+			{
+				var playlist = await Task.Run(() => context.Playlists
+														.Where(con => con.UsersId == userId)
+														.ToList());
+
+				return playlist;
+			}
+			catch { return null; }
+		}
+
+		public async Task<List<AlbumsLib>?> getAlbumsLibraryAsync(RhythmboxdbContext context, int userId)
+		{
+            try
+            {
+                var albumLib = await Task.Run(() => context.AlbumsLibs
+                                                        .Where(con => con.UsersId == userId)
+                                                        .ToList());
+
+                return albumLib;
+            }
+            catch { return null; }
+        }
+
+        public async Task<List<ArtistsLib>?> getArtistsLibraryAsync(RhythmboxdbContext context, int userId)
+		{
+            try
+            {
+                var artistLib = await Task.Run(() => context.ArtistsLibs
+                                                        .Where(con => con.UsersId == userId)
+                                                        .ToList());
+
+                return artistLib;
+            }
+            catch { return null; }
+        }
     }
 }
 

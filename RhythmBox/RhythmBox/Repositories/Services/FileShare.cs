@@ -24,7 +24,7 @@ namespace RhythmBox.Repositories
                                                 _config.GetValue<string>("FileShareDetails:FileShareName"));
         }
 
-		public async Task fileUploadAsync(FileDetails fileDetails, string Id, string atribute)
+		public async Task<string?> fileUploadAsync(FileDetails fileDetails, string id, string atribute, bool isImage)
 		{ 
 			// Create the share if it doesn't already exist
 			await _share.CreateIfNotExistsAsync();
@@ -33,10 +33,20 @@ namespace RhythmBox.Repositories
             if (await _share.ExistsAsync())
 			{
 				// Get a reference to the sample directory
-				ShareDirectoryClient directory = _share.GetDirectoryClient($"{Id}/{atribute}");
+				ShareDirectoryClient directory = _share.GetDirectoryClient($"{id}/{atribute}");
 
 				// Get a reference to a file and upload it
 				await directory.CreateIfNotExistsAsync();
+
+				if (isImage)
+				{
+					// Delete all file in directory if exists before adding 
+					foreach (ShareFileItem fileItem in directory.GetFilesAndDirectories())
+					{
+						ShareFileClient file = directory.GetFileClient(fileItem.Name);
+						await file.DeleteIfExistsAsync();
+					}
+				}
 
 				// Ensure that the directory exists
 				if (await directory.ExistsAsync())
@@ -55,8 +65,12 @@ namespace RhythmBox.Repositories
 							new HttpRange(0, stream.Length),
 							stream);
 					}
+
+					return $"https://rhythmboxstorage.file.core.windows.net/resource/{id}/{atribute}/{fileDetails.fileDetail.FileName}";
 				}
             }
+
+			return null;
         }
 
         public async Task<ShareFileDownloadInfo> fileDownloadAsync(string fileSharePath)
