@@ -39,7 +39,7 @@ namespace RhythmBox.Repositories
                 if (artist != null)
                 {
                     int artistId = artist.ArtistsId;
-                    await fileShare.fileUploadAsync(fileDetail, artistId.ToString(), atribute);
+                    await fileShare.fileUploadAsync(fileDetail, artistId.ToString(), atribute, false);
                 }
             }
             return Ok();
