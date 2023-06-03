@@ -24,56 +24,55 @@ namespace RhythmBox.Repositories
                                                 _config.GetValue<string>("FileShareDetails:FileShareName"));
         }
 
-		public async Task<string?> fileUploadAsync(FileDetails fileDetails, string id, string atribute, bool isImage)
-		{ 
-			// Create the share if it doesn't already exist
-			await _share.CreateIfNotExistsAsync();
-
-            // Ensure that the directory exists
-            if (await _share.ExistsAsync())
+		public async Task<string?> fileUploadAsync(FileContent fileDetails, string id, string atribute, bool isImage)
+		{
+			if (fileDetails.content != null && fileDetails.fileName != null)
 			{
-				// Get a reference to the sample directory
-				ShareDirectoryClient directory = _share.GetDirectoryClient($"{id}/{atribute}");
-
-				// Get a reference to a file and upload it
-				await directory.CreateIfNotExistsAsync();
-
-				if (isImage)
-				{
-					// Delete all file in directory if exists before adding 
-					foreach (ShareFileItem fileItem in directory.GetFilesAndDirectories())
-					{
-						ShareFileClient file = directory.GetFileClient(fileItem.Name);
-						await file.DeleteIfExistsAsync();
-					}
-				}
+				// Create the share if it doesn't already exist
+				await _share.CreateIfNotExistsAsync();
 
 				// Ensure that the directory exists
-				if (await directory.ExistsAsync())
+				if (await _share.ExistsAsync())
 				{
-					ShareFileClient file = directory.GetFileClient(fileDetails.fileDetail.FileName);
+					// Get a reference to the sample directory
+					ShareDirectoryClient directory = _share.GetDirectoryClient($"{id}/{atribute}");
 
-					// Check path
-					var filesPath = Directory.GetCurrentDirectory() + "/files";
-					var fileName = Path.GetFileName(fileDetails.fileDetail.FileName);
-					var filePath = Path.Combine(filesPath, fileName);
+					// Get a reference to a file and upload it
+					await directory.CreateIfNotExistsAsync();
 
-					using (FileStream stream = File.OpenRead(filePath))
+					if (isImage)
 					{
-						file.Create(stream.Length);
-						file.UploadRange(
-							new HttpRange(0, stream.Length),
-							stream);
+						// Delete all file in directory if exists before adding 
+						foreach (ShareFileItem fileItem in directory.GetFilesAndDirectories())
+						{
+							ShareFileClient file = directory.GetFileClient(fileItem.Name);
+							await file.DeleteIfExistsAsync();
+						}
 					}
 
-					return $"https://rhythmboxstorage.file.core.windows.net/resource/{id}/{atribute}/{fileDetails.fileDetail.FileName}";
+					// Ensure that the directory exists
+					if (await directory.ExistsAsync())
+					{
+						ShareFileClient file = directory.GetFileClient(fileDetails.fileName);
+
+						file.Create(fileDetails.content.Length);
+
+                        using (MemoryStream memoryStream = new MemoryStream(fileDetails.content))
+                        {
+                            await file.UploadRangeAsync(
+                                new HttpRange(0, fileDetails.content.Length),
+                                memoryStream);
+                        }
+
+                        return $"https://rhythmboxstorage.file.core.windows.net/resource/{id}/{atribute}/{fileDetails.fileName}";
+					}
 				}
-            }
+			}
 
 			return null;
         }
 
-        public async Task<ShareFileDownloadInfo> fileDownloadAsync(string fileSharePath)
+        public async Task<byte[]> fileDownloadAsync(string fileSharePath)
         {
 			fileSharePath = fileSharePath.Replace("https://rhythmboxstorage.file.core.windows.net/resource/", "");
 
@@ -83,24 +82,38 @@ namespace RhythmBox.Repositories
 
             ShareFileClient file = directory.GetFileClient(path[2]);
 
-            // Check path
-            var filesPath = Directory.GetCurrentDirectory() + "/files";
-            if (!System.IO.Directory.Exists(filesPath))
-            {
-                Directory.CreateDirectory(filesPath);
-            }
+            // Download the file
+            ShareFileDownloadInfo download = await file.DownloadAsync();
 
-            var fileName = Path.GetFileName(fileSharePath);
-            var filePath = Path.Combine(filesPath, fileName);
+            using (MemoryStream stream = new MemoryStream())
+            {
+				await download.Content.CopyToAsync(stream);
+				byte[] contentBytes = stream.ToArray();
+
+				return contentBytes;
+            }
+        }
+
+		public async Task<byte[]> fileAlbumCoverDownloadAsync(string fileSharePath)
+		{
+			fileSharePath = fileSharePath.Replace("https://rhythmboxstorage.file.core.windows.net/resource/", "");
+
+			string[] path = fileSharePath.Split("/");
+
+			ShareDirectoryClient directory = _share.GetDirectoryClient($"{path[0]}/{path[1]}");
+
+			ShareFileClient file = directory.GetFileClient($"{path[2]}/{path[3]}");
 
             // Download the file
-            ShareFileDownloadInfo download = file.Download();
-            using (FileStream stream = File.OpenWrite(filePath))
+            ShareFileDownloadInfo download = await file.DownloadAsync();
+
+            using (MemoryStream stream = new MemoryStream())
             {
                 await download.Content.CopyToAsync(stream);
-            }
+                byte[] contentBytes = stream.ToArray();
 
-			return download;
+                return contentBytes;
+            }
         }
     }
 }

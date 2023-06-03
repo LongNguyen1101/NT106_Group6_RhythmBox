@@ -7,8 +7,9 @@ namespace RhythmBox.Repositories
 {
     public interface IFileShare
     {
-        Task<string?> fileUploadAsync(FileDetails fileDetails, string Id, string atribtute, bool isImage);
-        Task<ShareFileDownloadInfo> fileDownloadAsync(string fileSharePath);
+        Task<string?> fileUploadAsync(FileContent fileDetails, string Id, string atribtute, bool isImage);
+        Task<byte[]> fileDownloadAsync(string fileSharePath);
+        Task<byte[]> fileAlbumCoverDownloadAsync(string fileSharePath);
     }
 }
 

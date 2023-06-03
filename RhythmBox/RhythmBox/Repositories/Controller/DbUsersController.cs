@@ -4,6 +4,9 @@ using RhythmBox.Data;
 using RhythmBox.Models;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.EntityFrameworkCore;
+using Azure.Storage.Files.Shares;
+using Azure.Storage.Files.Shares.Models;
+
 
 namespace RhythmBox.Repositories
 {
@@ -111,7 +114,17 @@ namespace RhythmBox.Repositories
             {
                 try
                 {
-                    int check = await _dbUsers.postChangeInformationAsync(_context, userId, newUserName, newEmail, newAva, newBirthday, newGender);
+                    FileContent fileContent = new FileContent();
+
+                    fileContent.fileName = newAva.fileDetail.FileName;
+
+                    using (MemoryStream stream = new MemoryStream())
+                    {
+                        await newAva.fileDetail.CopyToAsync(stream);
+                        fileContent.content = stream.ToArray();
+                    }
+
+                    int check = await _dbUsers.postChangeInformationAsync(_context, userId, newUserName, newEmail, fileContent, newBirthday, newGender);
 
                     if (check == 0) return BadRequest("Error");
                     else if (check == -1) return BadRequest("User not found");
@@ -127,7 +140,7 @@ namespace RhythmBox.Repositories
         }
 
         [HttpGet("getPlaylist")]
-        public async Task<IActionResult> getPlaylist(RhythmboxdbContext context, int userId)
+        public async Task<IActionResult> getPlaylist(int userId)
         {
             if (userId != 0)
             {
@@ -147,7 +160,7 @@ namespace RhythmBox.Repositories
         }
 
         [HttpGet("getAlbumsLib")]
-        public async Task<IActionResult> getAlbumsLib(RhythmboxdbContext context, int userId)
+        public async Task<IActionResult> getAlbumsLib(int userId)
         {
             if (userId != 0)
             {
@@ -167,7 +180,7 @@ namespace RhythmBox.Repositories
         }
 
         [HttpGet("getArtistsLib")]
-        public async Task<IActionResult> getArtistsLib(RhythmboxdbContext context, int userId)
+        public async Task<IActionResult> getArtistsLib(int userId)
         {
             if (userId != 0)
             {
@@ -184,6 +197,26 @@ namespace RhythmBox.Repositories
             }
 
             return BadRequest("User not found");
+        }
+
+        [HttpGet("getTracks")]
+        public async Task<IActionResult> getTracks()
+        {
+            try
+            {
+                var tracks = await _dbUsers.getTracksAsync(_context);
+
+                if (tracks != null)
+                {
+                    return Ok(tracks.ToString());
+                }
+
+                else return BadRequest("Error for getting tracks");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

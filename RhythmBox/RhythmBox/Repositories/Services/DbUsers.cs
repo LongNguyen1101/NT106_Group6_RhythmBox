@@ -50,7 +50,7 @@ namespace RhythmBox.Repositories
 			return 0; // return if userName or email is exist
 		}
 
-		public async Task<(User?, ShareFileDownloadInfo?)> getUserAsync(RhythmboxdbContext context, string authenticString, string password)
+		public async Task<(User?, byte[]?)> getUserAsync(RhythmboxdbContext context, string authenticString, string password)
 		{
 			try
 			{
@@ -69,7 +69,7 @@ namespace RhythmBox.Repositories
 
 				if (user != null && user.AvaUrl != null)
 				{
-					ShareFileDownloadInfo ava = await _fileShare.fileDownloadAsync(user.AvaUrl);
+					byte[] ava = await _fileShare.fileDownloadAsync(user.AvaUrl);
 					return (user, ava);
 				}
 
@@ -125,7 +125,7 @@ namespace RhythmBox.Repositories
 			catch { return null; }
 		}
 
-		public async Task<int> postChangeInformationAsync(RhythmboxdbContext context, int userId, string newUserName, string newEmail, FileDetails newAva, string newBirthday, string newGender)
+		public async Task<int> postChangeInformationAsync(RhythmboxdbContext context, int userId, string newUserName, string newEmail, FileContent newAva, string newBirthday, string newGender)
 		{
 			var user = await Task.Run(() => context.Users
 												.Where(con => con.UsersId == userId)
@@ -195,6 +195,70 @@ namespace RhythmBox.Repositories
             }
             catch { return null; }
         }
+
+        public async Task<List<(Track?, byte[]?)>?> getTracksAsync(RhythmboxdbContext context)
+		{
+			try
+			{
+				var tracks = await Task.Run(() => context.Tracks
+														.Take(100)
+														.Select(con => new Track
+														{
+															TracksId = con.TracksId,
+															AlbumsId = con.AlbumsId,
+															ArtistsId = con.ArtistsId,
+															Title = con.Title,
+															Genre = con.Genre
+														})
+														.ToList());
+
+				List<(Track?, byte[]?)> container = new List<(Track?, byte[]?)>();
+
+				await Task.Run(async () =>
+				{
+					foreach (var track in tracks)
+					{
+						if (track.AlbumsId != null)
+						{
+							var albumImageUrl = context.Albums
+														.Where(con => con.AlbumsId == track.AlbumsId)
+														.Select(e => e.AlbumImage)
+														.SingleOrDefault();
+
+							if (albumImageUrl != null)
+							{
+								byte[]? image = await _fileShare.fileAlbumCoverDownloadAsync(albumImageUrl);
+
+								if (image != null) container.Add((track, image));
+							}
+						}
+						else
+						{
+                            var artistImageUrl = context.Artists
+                                                        .Where(con => con.ArtistsId == track.ArtistsId)
+                                                        .Select(e => e.ArtistsImage)
+                                                        .SingleOrDefault();
+
+                            if (artistImageUrl != null)
+                            {
+								byte[]? image = await _fileShare.fileAlbumCoverDownloadAsync(artistImageUrl);
+
+								if (image != null) container.Add((track, image));
+                            }
+                        }
+					}
+				});
+				
+
+				return container;
+			}
+			catch { return null; }
+		}
+
+        public async Task<int> postCreatePlaylistAsync(RhythmboxdbContext context, int userId)
+		{
+			return 1;
+		}
     }
 }
 

@@ -21,43 +21,77 @@ namespace RhythmBox.Repositories
             this.context = context;
         }
 
-        /// <summary>
-        /// upload file
-        /// </summary>
-        /// <param name="fileDetail"></param>
-        /// <returns></returns>
-        [HttpPost("UploadFile")]
-        public async Task<IActionResult> UploadFile([FromForm] FileDetails fileDetail, string artistName, string atribute)
+        [HttpPost("uploadFile")]
+        public async Task<IActionResult> uploadFile([FromForm] FileDetails fileDetail, string name, string atribute)
         {
-            if (fileDetail.fileDetail != null && !string.IsNullOrEmpty(artistName) && !string.IsNullOrEmpty(atribute))
+            if (fileDetail != null && !string.IsNullOrEmpty(name) && !string.IsNullOrEmpty(atribute))
             {
                 var artists = context.Artists
-                                        .Where(con => con.FullName == artistName);
+                                        .Where(con => con.FullName == name);
 
                 var artist = artists.SingleOrDefault();
 
                 if (artist != null)
                 {
                     int artistId = artist.ArtistsId;
-                    await fileShare.fileUploadAsync(fileDetail, artistId.ToString(), atribute, false);
+
+                    FileContent fileContent = new FileContent();
+
+                    fileContent.fileName = fileDetail.fileDetail.FileName;
+
+                    using (MemoryStream stream = new MemoryStream())
+                    {
+                        await fileDetail.fileDetail.CopyToAsync(stream);
+                        fileContent.content = stream.ToArray();
+                    }
+
+                    string? fileUrl = await fileShare.fileUploadAsync(fileContent, artistId.ToString(), atribute, false);
+
+                    return Ok(fileUrl);
                 }
             }
-            return Ok();
+
+            return BadRequest("Error");
         }
 
-        /// <summary>
-        /// download file
-        /// </summary>
-        /// <param name="fileDetail"></param>
-        /// <returns></returns>
-        [HttpPost("DownloadFile")]
-        public async Task<IActionResult> DownloadFile(string fileName)
+        [HttpGet("downloadFile")]
+        public async Task<IActionResult> downloadFile(string path)
         {
-            if (fileName != null)
+            if (path != null)
             {
-                await fileShare.fileDownloadAsync(fileName);
+                try
+                {
+                    byte[] data = await fileShare.fileDownloadAsync(path);
+
+                    return Ok(data);
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
             }
-            return Ok();
+
+            return BadRequest("Error path");
+        }
+
+        [HttpGet("downloadAlbumCover")]
+        public async Task<IActionResult> downloadAlbumCover(string path)
+        {
+            if (path != null)
+            {
+                try
+                {
+                    byte[] data = await fileShare.fileAlbumCoverDownloadAsync(path);
+
+                    return Ok(data);
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(ex.Message);
+                }
+            }
+
+            return BadRequest("Error path");
         }
     }
 }
