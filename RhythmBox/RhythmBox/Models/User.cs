@@ -19,6 +19,8 @@ public partial class User
 
     public string? Gender { get; set; }
 
+    public int? ArtistsId { get; set; }
+
     public virtual ICollection<AlbumsLib> AlbumsLibs { get; set; } = new List<AlbumsLib>();
 
     public virtual ICollection<ArtistsLib> ArtistsLibs { get; set; } = new List<ArtistsLib>();

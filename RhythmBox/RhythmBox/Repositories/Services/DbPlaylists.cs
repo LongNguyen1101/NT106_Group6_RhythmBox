@@ -46,7 +46,10 @@ namespace RhythmBox.Repositories.Services
 			catch { return false; } // Error
 		}
 
+		//public async Task<List<Playlist>?> getUserPlaylistsAsync(RhythmboxdbContext context, int userId)
+		//{
 
+		//}
     }
 }
 

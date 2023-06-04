@@ -1,26 +1,26 @@
 ﻿<Properties StartupConfiguration="{AD269B11-7B94-49DF-A325-7CE854B60E76}|https">
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="RhythmBox/Repositories/Controller/DbUsersController.cs">
+  <MonoDevelop.Ide.ItemProperties.RhythmBox PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="RhythmBox/Repositories/Interface/IDbArtist.cs">
     <Files>
-      <File FileName="RhythmBox/Repositories/Interface/IDbUsers.cs" Line="7" Column="30" />
-      <File FileName="RhythmBox/Repositories/Services/DbUsers.cs" Line="199" Column="97" />
-      <File FileName="RhythmBox/Repositories/Controller/DbUsersController.cs" Line="130" Column="45" />
-      <File FileName="RhythmBox/Repositories/Interface/IDbArtistsLib.cs" Line="10" Column="96" />
-      <File FileName="RhythmBox/Repositories/Interface/IDbTracks.cs" Line="14" Column="95" />
+      <File FileName="RhythmBox/Repositories/Interface/IDbPlaylist.cs" Line="28" Column="44" />
+      <File FileName="RhythmBox/Repositories/Services/DbPlaylists.cs" Line="47" Column="4" />
+      <File FileName="RhythmBox/Repositories/Interface/IDbUsers.cs" Line="1" Column="1" />
+      <File FileName="RhythmBox/Repositories/Interface/IDbArtist.cs" Line="23" Column="3" />
+      <File FileName="RhythmBox/Models/User.cs" Line="13" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="RhythmBox" expanded="True">
             <Node name="RhythmBox" expanded="True">
-              <Node name="Data" expanded="True" />
-              <Node name="files" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Repositories" expanded="True">
-                <Node name="Controller" expanded="True">
-                  <Node name="DbUsersController.cs" selected="True" />
+                <Node name="Controller" expanded="True" />
+                <Node name="Interface" expanded="True">
+                  <Node name="IDbArtist.cs" selected="True" />
                 </Node>
-                <Node name="Interface" expanded="True" />
                 <Node name="Services" expanded="True" />
               </Node>
               <Node name="wwwroot" expanded="True" />
@@ -30,10 +30,8 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.RhythmBox PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
 </Properties>

@@ -207,6 +207,7 @@ public partial class RhythmboxdbContext : DbContext
             entity.ToTable("USERS");
 
             entity.Property(e => e.UsersId).HasColumnName("USERS_ID");
+            entity.Property(e => e.ArtistsId).HasColumnName("ARTISTS_ID");
             entity.Property(e => e.AvaUrl)
                 .HasMaxLength(255)
                 .IsUnicode(false)
