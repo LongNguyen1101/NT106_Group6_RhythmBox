@@ -1,17 +1,12 @@
 ﻿<Properties StartupConfiguration="{AD269B11-7B94-49DF-A325-7CE854B60E76}|https">
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="RhythmBox/Repositories/Services/DbUsers.cs">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="RhythmBox/Repositories/Controller/DbUsersController.cs">
     <Files>
-      <File FileName="RhythmBox/Program.cs" Line="55" Column="1" />
-      <File FileName="RhythmBox/Repositories/Controller/DbUsersController.cs" Line="188" Column="5" />
-      <File FileName="RhythmBox/Repositories/Services/DbUsers.cs" Line="198" Column="1" />
-      <File FileName="RhythmBox/Repositories/Interface/IDbUsers.cs" Line="23" Column="53" />
-      <File FileName="RhythmBox/Repositories/Services/FileShare.cs" Line="34" Column="5" />
-      <File FileName="RhythmBox/Repositories/Interface/IFileShare.cs" Line="10" Column="106" />
-      <File FileName="RhythmBox/Repositories/Controller/FilesController.cs" Line="34" Column="46" />
-      <File FileName="RhythmBox/Data/RhythmboxdbContext.cs" Line="36" Column="1" />
-      <File FileName="RhythmBox/Models/User.cs" Line="1" Column="1" />
-      <File FileName="RhythmBox/Models/Playlist.cs" Line="18" Column="14" />
+      <File FileName="RhythmBox/Repositories/Interface/IDbUsers.cs" Line="7" Column="30" />
+      <File FileName="RhythmBox/Repositories/Services/DbUsers.cs" Line="199" Column="97" />
+      <File FileName="RhythmBox/Repositories/Controller/DbUsersController.cs" Line="130" Column="45" />
+      <File FileName="RhythmBox/Repositories/Interface/IDbArtistsLib.cs" Line="10" Column="96" />
+      <File FileName="RhythmBox/Repositories/Interface/IDbTracks.cs" Line="14" Column="95" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,11 +17,11 @@
               <Node name="files" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Repositories" expanded="True">
-                <Node name="Controller" expanded="True" />
-                <Node name="Interface" expanded="True" />
-                <Node name="Services" expanded="True">
-                  <Node name="DbUsers.cs" selected="True" />
+                <Node name="Controller" expanded="True">
+                  <Node name="DbUsersController.cs" selected="True" />
                 </Node>
+                <Node name="Interface" expanded="True" />
+                <Node name="Services" expanded="True" />
               </Node>
               <Node name="wwwroot" expanded="True" />
             </Node>
@@ -35,10 +30,10 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.RhythmBox PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.RhythmBox PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
 </Properties>
