@@ -8,24 +8,17 @@ using RhythmBox.Repositories.Interface;
 namespace RhythmBox.Repositories.Controller
 {
     [Route("api/[controller]")]
-    [ApiController, Authorize]
+    [ApiController]
     public class ForgotPasswordController : ControllerBase
     {
         private readonly IForgotPassword _forgotPassword;
         private readonly RhythmboxdbContext _context;
         private readonly IHttpContextAccessor _contextAccessor;
-        private readonly IUserService _userService;
-        public ForgotPasswordController(RhythmboxdbContext context ,IForgotPassword forgotPassword, IHttpContextAccessor contextAccessor, IUserService userService) 
+        public ForgotPasswordController(RhythmboxdbContext context ,IForgotPassword forgotPassword, IHttpContextAccessor contextAccessor) 
         {
             _context = context;
             _forgotPassword = forgotPassword;
             _contextAccessor = contextAccessor;
-            _userService = userService;
-        }
-        [HttpGet]
-        public ActionResult<string> GetID()
-        {
-            return Ok(Convert.ToInt16(_userService.getUserID()));
         }
         [HttpPost]
         public async Task<ActionResult> ForgotPass(string email)
@@ -36,7 +29,7 @@ namespace RhythmBox.Repositories.Controller
                 return BadRequest();
             }
             _contextAccessor.HttpContext.Session.SetInt32(email, OTP.Value);
-            return Ok();
+            return Ok(email);
         }
         [HttpPost("Authentication")]
         public async Task<ActionResult> authOTP (string email,int enteredOtp)
