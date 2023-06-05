@@ -9,6 +9,7 @@ using Azure.Storage.Files.Shares.Models;
 using System.IO;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using RhythmBox.Repositories.Interface;
 
 namespace RhythmBox.Repositories
 {

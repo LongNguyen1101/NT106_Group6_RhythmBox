@@ -6,6 +6,7 @@ using RhythmBox.Repositories;
 using Azure;
 using Azure.Storage.Files.Shares;
 using Azure.Storage.Files.Shares.Models;
+using RhythmBox.Repositories.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 

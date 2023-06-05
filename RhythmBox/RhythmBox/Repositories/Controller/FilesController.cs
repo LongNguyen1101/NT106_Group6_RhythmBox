@@ -5,6 +5,7 @@ using RhythmBox.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.EntityFrameworkCore;
+using RhythmBox.Repositories.Interface;
 
 namespace RhythmBox.Repositories
 {

@@ -3,7 +3,7 @@ using Azure;
 using Azure.Storage.Files.Shares;
 using Azure.Storage.Files.Shares.Models;
 
-namespace RhythmBox.Repositories
+namespace RhythmBox.Repositories.Interface
 {
     public interface IFileShare
     {

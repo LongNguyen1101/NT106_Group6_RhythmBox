@@ -23,6 +23,8 @@ public partial class Track
 
     public string? LyricsUrl { get; set; }
 
+    public string? TrackImage { get; set; }
+
     public virtual Album? Albums { get; set; }
 
     public virtual Artist? Artists { get; set; }

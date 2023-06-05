@@ -1,6 +1,8 @@
 ﻿using System;
 using RhythmBox.Data;
 using RhythmBox.Models;
+using Azure.Storage.Files.Shares;
+using Azure.Storage.Files.Shares.Models;
 
 namespace RhythmBox.Repositories.Interface
 {
@@ -13,16 +15,16 @@ namespace RhythmBox.Repositories.Interface
         Task<List<Playlist>?> getPlaylistsAsync(RhythmboxdbContext context, int userId);
 
 		// Delete playlist
-        Task deletePlaylistAsync(RhythmboxdbContext context, int playlistId);
+        Task<int> deletePlaylistAsync(RhythmboxdbContext context, int playlistId);
 
 		// Update new title to playlist
-		Task postUpdateInformationAsync(RhythmboxdbContext context, int playlistId, string newTitle);
+		Task<int> postUpdateInformationAsync(RhythmboxdbContext context, int playlistId, string newTitle);
 
 		// Download all tracks in a playlist
-		Task getDownloadPlaylistAsync(RhythmboxdbContext context, int playlistId);
+		Task<List<byte[]>?> getDownloadPlaylistAsync(RhythmboxdbContext context, int playlistId);
 
 		// Calculate the total of duraion per track and update to duration of playlist
-		Task<int> postCalculateTotalDurationAsync(RhythmboxdbContext context);
+		Task<TimeSpan> postCalculateTotalDurationAsync(RhythmboxdbContext context);
 
 		// Get all playlist - for testing only
 		Task<List<Playlist>?> getAllPlaylistAsync(RhythmboxdbContext context);

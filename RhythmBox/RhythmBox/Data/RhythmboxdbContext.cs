@@ -190,6 +190,10 @@ public partial class RhythmboxdbContext : DbContext
             entity.Property(e => e.Title)
                 .HasMaxLength(50)
                 .HasColumnName("TITLE");
+            entity.Property(e => e.TrackImage)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("TRACK_IMAGE");
 
             entity.HasOne(d => d.Albums).WithMany(p => p.Tracks)
                 .HasForeignKey(d => d.AlbumsId)

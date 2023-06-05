@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.EntityFrameworkCore;
 using Azure.Storage.Files.Shares;
 using Azure.Storage.Files.Shares.Models;
-
+using RhythmBox.Repositories.Interface;
 
 namespace RhythmBox.Repositories
 {
