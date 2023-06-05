@@ -8,28 +8,29 @@ using Azure.Storage.Files.Shares;
 using Azure.Storage.Files.Shares.Models;
 using RhythmBox.Repositories.Interface;
 using Microsoft.AspNetCore.Authorization;
+using RhythmBox.Repositories.Services;
 
 namespace RhythmBox.Repositories.Controller
 {
     [Route("api/[controller]")]
     [ApiController, Authorize]
-    public class AlbumsLibController : ControllerBase
+    public class ArtistsLibController : ControllerBase
     {
         private readonly RhythmboxdbContext _context;
-        private readonly IAlbumsLib _albumsLib;
+        private readonly IArtistsLib _artistsLib;
 
-        public AlbumsLibController(RhythmboxdbContext context, IAlbumsLib albumsLib)
+        public ArtistsLibController(RhythmboxdbContext context, IArtistsLib artistsLib)
 		{
             _context = context;
-            _albumsLib = albumsLib;
+            _artistsLib = artistsLib;
 		}
 
-        [HttpDelete("deleteAlbumLib")]
-        public async Task<IActionResult> deleteAlbumsLib(int albumsLibId)
+        [HttpDelete("deleteArtist")]
+        public async Task<IActionResult> deleteAlbumsLib(int artistsLibId)
         {
             try
             {
-                int check = await _albumsLib.deleteAlbumLibAsync(_context, albumsLibId);
+                int check = await _artistsLib.deleteArtistsLibAsync(_context, artistsLibId);
 
                 if (check == -1) return BadRequest("Error");
                 else if (check == 0) return BadRequest("Album not found");
@@ -42,12 +43,12 @@ namespace RhythmBox.Repositories.Controller
             return StatusCode(201);
         }
 
-        [HttpGet("getAlbumLoad")]
-        public async Task<IActionResult> getAlbumLoading(int userId)
+        [HttpGet("getArtistLoad")]
+        public async Task<IActionResult> getArtistLoading(int userId)
         {
             try
             {
-                var list = await _albumsLib.getAlbumsLibraryAsync(_context, userId);
+                var list = await _artistsLib.getArtistsLibraryAsync(_context, userId);
 
                 if (list != null)
                 {
@@ -66,12 +67,12 @@ namespace RhythmBox.Repositories.Controller
             return BadRequest("Error");
         }
 
-        [HttpPost("addAlbum")]
-        public async Task<IActionResult> postAddAlbumtoLib(int userId, int albumId)
+        [HttpPost("addArtist")]
+        public async Task<IActionResult> postAddAlbumtoLib(int userId, int artistId)
         {
             try
             {
-                var check = await _albumsLib.postAddAlbumToLibAsync(_context, userId, albumId);
+                var check = await _artistsLib.postAddArtistToLibAsync(_context, userId, artistId);
 
                 if (check == -1) return BadRequest("Error");
                 else if (check == 0) return BadRequest("album aready exist");
@@ -83,6 +84,6 @@ namespace RhythmBox.Repositories.Controller
 
             return StatusCode(201);
         }
-	}
+    }
 }
 

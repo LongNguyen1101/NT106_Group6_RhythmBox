@@ -84,7 +84,7 @@ namespace RhythmBox.Repositories.Services
                         context.SaveChanges();
                     });
 
-                    return 1;
+                    return 1; // Add successful
                 }
 
                 return 0; // Album already exist

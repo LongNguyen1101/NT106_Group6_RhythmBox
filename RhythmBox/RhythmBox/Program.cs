@@ -25,6 +25,7 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IForgotPassword, ForgotPassword>();
 builder.Services.AddScoped<IAccount, Account>();
 builder.Services.AddScoped<IAlbumsLib, AlbumsLib>();
+builder.Services.AddScoped<IArtistsLib, ArtistsLib>();
 builder.Services.AddAuthentication().AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters

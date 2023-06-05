@@ -10,7 +10,7 @@ using RhythmBox.Repositories.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
 
-namespace RhythmBox.Repositories
+namespace RhythmBox.Repositories.Controller
 {
     [Route("api/[controller]")]
     [ApiController, Authorize]
