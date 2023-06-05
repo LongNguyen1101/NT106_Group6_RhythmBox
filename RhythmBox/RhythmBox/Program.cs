@@ -7,6 +7,11 @@ using Azure;
 using Azure.Storage.Files.Shares;
 using Azure.Storage.Files.Shares.Models;
 using RhythmBox.Repositories.Interface;
+using RhythmBox.Repositories.Services;
+using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.Filters;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,9 +21,35 @@ builder.Services.AddDbContext<RhythmboxdbContext>(options =>
 
 builder.Services.AddScoped<IFileShare, RhythmBox.Repositories.FileShare>();
 builder.Services.AddScoped<IDbUsers, DbUsers>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IForgotPassword, ForgotPassword>();
+builder.Services.AddScoped<IAccount, Account>();
+builder.Services.AddAuthentication().AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        ValidateAudience = false,
+        ValidateIssuer = false,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
+            builder.Configuration.GetSection("AppSettings:Token").Value!))
+    };
+});
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddSession();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey
+    });
+
+    options.OperationFilter<SecurityRequirementsOperationFilter>();
+});
 
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
@@ -47,7 +78,7 @@ app.MapControllers();
 
 app.UseStaticFiles();
 
-app.UseRouting();
+//app.UseRouting();
 
 app.MapBlazorHub();
 
