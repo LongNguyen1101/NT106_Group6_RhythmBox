@@ -37,6 +37,7 @@ builder.Services.AddAuthentication().AddJwtBearer(options =>
 });
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSession();
+builder.Services.AddScoped<ISearch, Search>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>

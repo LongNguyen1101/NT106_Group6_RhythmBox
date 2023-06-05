@@ -1,16 +1,19 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore.SqlServer;
 using RhythmBox.Data;
 using RhythmBox.Models;
+using Azure.Storage.Files.Shares;
+using Azure.Storage.Files.Shares.Models;
 using RhythmBox.Repositories.Interface;
 
-namespace RhythmBox.Repositories.Services
+namespace RhythmBox.Repositories
 {
-	public class Seach : ISearch
+	public class Search : ISearch
 	{
 		private readonly IConfiguration _config;
-        private readonly FileShare _fileShare;
+        private readonly IFileShare _fileShare;
 
-		public Seach(IConfiguration config, FileShare fileShare)
+		public Search(IConfiguration config, IFileShare fileShare)
 		{
 			_config = config;
             _fileShare = fileShare;
@@ -45,7 +48,7 @@ namespace RhythmBox.Repositories.Services
             }
             catch { return null; }
         }
-        
+
         public async Task<List<(int, string, byte[], byte[])>?> GetArtistsLoad(RhythmboxdbContext context, string searchString)
         {
             var artists = await Task.Run(() => context.Artists
@@ -54,11 +57,11 @@ namespace RhythmBox.Repositories.Services
 
             try
             {
-                List<(int, string, byte[], byte[])> list = new List<(int, string, byte[], byte[])>();
+                List<(int, string, byte[], byte[])>? list = new List<(int, string, byte[], byte[])>();
 
                 await Task.Run(async () =>
                 {
-                    foreach(var artist in artists)
+                    foreach (var artist in artists)
                     {
                         if (artist.FullName != null && artist.BioUrl != null && artist.ArtistsImage != null)
                             list.Add((artist.ArtistsId, artist.FullName,
@@ -72,7 +75,7 @@ namespace RhythmBox.Repositories.Services
             catch { return null; }
         }
 
-        public async Task<List<(int, string, byte[], byte[])>?> getTracksLoad(RhythmboxdbContext context, string searchString)
+        public async Task<List<(int, string, byte[])>?> getTracksLoad(RhythmboxdbContext context, string searchString)
         {
             var tracks = await Task.Run(() => context.Tracks
                                                        .Where(con => con.Title != null && con.Title.Contains(searchString))
@@ -80,13 +83,18 @@ namespace RhythmBox.Repositories.Services
 
             try
             {
-                List<(int, string, byte[], byte[])> list = new List<(int, string, byte[], byte[])>();
+                List<(int, string, byte[])>? list = new List<(int, string, byte[])>();
 
-                await Task.Run(() =>
+                await Task.Run(async () =>
                 {
-                    foreach(var track in tracks)
+                    foreach (var track in tracks)
                     {
-                        
+                        if (track.Title != null && track.TrackImage != null)
+                        {
+                            if (track.TrackImage.Replace("https://rhythmboxstorage.file.core.windows.net/resource/", "").Split('/').Length == 3)
+                                list.Add((track.TracksId, track.Title, await _fileShare.fileDownloadAsync(track.TrackImage)));
+                            else list.Add((track.TracksId, track.Title, await _fileShare.fileAlbumCoverDownloadAsync(track.TrackImage)));
+                        }
                     }
                 });
 
@@ -95,9 +103,27 @@ namespace RhythmBox.Repositories.Services
             catch { return null; }
         }
 
-        public Task<List<(int, string, byte[])>?> GetUsersLoad(RhythmboxdbContext context, string searchString)
+        public async Task<List<(int, string, byte[])>?> GetUsersLoad(RhythmboxdbContext context, string searchString)
         {
-            throw new NotImplementedException();
+            var users = await Task.Run(() => context.Users
+                                                    .Where(con => con.UserName != null && con.UserName.Contains(searchString)));
+
+            try
+            {
+                List<(int, string, byte[])>? list = new List<(int, string, byte[])>();
+
+                await Task.Run(async () =>
+                {
+                    foreach (var user in users)
+                    {
+                        if (user.UserName != null && user.AvaUrl != null)
+                            list.Add((user.UsersId, user.UserName, await _fileShare.fileDownloadAsync(user.AvaUrl)));
+                    }
+                });
+
+                return list;
+            }
+            catch { return null; }
         }
     }
 }

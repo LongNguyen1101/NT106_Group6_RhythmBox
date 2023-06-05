@@ -41,6 +41,7 @@ namespace RhythmBox.Repositories.Services
                 smtp.Send(msg);
             }
         }
+
         public int? forgotPassword(RhythmboxdbContext context, string email)
         {
             var exists = (from user in context.Users
@@ -58,6 +59,7 @@ namespace RhythmBox.Repositories.Services
 
             return OTP;
         }
+
         public async Task<User> renewPassword(RhythmboxdbContext context, string email, string newPassword)
         {
             var exists = (from user in context.Users

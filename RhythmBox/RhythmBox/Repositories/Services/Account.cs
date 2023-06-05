@@ -23,6 +23,7 @@ namespace RhythmBox.Repositories.Services
 
             return exist!;
         }
+
         public User Register(RhythmboxdbContext dbContext, string userName, string email, string password, string birthday, string gender)
         {
             var exist = getEmail(dbContext, email);
@@ -44,6 +45,7 @@ namespace RhythmBox.Repositories.Services
             dbContext.SaveChanges();
             return user;
         }
+
         public string? Login(RhythmboxdbContext dbContext,IConfiguration config, string email, string password) 
         {
             var exist = getEmail(dbContext, email);
@@ -58,6 +60,7 @@ namespace RhythmBox.Repositories.Services
 
             return CreateToken(exist, config) ;
         }
+
         private string CreateToken(User user, IConfiguration configuration)
         {
             List<Claim> claims = new List<Claim> {

@@ -4,7 +4,7 @@ using RhythmBox.Models;
 using Azure.Storage.Files.Shares;
 using Azure.Storage.Files.Shares.Models;
 
-namespace RhythmBox.Repositories.Interface
+namespace RhythmBox.Repositories
 {
 	public interface IDbUsers
 	{

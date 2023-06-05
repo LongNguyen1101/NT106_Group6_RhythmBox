@@ -11,6 +11,7 @@ namespace RhythmBox.Repositories.Services
         {
             _contextAccessor = contextAccessor;
         }
+
         public string getUserID()
         {
             string result = string.Empty;
