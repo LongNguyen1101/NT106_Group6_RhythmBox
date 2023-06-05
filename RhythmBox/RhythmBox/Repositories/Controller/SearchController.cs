@@ -7,11 +7,13 @@ using Microsoft.EntityFrameworkCore;
 using Azure.Storage.Files.Shares;
 using Azure.Storage.Files.Shares.Models;
 using RhythmBox.Repositories.Interface;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Authorization;
 
 namespace RhythmBox.Repositories
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController, Authorize]
     public class SearchController : ControllerBase
 	{
 		private readonly RhythmboxdbContext _context;
