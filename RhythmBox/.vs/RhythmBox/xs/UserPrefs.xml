@@ -2,25 +2,24 @@
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.RhythmBox PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="RhythmBox/Repositories/Services/Search.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="RhythmBox/Repositories/Services/ArtistsLib.cs">
     <Files>
-      <File FileName="RhythmBox/Repositories/Interface/IDbUsers.cs" />
-      <File FileName="RhythmBox/Models/User.cs" Line="1" Column="1" />
-      <File FileName="RhythmBox/Repositories/Services/Search.cs" Line="32" Column="45" />
-      <File FileName="RhythmBox/Repositories/Services/FileShare.cs" Line="87" Column="1" />
+      <File FileName="RhythmBox/Repositories/Controller/ArtistsLibController.cs" Line="18" Column="48" />
+      <File FileName="RhythmBox/Repositories/Services/ArtistsLib.cs" Line="45" Column="51" />
+      <File FileName="RhythmBox/Repositories/Interface/IArtistsLib.cs" Line="20" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="RhythmBox" expanded="True">
             <Node name="RhythmBox" expanded="True">
+              <Node name="Data" expanded="True" />
               <Node name="Repositories" expanded="True">
-                <Node name="Controller" expanded="True">
-                  <Node name="FilesController.cs" selected="True" />
-                </Node>
+                <Node name="Controller" expanded="True" />
                 <Node name="Interface" expanded="True" />
                 <Node name="Services" expanded="True" />
               </Node>
+              <Node name="appsettings.json" selected="True" />
             </Node>
           </Node>
         </State>

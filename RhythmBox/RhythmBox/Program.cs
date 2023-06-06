@@ -26,6 +26,7 @@ builder.Services.AddScoped<IForgotPassword, ForgotPassword>();
 builder.Services.AddScoped<IAccount, Account>();
 builder.Services.AddScoped<IAlbumsLib, AlbumsLib>();
 builder.Services.AddScoped<IArtistsLib, ArtistsLib>();
+builder.Services.AddScoped<ISearch, Search>();
 builder.Services.AddAuthentication().AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters
@@ -39,7 +40,6 @@ builder.Services.AddAuthentication().AddJwtBearer(options =>
 });
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSession();
-builder.Services.AddScoped<ISearch, Search>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
@@ -56,35 +56,42 @@ builder.Services.AddSwaggerGen(options =>
 
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+//if (!app.Environment.IsDevelopment())
+//{
+//    app.UseExceptionHandler("/Error");
+//    app.UseHsts();
+//}
+//else
+//{
+//    app.UseSwagger();
+//    app.UseSwaggerUI(options =>
+//    {
+//        options.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1");
+//    });
+//}
+
+app.UseSwagger();
+app.UseSwaggerUI(options =>
 {
-    app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
-else
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1");
+});
 
 app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
-
 app.UseStaticFiles();
 
-//app.UseRouting();
 
+app.UseRouting();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+
+app.MapControllers();
 app.MapBlazorHub();
-
 app.MapFallbackToPage("/_Host");
 
 app.Run();

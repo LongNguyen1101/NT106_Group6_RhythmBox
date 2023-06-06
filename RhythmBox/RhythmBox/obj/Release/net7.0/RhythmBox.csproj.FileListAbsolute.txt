@@ -622,3 +622,7 @@
 /Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/obj/Release/net7.0/RhythmBox.pdb
 /Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/obj/Release/net7.0/RhythmBox.genruntimeconfig.cache
 /Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/obj/Release/net7.0/ref/RhythmBox.dll
+/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/bin/Release/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/bin/Release/net7.0/Scrutor.dll
+/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/bin/Release/net7.0/Swashbuckle.AspNetCore.Filters.dll
+/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/bin/Release/net7.0/Swashbuckle.AspNetCore.Filters.Abstractions.dll

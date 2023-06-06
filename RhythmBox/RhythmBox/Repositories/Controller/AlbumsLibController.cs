@@ -18,11 +18,13 @@ namespace RhythmBox.Repositories.Controller
     {
         private readonly RhythmboxdbContext _context;
         private readonly IAlbumsLib _albumsLib;
+        private readonly IUserService _userService;
 
-        public AlbumsLibController(RhythmboxdbContext context, IAlbumsLib albumsLib)
+        public AlbumsLibController(RhythmboxdbContext context, IAlbumsLib albumsLib, IUserService userService)
 		{
             _context = context;
             _albumsLib = albumsLib;
+            _userService = userService;
 		}
 
         [HttpDelete("deleteAlbumLib")]
@@ -44,11 +46,11 @@ namespace RhythmBox.Repositories.Controller
         }
 
         [HttpGet("getAlbumLoad")]
-        public async Task<IActionResult> getAlbumLoading(int userId)
+        public async Task<IActionResult> getAlbumLoading()
         {
             try
             {
-                var list = await _albumsLib.getAlbumsLibraryAsync(_context, userId);
+                var list = await _albumsLib.getAlbumsLibraryAsync(_context, int.Parse(_userService.getUserID()));
 
                 if (list != null)
                 {
@@ -66,11 +68,11 @@ namespace RhythmBox.Repositories.Controller
         }
 
         [HttpPost("addAlbum")]
-        public async Task<IActionResult> postAddAlbumtoLib(int userId, int albumId)
+        public async Task<IActionResult> postAddAlbumtoLib(int albumId)
         {
             try
             {
-                var check = await _albumsLib.postAddAlbumToLibAsync(_context, userId, albumId);
+                var check = await _albumsLib.postAddAlbumToLibAsync(_context, int.Parse(_userService.getUserID()), albumId);
 
                 if (check == -1) return BadRequest("Error");
                 else if (check == 0) return BadRequest("album aready exist");

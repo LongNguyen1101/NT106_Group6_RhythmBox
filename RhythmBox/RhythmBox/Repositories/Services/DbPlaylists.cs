@@ -8,7 +8,7 @@ using RhythmBox.Repositories.Interface;
 
 namespace RhythmBox.Repositories
 {
-	public class DbPlaylists : IDbPlaylist
+	public class DbPlaylists : IPlaylist
 	{
         private readonly IConfiguration _config;
         private readonly IFileShare _fileShare;

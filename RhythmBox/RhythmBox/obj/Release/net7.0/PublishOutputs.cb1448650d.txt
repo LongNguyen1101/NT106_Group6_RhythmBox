@@ -9,6 +9,7 @@
 /Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/obj/Release/net7.0/PubTmp/Out/Azure.Storage.Common.dll
 /Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/obj/Release/net7.0/PubTmp/Out/Azure.Storage.Files.Shares.dll
 /Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/obj/Release/net7.0/PubTmp/Out/Humanizer.dll
+/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/obj/Release/net7.0/PubTmp/Out/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/obj/Release/net7.0/PubTmp/Out/Microsoft.AspNetCore.Razor.Language.dll
 /Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/obj/Release/net7.0/PubTmp/Out/Microsoft.Bcl.AsyncInterfaces.dll
 /Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/obj/Release/net7.0/PubTmp/Out/Microsoft.Build.dll
@@ -67,9 +68,12 @@
 /Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/obj/Release/net7.0/PubTmp/Out/NuGet.ProjectModel.dll
 /Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/obj/Release/net7.0/PubTmp/Out/NuGet.Protocol.dll
 /Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/obj/Release/net7.0/PubTmp/Out/NuGet.Versioning.dll
+/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/obj/Release/net7.0/PubTmp/Out/Scrutor.dll
 /Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/obj/Release/net7.0/PubTmp/Out/SQLitePCLRaw.batteries_v2.dll
 /Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/obj/Release/net7.0/PubTmp/Out/SQLitePCLRaw.core.dll
 /Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/obj/Release/net7.0/PubTmp/Out/SQLitePCLRaw.provider.e_sqlite3.dll
+/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/obj/Release/net7.0/PubTmp/Out/Swashbuckle.AspNetCore.Filters.dll
+/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/obj/Release/net7.0/PubTmp/Out/Swashbuckle.AspNetCore.Filters.Abstractions.dll
 /Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/obj/Release/net7.0/PubTmp/Out/Swashbuckle.AspNetCore.Swagger.dll
 /Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/obj/Release/net7.0/PubTmp/Out/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/obj/Release/net7.0/PubTmp/Out/Swashbuckle.AspNetCore.SwaggerUI.dll

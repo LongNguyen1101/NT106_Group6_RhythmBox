@@ -146,6 +146,10 @@ public partial class RhythmboxdbContext : DbContext
             entity.Property(e => e.Duration)
                 .HasPrecision(0)
                 .HasColumnName("DURATION");
+            entity.Property(e => e.PlaylistCover)
+                .HasMaxLength(255)
+                .IsUnicode(false)
+                .HasColumnName("PLAYLIST_COVER");
             entity.Property(e => e.Title)
                 .HasMaxLength(20)
                 .HasColumnName("TITLE");

@@ -15,6 +15,8 @@ public partial class Playlist
 
     public int? TracksId { get; set; }
 
+    public string? PlaylistCover { get; set; }
+
     public virtual Track? Tracks { get; set; }
 
     public virtual User? Users { get; set; }
