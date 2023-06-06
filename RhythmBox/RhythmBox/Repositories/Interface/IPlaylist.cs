@@ -9,10 +9,10 @@ namespace RhythmBox.Repositories.Interface
 	public interface IPlaylist
 	{
 		// Create new playlist
-		Task<Boolean> postCreatePlaylistAsync(RhythmboxdbContext context, int userId, int trackId, string title, TimeSpan duration);
+		Task<int> postCreatePlaylistAsync(RhythmboxdbContext context, int userId, int trackId);
 
 		// Get information and cover of playlists to display
-        Task<List<Playlist>?> getPlaylistsAsync(RhythmboxdbContext context, int userId);
+        Task<List<(int, string?, byte[])>?> getPlaylistsLoadAsync(RhythmboxdbContext context, int userId);
 
 		// Delete playlist
         Task<int> deletePlaylistAsync(RhythmboxdbContext context, int playlistId);
@@ -26,8 +26,8 @@ namespace RhythmBox.Repositories.Interface
 		// Calculate the total of duraion per track and update to duration of playlist
 		Task<TimeSpan> postCalculateTotalDurationAsync(RhythmboxdbContext context);
 
-		// Get all playlist - for testing only
-		Task<List<Playlist>?> getAllPlaylistAsync(RhythmboxdbContext context);
+		// Add album to playlist
+		Task<int> postAddAlbumToPlaylistAsync(RhythmboxdbContext context, int albumId, int userId);
     }
 }
 

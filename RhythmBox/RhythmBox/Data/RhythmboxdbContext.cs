@@ -28,6 +28,8 @@ public partial class RhythmboxdbContext : DbContext
 
     public virtual DbSet<Playlist> Playlists { get; set; }
 
+    public virtual DbSet<PlaylistTrack> PlaylistTracks { get; set; }
+
     public virtual DbSet<Track> Tracks { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
@@ -156,13 +158,27 @@ public partial class RhythmboxdbContext : DbContext
             entity.Property(e => e.TracksId).HasColumnName("TRACKS_ID");
             entity.Property(e => e.UsersId).HasColumnName("USERS_ID");
 
-            entity.HasOne(d => d.Tracks).WithMany(p => p.Playlists)
-                .HasForeignKey(d => d.TracksId)
-                .HasConstraintName("FK_PLAYLIST_TRACKS");
-
             entity.HasOne(d => d.Users).WithMany(p => p.Playlists)
                 .HasForeignKey(d => d.UsersId)
                 .HasConstraintName("FK_PLAYLIST_USERS");
+        });
+
+        modelBuilder.Entity<PlaylistTrack>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("PLAYLIST_TRACK");
+
+            entity.Property(e => e.PlaylistId).HasColumnName("PLAYLIST_ID");
+            entity.Property(e => e.TrackId).HasColumnName("TRACK_ID");
+
+            entity.HasOne(d => d.Playlist).WithMany()
+                .HasForeignKey(d => d.PlaylistId)
+                .HasConstraintName("FK_PLAYLIST_TRACK_PLAYLIST");
+
+            entity.HasOne(d => d.Track).WithMany()
+                .HasForeignKey(d => d.TrackId)
+                .HasConstraintName("FK_PLAYLIST_TRACK_TRACK");
         });
 
         modelBuilder.Entity<Track>(entity =>

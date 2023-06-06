@@ -30,6 +30,4 @@ public partial class Track
     public virtual Artist? Artists { get; set; }
 
     public virtual ICollection<History> Histories { get; set; } = new List<History>();
-
-    public virtual ICollection<Playlist> Playlists { get; set; } = new List<Playlist>();
 }

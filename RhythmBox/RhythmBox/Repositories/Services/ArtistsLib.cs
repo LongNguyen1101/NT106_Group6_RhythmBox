@@ -87,7 +87,7 @@ namespace RhythmBox.Repositories.Services
                     return 1; // Add successful
                 }
 
-                return 0; // Album already exist
+                return 0; // Artist already exist
             }
             catch { return -1; } // Error
         }
