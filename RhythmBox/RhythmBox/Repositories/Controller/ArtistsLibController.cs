@@ -9,6 +9,7 @@ using Azure.Storage.Files.Shares.Models;
 using RhythmBox.Repositories.Interface;
 using Microsoft.AspNetCore.Authorization;
 using RhythmBox.Repositories.Services;
+using Newtonsoft.Json;
 
 namespace RhythmBox.Repositories.Controller
 {
@@ -52,11 +53,9 @@ namespace RhythmBox.Repositories.Controller
 
                 if (list != null)
                 {
-                    List<string> title = list.Where(con => con.Item2 != null)
-                                            .Select(con => con.Item2)
-                                            .ToList();
+                    string json = JsonConvert.SerializeObject(list);
 
-                    return Ok(title);
+                    return Ok(json);
                 }
             }
             catch (Exception ex)
