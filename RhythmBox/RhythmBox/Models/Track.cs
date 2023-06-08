@@ -25,9 +25,13 @@ public partial class Track
 
     public string? TrackImage { get; set; }
 
+    public int? Plays { get; set; }
+
     public virtual Album? Albums { get; set; }
 
     public virtual Artist? Artists { get; set; }
 
     public virtual ICollection<History> Histories { get; set; } = new List<History>();
+
+    public virtual ICollection<PlaylistTrack> PlaylistTracks { get; set; } = new List<PlaylistTrack>();
 }

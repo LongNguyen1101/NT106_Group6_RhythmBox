@@ -27,6 +27,7 @@ builder.Services.AddScoped<IAccount, Account>();
 builder.Services.AddScoped<IAlbumsLib, AlbumsLib>();
 builder.Services.AddScoped<IArtistsLib, ArtistsLib>();
 builder.Services.AddScoped<ISearch, Search>();
+builder.Services.AddScoped<IPlaylist, Playlists>();
 builder.Services.AddAuthentication().AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters
@@ -84,7 +85,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 
-app.UseRouting();
+app.UseSession();
 
 app.UseAuthentication();
 app.UseAuthorization();

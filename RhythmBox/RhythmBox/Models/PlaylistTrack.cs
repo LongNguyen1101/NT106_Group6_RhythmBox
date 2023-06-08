@@ -9,6 +9,8 @@ public partial class PlaylistTrack
 
     public int? TrackId { get; set; }
 
+    public int PlaylistTrackId { get; set; }
+
     public virtual Playlist? Playlist { get; set; }
 
     public virtual Track? Track { get; set; }

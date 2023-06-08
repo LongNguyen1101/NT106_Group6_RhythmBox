@@ -155,7 +155,6 @@ public partial class RhythmboxdbContext : DbContext
             entity.Property(e => e.Title)
                 .HasMaxLength(20)
                 .HasColumnName("TITLE");
-            entity.Property(e => e.TracksId).HasColumnName("TRACKS_ID");
             entity.Property(e => e.UsersId).HasColumnName("USERS_ID");
 
             entity.HasOne(d => d.Users).WithMany(p => p.Playlists)
@@ -165,18 +164,17 @@ public partial class RhythmboxdbContext : DbContext
 
         modelBuilder.Entity<PlaylistTrack>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("PLAYLIST_TRACK");
+            entity.ToTable("PLAYLIST_TRACK");
 
+            entity.Property(e => e.PlaylistTrackId).HasColumnName("PLAYLIST_TRACK_ID");
             entity.Property(e => e.PlaylistId).HasColumnName("PLAYLIST_ID");
             entity.Property(e => e.TrackId).HasColumnName("TRACK_ID");
 
-            entity.HasOne(d => d.Playlist).WithMany()
+            entity.HasOne(d => d.Playlist).WithMany(p => p.PlaylistTracks)
                 .HasForeignKey(d => d.PlaylistId)
                 .HasConstraintName("FK_PLAYLIST_TRACK_PLAYLIST");
 
-            entity.HasOne(d => d.Track).WithMany()
+            entity.HasOne(d => d.Track).WithMany(p => p.PlaylistTracks)
                 .HasForeignKey(d => d.TrackId)
                 .HasConstraintName("FK_PLAYLIST_TRACK_TRACK");
         });
@@ -200,6 +198,7 @@ public partial class RhythmboxdbContext : DbContext
                 .HasMaxLength(255)
                 .IsUnicode(false)
                 .HasColumnName("LYRICS_URL");
+            entity.Property(e => e.Plays).HasColumnName("PLAYS");
             entity.Property(e => e.ReleaseDate)
                 .HasColumnType("date")
                 .HasColumnName("RELEASE_DATE");

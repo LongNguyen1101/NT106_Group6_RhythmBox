@@ -13,9 +13,9 @@ public partial class Playlist
 
     public TimeSpan? Duration { get; set; }
 
-    public int? TracksId { get; set; }
-
     public string? PlaylistCover { get; set; }
+
+    public virtual ICollection<PlaylistTrack> PlaylistTracks { get; set; } = new List<PlaylistTrack>();
 
     public virtual User? Users { get; set; }
 }
