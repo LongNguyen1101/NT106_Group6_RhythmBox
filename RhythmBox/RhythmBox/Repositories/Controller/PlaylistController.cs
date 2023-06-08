@@ -66,7 +66,7 @@ namespace RhythmBox.Repositories.Controller
             return StatusCode(201);
         }
 
-        [HttpPost("addLabum")]
+        [HttpPost("addAlbum")]
         public async Task<IActionResult> addAlbum(int playlistId, int albumId)
         {
             try
@@ -106,6 +106,49 @@ namespace RhythmBox.Repositories.Controller
 
             return BadRequest("Error");
         }
-	}
+
+        [HttpPost("deletePlaylist")]
+        public async Task<IActionResult> deletePlaylist(int playlistId)
+        {
+            try
+            {
+                var check = await _playlist.deletePlaylistAsync(_context, playlistId);
+
+                if (check == -1) return BadRequest("Error");
+                else if (check == 0) return BadRequest("playlist not found");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            return StatusCode(201);
+        }
+
+        [HttpGet("downloadPlaylist")]
+        public async Task<IActionResult> downloadPlaylist(int playlistId)
+        {
+            try
+            {
+                var lists = await _playlist.getDownloadPlaylistAsync(_context, playlistId);
+
+                if (lists != null)
+                {
+                    foreach (var list in lists)
+                    {
+                        string json = await Task.Run(() => JsonConvert.SerializeObject(list));
+
+                        return Ok(json);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            return BadRequest("Error");
+        }
+    }
 }
 

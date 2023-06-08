@@ -57,14 +57,14 @@ namespace RhythmBox.Repositories
             try
             {
                 var query = await Task.Run(() => from track in context.Tracks
-                                                  join playlistTrack in context.PlaylistTracks
-                                                  on track.TracksId equals playlistTrack.TrackId
-                                                  where(playlistTrack.PlaylistId == playlistId)
-                                                  select new
-                                                  {
-                                                      track.Title,
-                                                      track.SongUrl
-                                                  });
+                                                 join playlistTrack in context.PlaylistTracks
+                                                 on track.TracksId equals playlistTrack.TrackId
+                                                 where(playlistTrack.PlaylistId == playlistId)
+                                                 select new
+                                                 {
+                                                     track.Title,
+                                                     track.SongUrl
+                                                 });
                 var tracks = query.ToList();
 
                 if (tracks != null)
@@ -76,7 +76,8 @@ namespace RhythmBox.Repositories
 
                         foreach (var track in tracks)
                         {
-                            list.Add((track.Title, await _fileShare.fileDownloadAsync(track.SongUrl)));
+                            var bytes = await _fileShare.fileDownloadAsync(track.SongUrl);
+                            list.Add((track.Title, bytes));
                         }
 
                     });
@@ -123,9 +124,9 @@ namespace RhythmBox.Repositories
             try
             {
                 var tracks = await Task.Run(() => context.Tracks
-                                        .Where(con => con.AlbumsId == albumId)
-                                        .Select(con => new { con.TracksId, con.Duration })
-                                        .ToList());
+                                                            .Where(con => con.AlbumsId == albumId)
+                                                            .Select(con => new { con.TracksId, con.Duration })
+                                                            .ToList());
 
                 var playlist = await Task.Run(() => context.Playlists
                                                             .Where(con => con.PlaylistId == playlistId)
@@ -154,10 +155,16 @@ namespace RhythmBox.Repositories
                         }
 
                         totalDurationSeconds += playlist.Duration.GetValueOrDefault().TotalSeconds;
-
                         TimeSpan timeSpan = TimeSpan.FromSeconds(totalDurationSeconds);
-
                         playlist.Duration = timeSpan;
+
+                        if (!context.PlaylistTracks.Any(con => con.PlaylistId == playlistId))
+                        {
+                            playlist.PlaylistCover = context.Tracks
+                                                            .Where(con => con.TracksId == tracks.FirstOrDefault()!.TracksId)
+                                                            .Select(se => se.TrackImage)
+                                                            .ToString();
+                        }
 
                         context.PlaylistTracks.AddRange(playlistsTrack);
                         context.Playlists.Update(playlist);
@@ -203,6 +210,14 @@ namespace RhythmBox.Repositories
                         if (playlist.Duration != null)
                             playlist.Duration = TimeSpan.FromSeconds(playlist.Duration.GetValueOrDefault().TotalSeconds + seconds);
                         else playlist.Duration = TimeSpan.FromSeconds(seconds);
+
+                        if (!context.PlaylistTracks.Any(con => con.PlaylistId == playlistId))
+                        {
+                            playlist.PlaylistCover = context.Tracks
+                                                            .Where(con => con.TracksId == trackId)
+                                                            .Select(se => se.TrackImage)
+                                                            .ToString();
+                        }
 
                         context.Playlists.Update(playlist);
                         context.PlaylistTracks.Add(playlistTrack);

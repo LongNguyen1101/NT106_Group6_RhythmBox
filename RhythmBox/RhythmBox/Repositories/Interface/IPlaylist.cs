@@ -26,8 +26,8 @@ namespace RhythmBox.Repositories.Interface
 		// Update new title to playlist
 		Task<int> postUpdateInformationAsync(RhythmboxdbContext context, int playlistId, string newTitle);
 
-		// Download all tracks in a playlist
-		Task<List<(string, byte[])>?> getDownloadPlaylistAsync(RhythmboxdbContext context, int playlistId);
+        // Download all tracks in a playlist
+        Task<List<(string, byte[])>?> getDownloadPlaylistAsync(RhythmboxdbContext context, int playlistId);
     }
 }
 
