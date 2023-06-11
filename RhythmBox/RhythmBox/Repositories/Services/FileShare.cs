@@ -25,7 +25,7 @@ namespace RhythmBox.Repositories
                                                 _config.GetValue<string>("FileShareDetails:FileShareName"));
         }
 
-		public async Task<string?> fileUploadAsync(FileContent fileDetails, string id, string atribute, bool isImage)
+		public async Task<string?> fileUploadAsync(FileContent fileDetails, string id, string atribute, bool isClear)
 		{
 			if (fileDetails.content != null && fileDetails.fileName != null)
 			{
@@ -41,7 +41,7 @@ namespace RhythmBox.Repositories
 					// Get a reference to a file and upload it
 					await directory.CreateIfNotExistsAsync();
 
-					if (isImage)
+					if (isClear)
 					{
 						// Delete all file in directory if exists before adding 
 						foreach (ShareFileItem fileItem in directory.GetFilesAndDirectories())
@@ -73,6 +73,38 @@ namespace RhythmBox.Repositories
 			return null;
         }
 
+		public async Task<string> fileDelete(string fileSharePath)
+		{
+			try
+			{
+				if (fileSharePath != null)
+				{
+					fileSharePath = fileSharePath.Replace("https://rhythmboxstorage.file.core.windows.net/resource/", "");
+
+					string[] path = fileSharePath.Split("/");
+
+					ShareDirectoryClient directory = _share.GetDirectoryClient($"{path[0]}/{path[1]}");
+					ShareFileClient file;
+
+					if (path.Length == 3) file = directory.GetFileClient(path[2]);
+					else file = directory.GetFileClient($"{path[2]}/{path[3]}");
+
+					if (file.Exists())
+					{
+						await file.DeleteAsync();
+
+						return "Delete successful";
+					}
+					else return "Error: File is not exist";
+                }
+				else return "Error: File path not found";
+			}
+			catch (Exception ex)
+			{
+				return $"Error: {ex.Message}";
+			}
+		}
+
         public async Task<byte[]> fileDownloadAsync(string fileSharePath)
         {
 			fileSharePath = fileSharePath.Replace("https://rhythmboxstorage.file.core.windows.net/resource/", "");
@@ -82,6 +114,8 @@ namespace RhythmBox.Repositories
             ShareDirectoryClient directory = _share.GetDirectoryClient($"{path[0]}/{path[1]}");
 
             ShareFileClient file = directory.GetFileClient(path[2]);
+
+			if (!await file.ExistsAsync()) throw new FileNotFoundException("File not dound");
 
             // Download the file
             ShareFileDownloadInfo download = await file.DownloadAsync();
@@ -104,6 +138,8 @@ namespace RhythmBox.Repositories
 			ShareDirectoryClient directory = _share.GetDirectoryClient($"{path[0]}/{path[1]}");
 
 			ShareFileClient file = directory.GetFileClient($"{path[2]}/{path[3]}");
+
+            if (!await file.ExistsAsync()) throw new FileNotFoundException("File not dound");
 
             // Download the file
             ShareFileDownloadInfo download = await file.DownloadAsync();

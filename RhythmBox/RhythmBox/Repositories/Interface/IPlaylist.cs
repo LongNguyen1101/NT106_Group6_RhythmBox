@@ -17,17 +17,23 @@ namespace RhythmBox.Repositories.Interface
 		// Add album to playlist
 		Task<int> postAddAlbumToPlaylistAsync(RhythmboxdbContext context, int playlistId, int albumId);
 
-		// Get information and cover of playlists to display
+		// Get playlistId, title and cover of playlists to display
         Task<List<(int, string?, byte[])>?> getPlaylistsLoadAsync(RhythmboxdbContext context, int userId);
+
+        // Get all tracks for displaying
+        Task<List<(string, byte[])>?> getTracksLoadingAsync(RhythmboxdbContext context, int playlistId);
+
+        // Get duration
+        Task<(string?, TimeSpan?)?> getDuration(RhythmboxdbContext context, int playlistId);
 
 		// Delete playlist
         Task<int> deletePlaylistAsync(RhythmboxdbContext context, int playlistId);
 
+		// Delete track
+		Task<int> deleteTrackAsync(RhythmboxdbContext context, int playlistId, int trackId);
+
 		// Update new title to playlist
 		Task<int> postUpdateInformationAsync(RhythmboxdbContext context, int playlistId, string newTitle);
-
-        // Download all tracks in a playlist
-        Task<List<(string, byte[])>?> getDownloadPlaylistAsync(RhythmboxdbContext context, int playlistId);
     }
 }
 

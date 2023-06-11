@@ -10,32 +10,31 @@ using RhythmBox.Repositories.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Newtonsoft.Json;
+using System.Text;
 
 namespace RhythmBox.Repositories.Controller
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController, Authorize]
     public class PlaylistController : ControllerBase
-	{
+    {
         private readonly RhythmboxdbContext _context;
         private readonly IPlaylist _playlist;
         private readonly IUserService _user;
 
         public PlaylistController(RhythmboxdbContext context, IPlaylist playlist, IUserService user)
-		{
+        {
             _context = context;
             _playlist = playlist;
             _user = user;
-		}
+        }
 
-        // check for id
         [HttpPost("createPlaylist")]
         public async Task<IActionResult> createPlaylist(int id)
         {
             try
             {
-                //var check = await _playlist.postCreatePlaylistAsync(_context, int.Parse(_user.getUserID()));
-                var check = await _playlist.postCreatePlaylistAsync(_context, id);
+                var check = await _playlist.postCreatePlaylistAsync(_context, int.Parse(_user.getUserID()));
 
                 if (check == -1) return BadRequest("Error");
             }
@@ -84,13 +83,12 @@ namespace RhythmBox.Repositories.Controller
             return StatusCode(201);
         }
 
-        // check for id
         [HttpGet("getPlaylistLoad")]
         public async Task<IActionResult> getPlaylistLoading(int id)
         {
             try
             {
-                var list = await _playlist.getPlaylistsLoadAsync(_context, id);
+                var list = await _playlist.getPlaylistsLoadAsync(_context, int.Parse(_user.getUserID()));
 
                 if (list != null)
                 {
@@ -105,6 +103,56 @@ namespace RhythmBox.Repositories.Controller
             }
 
             return BadRequest("Error");
+        }
+
+        [HttpGet("getTracksLoad")]
+        public async Task<IActionResult> getTracksLoading(int playlistId)
+        {
+            try
+            {
+                var tracks = await _playlist.getTracksLoadingAsync(_context, playlistId);
+
+                if (tracks != null)
+                {
+                    var response = HttpContext.Response;
+                    response.Headers.Add("Content-Type", "application/json");
+
+                    foreach (var track in tracks)
+                    {
+                        string json = JsonConvert.SerializeObject(track);
+                        var bytes = Encoding.UTF8.GetBytes(json);
+
+                        await response.Body.WriteAsync(bytes, 0, bytes.Length);
+                        await response.Body.FlushAsync();
+                    }
+
+                    return Ok();
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            return BadRequest("Content not found");
+        }
+
+        [HttpGet("getDuration")]
+        public async Task<IActionResult> getDuration(int playlistId)
+        {
+            (string?, TimeSpan?)? duration;
+            try
+            {
+                duration = await _playlist.getDuration(_context, playlistId);
+
+                if (duration.GetValueOrDefault().Item1 != null || duration.GetValueOrDefault().Item2 == null)
+                    return BadRequest(JsonConvert.SerializeObject(duration.GetValueOrDefault().Item1));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            return Ok(JsonConvert.SerializeObject(duration.GetValueOrDefault().Item2));
         }
 
         [HttpPost("deletePlaylist")]
@@ -125,29 +173,40 @@ namespace RhythmBox.Repositories.Controller
             return StatusCode(201);
         }
 
-        [HttpGet("downloadPlaylist")]
-        public async Task<IActionResult> downloadPlaylist(int playlistId)
+        [HttpPost("updateTitle")]
+        public async Task<IActionResult> updateTitle(int playlistId, string newTitle)
         {
             try
             {
-                var lists = await _playlist.getDownloadPlaylistAsync(_context, playlistId);
+                var check = await _playlist.postUpdateInformationAsync(_context, playlistId, newTitle);
 
-                if (lists != null)
-                {
-                    foreach (var list in lists)
-                    {
-                        string json = await Task.Run(() => JsonConvert.SerializeObject(list));
-
-                        return Ok(json);
-                    }
-                }
+                if (check == -1) return BadRequest("Error");
+                else if (check == 0) return BadRequest("Playlist not found");
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
 
-            return BadRequest("Error");
+            return StatusCode(201);
+        }
+
+        [HttpPost("deleteTrack")]
+        public async Task<IActionResult> deleteTrack(int playlistId, int trackId)
+        {
+            try
+            {
+                var check = await _playlist.deleteTrackAsync(_context, playlistId, trackId);
+
+                if (check == -1) return BadRequest("Error");
+                else if (check == 0) return BadRequest("Play list or track not found");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+            return StatusCode(201);
         }
     }
 }

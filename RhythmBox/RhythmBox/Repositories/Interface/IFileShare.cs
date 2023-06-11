@@ -10,6 +10,9 @@ namespace RhythmBox.Repositories.Interface
         // For uploading file bios, lyrics, tracks, images to File Share
         Task<string?> fileUploadAsync(FileContent fileDetails, string Id, string atribtute, bool isImage);
 
+        // Delete file
+        Task<string> fileDelete(string fileSharePath);
+
         // For downloading bios, lyrics, tracks, ava of user and artist from File Share
         Task<byte[]> fileDownloadAsync(string fileSharePath);
 

@@ -11,26 +11,33 @@ namespace RhythmBox.Repositories.Services
 {
     public class Account : IAccount
     {
-        private User getEmail(RhythmboxdbContext dbContext, string email)
+        private User? getEmail(RhythmboxdbContext dbContext, string email)
         {
-            var exist = (from perUser in dbContext.Users
-                         where perUser.Email == email 
-                         select perUser).FirstOrDefault();
-            if (exist == null)
+            try
             {
-                return null;
-            }
+                var exist = (from perUser in dbContext.Users
+                             where perUser.Email == email
+                             select perUser).FirstOrDefault();
 
-            return exist!;
+                if (exist == null)
+                {
+                    return null;
+                }
+
+                return exist;
+            }
+            catch { return null; }
         }
 
         public User Register(RhythmboxdbContext dbContext, string userName, string email, string password, string birthday, string gender)
         {
             var exist = getEmail(dbContext, email);
+
             if (exist != null)
             {
                 return null;
             }
+
             var user = new User()
             {
                 UserName = userName,
