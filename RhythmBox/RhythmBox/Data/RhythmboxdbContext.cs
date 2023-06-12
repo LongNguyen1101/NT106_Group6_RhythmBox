@@ -122,9 +122,6 @@ public partial class RhythmboxdbContext : DbContext
             entity.ToTable("HISTORY");
 
             entity.Property(e => e.HistoryId).HasColumnName("HISTORY_ID");
-            entity.Property(e => e.DurationPlayed)
-                .HasPrecision(0)
-                .HasColumnName("DURATION_PLAYED");
             entity.Property(e => e.PlayedAt)
                 .HasColumnType("datetime")
                 .HasColumnName("PLAYED_AT");

@@ -14,15 +14,12 @@ namespace RhythmBox.Repositories.Controller
         private readonly RhythmboxdbContext _dbContext;
         private readonly IAccount _account;
         private readonly IConfiguration _configuration;
-        private readonly IDbUsers dbUsers;
 
-        public AccountController(RhythmboxdbContext dbContext, IAccount account, IConfiguration configuration, IDbUsers dbUsers)
+        public AccountController(RhythmboxdbContext dbContext, IAccount account, IConfiguration configuration)
         {
             _dbContext = dbContext;
             _account = account;
             _configuration = configuration;
-
-            this.dbUsers = dbUsers;
         }
         [HttpPost("register")]
         public ActionResult<User> Register(string userName, string email, string password, string birthday, string gender)

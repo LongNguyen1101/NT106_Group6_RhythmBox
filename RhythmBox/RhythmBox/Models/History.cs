@@ -13,8 +13,6 @@ public partial class History
 
     public DateTime? PlayedAt { get; set; }
 
-    public TimeSpan? DurationPlayed { get; set; }
-
     public virtual Track? Tracks { get; set; }
 
     public virtual User? Users { get; set; }

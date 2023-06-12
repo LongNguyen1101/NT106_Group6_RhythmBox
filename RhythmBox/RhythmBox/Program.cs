@@ -20,7 +20,6 @@ builder.Services.AddDbContext<RhythmboxdbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("RhythmBox")));
 
 builder.Services.AddScoped<IFileShare, RhythmBox.Repositories.FileShare>();
-builder.Services.AddScoped<IDbUsers, DbUsers>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IForgotPassword, ForgotPassword>();
 builder.Services.AddScoped<IAccount, Account>();
@@ -30,6 +29,7 @@ builder.Services.AddScoped<ISearch, Search>();
 builder.Services.AddScoped<IPlaylist, Playlists>();
 builder.Services.AddScoped<IAlbumsUser, AlbumsUser>();
 builder.Services.AddScoped<IAlbumsArtist, AlbumsArtist>();
+builder.Services.AddScoped<IHistory, History>();
 builder.Services.AddAuthentication().AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters
