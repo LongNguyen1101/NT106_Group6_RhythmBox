@@ -21,24 +21,28 @@ namespace RhythmBox.Repositories.Controller
             _account = account;
             _configuration = configuration;
         }
+
         [HttpPost("register")]
-        public ActionResult<User> Register(string userName, string email, string password, string birthday, string gender)
+        public ActionResult<User> Register([FromBody] Register user)
         { 
-            var newUser = _account.Register(_dbContext, userName, email, password, birthday, gender);
+            var newUser = _account.Register(_dbContext, user.userName!, user.email!, user.password!, user.birthday.ToString()!, user.gender!);
             if (newUser == null)
             {
                 return BadRequest("Tài khoản đã tồn tại");
             }
             return Ok(newUser);
         }
+
         [HttpPost("login")]
-        public ActionResult Login(string email, string password)
+        public ActionResult Login([FromBody] Login model)
         {
-            var result = _account.Login(_dbContext, _configuration, email, password);
+            var result = _account.Login(_dbContext, _configuration, model.email!, model.password!);
+
             if (result == "User not found") 
             {
                 return BadRequest(result);
             }
+
             if (result == "Wrong password")
             {
                 return BadRequest(result);

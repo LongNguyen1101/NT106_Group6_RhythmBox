@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using RhythmBox.Data;
+using RhythmBox.Models;
 using RhythmBox.Repositories.Interface;
 
 namespace RhythmBox.Repositories.Controller
@@ -20,37 +21,40 @@ namespace RhythmBox.Repositories.Controller
             _forgotPassword = forgotPassword;
             _contextAccessor = contextAccessor;
         }
+
         [HttpPost]
-        public async Task<ActionResult> ForgotPass(string email)
+        public async Task<ActionResult> ForgotPass([FromBody] string email)
         {
-            int? OTP = _forgotPassword.forgotPassword(_context, email);
+            int? OTP = await Task.Run(() => _forgotPassword.forgotPassword(_context, email));
             if (OTP == null) 
             {
                 return BadRequest();
             }
-            _contextAccessor.HttpContext.Session.SetInt32(email, OTP.Value);
+            _contextAccessor.HttpContext!.Session.SetInt32(email, OTP.Value);
             return Ok(email);
         }
+
         [HttpPost("Authentication")]
-        public async Task<ActionResult> authOTP (string email,int enteredOtp)
+        public async Task<ActionResult> authOTP([FromBody] EmailOtp model)
         {
-            var storedOtp = _contextAccessor.HttpContext.Session.GetInt32(email);
-            if (enteredOtp != storedOtp)
+            var storedOtp = await Task.Run(() => _contextAccessor.HttpContext!.Session.GetInt32(model.email));
+            if (model.enteredOtp != storedOtp)
             {
                 return BadRequest();
             }
             
-            return Ok(email);
+            return Ok(model.email);
         }
+
         [HttpPost("RenewPassword")]
-        public async Task<ActionResult> renewPass(string email ,string newPassword)
+        public async Task<ActionResult> renewPass([FromBody] EmailNewPass model)
         {
-            if (newPassword.IsNullOrEmpty())
+            if (model.newPassword.IsNullOrEmpty())
             {
                 return BadRequest();
             }
             
-            var user = _forgotPassword.renewPassword(_context, email, newPassword);
+            var user = await Task.Run(() => _forgotPassword.renewPassword(_context, model.email, model.newPassword));
 
             if (user == null)
             {

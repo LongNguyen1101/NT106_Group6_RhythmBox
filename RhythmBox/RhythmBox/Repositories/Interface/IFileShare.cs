@@ -8,7 +8,7 @@ namespace RhythmBox.Repositories.Interface
     public interface IFileShare
     {
         // For uploading file bios, lyrics, tracks, images to File Share
-        Task<string?> fileUploadAsync(FileContent fileDetails, string Id, string atribtute, bool isImage);
+        Task<string?> fileUploadAsync(FileContent fileDetails, string Id, string atribtute, bool isClear);
 
         // Delete file
         Task<string> fileDelete(string fileSharePath);

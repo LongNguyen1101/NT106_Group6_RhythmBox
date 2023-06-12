@@ -55,16 +55,17 @@ namespace RhythmBox.Repositories.Services
             Random random = new Random();
             int OTP = random.Next(100000, 1000000);
 
-            SendEmail(exists.Email, OTP);
+            SendEmail(exists.Email!, OTP);
 
             return OTP;
         }
 
-        public async Task<User> renewPassword(RhythmboxdbContext context, string email, string newPassword)
+        public async Task<User?> renewPassword(RhythmboxdbContext context, string email, string newPassword)
         {
-            var exists = (from user in context.Users
+            var exists = await Task.Run(() => (from user in context.Users
                           where user.Email == email
-                          select user).FirstOrDefault();
+                          select user).FirstOrDefault());
+
             if (exists == null)
             {
                 return null;

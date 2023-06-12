@@ -28,7 +28,7 @@ namespace RhythmBox.Repositories.Controller
 		}
 
         [HttpDelete("deleteAlbumLib")]
-        public async Task<IActionResult> deleteAlbumsLib(int albumsLibId)
+        public async Task<IActionResult> deleteAlbumsLib([FromBody] int albumsLibId)
         {
             try
             {
@@ -68,7 +68,7 @@ namespace RhythmBox.Repositories.Controller
         }
 
         [HttpPost("addAlbum")]
-        public async Task<IActionResult> postAddAlbumtoLib(int albumId)
+        public async Task<IActionResult> postAddAlbumtoLib([FromBody] int albumId)
         {
             try
             {

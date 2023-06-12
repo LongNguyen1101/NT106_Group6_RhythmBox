@@ -30,7 +30,7 @@ namespace RhythmBox.Repositories.Controller
         }
 
         [HttpPost("createPlaylist")]
-        public async Task<IActionResult> createPlaylist(int id)
+        public async Task<IActionResult> createPlaylist()
         {
             try
             {
@@ -47,11 +47,11 @@ namespace RhythmBox.Repositories.Controller
         }
 
         [HttpPost("addTrack")]
-        public async Task<IActionResult> addTrack(int playlistId, int trackId)
+        public async Task<IActionResult> addTrack([FromBody] PlaylistTrackId model)
         {
             try
             {
-                var check = await _playlist.postAddTrackToPlaylistAsync(_context, playlistId, trackId);
+                var check = await _playlist.postAddTrackToPlaylistAsync(_context, model.playlistId, model.trackId);
 
                 if (check == -1) return BadRequest("Error");
                 else if (check == 0) return BadRequest("Playlist or track not found");
@@ -66,11 +66,11 @@ namespace RhythmBox.Repositories.Controller
         }
 
         [HttpPost("addAlbum")]
-        public async Task<IActionResult> addAlbum(int playlistId, int albumId)
+        public async Task<IActionResult> addAlbum([FromBody] PlaylistAlbumId model)
         {
             try
             {
-                var check = await _playlist.postAddAlbumToPlaylistAsync(_context, playlistId, albumId);
+                var check = await _playlist.postAddAlbumToPlaylistAsync(_context, model.playlistId, model.albumId);
 
                 if (check == -1) return BadRequest("Error");
                 else if (check == 0) return BadRequest("Album or playlist not found");
@@ -84,7 +84,7 @@ namespace RhythmBox.Repositories.Controller
         }
 
         [HttpGet("getPlaylistLoad")]
-        public async Task<IActionResult> getPlaylistLoading(int id)
+        public async Task<IActionResult> getPlaylistLoading()
         {
             try
             {
@@ -106,7 +106,7 @@ namespace RhythmBox.Repositories.Controller
         }
 
         [HttpGet("getTracksLoad")]
-        public async Task<IActionResult> getTracksLoading(int playlistId)
+        public async Task<IActionResult> getTracksLoading([FromBody] int playlistId)
         {
             try
             {
@@ -137,7 +137,7 @@ namespace RhythmBox.Repositories.Controller
         }
 
         [HttpGet("getDuration")]
-        public async Task<IActionResult> getDuration(int playlistId)
+        public async Task<IActionResult> getDuration([FromBody] int playlistId)
         {
             (string?, TimeSpan?)? duration;
             try
@@ -156,7 +156,7 @@ namespace RhythmBox.Repositories.Controller
         }
 
         [HttpPost("deletePlaylist")]
-        public async Task<IActionResult> deletePlaylist(int playlistId)
+        public async Task<IActionResult> deletePlaylist([FromBody] int playlistId)
         {
             try
             {
@@ -174,11 +174,11 @@ namespace RhythmBox.Repositories.Controller
         }
 
         [HttpPost("updateTitle")]
-        public async Task<IActionResult> updateTitle(int playlistId, string newTitle)
+        public async Task<IActionResult> updateTitle([FromBody] PlaylistTitle model)
         {
             try
             {
-                var check = await _playlist.postUpdateInformationAsync(_context, playlistId, newTitle);
+                var check = await _playlist.postUpdateInformationAsync(_context, model.playlistId, model.newTitle);
 
                 if (check == -1) return BadRequest("Error");
                 else if (check == 0) return BadRequest("Playlist not found");
@@ -192,11 +192,11 @@ namespace RhythmBox.Repositories.Controller
         }
 
         [HttpPost("deleteTrack")]
-        public async Task<IActionResult> deleteTrack(int playlistId, int trackId)
+        public async Task<IActionResult> deleteTrack([FromBody] PlaylistTrackId model)
         {
             try
             {
-                var check = await _playlist.deleteTrackAsync(_context, playlistId, trackId);
+                var check = await _playlist.deleteTrackAsync(_context, model.playlistId, model.trackId);
 
                 if (check == -1) return BadRequest("Error");
                 else if (check == 0) return BadRequest("Play list or track not found");

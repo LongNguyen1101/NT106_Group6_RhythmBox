@@ -27,7 +27,7 @@ namespace RhythmBox.Repositories.Controller
 		}
 
 		[HttpGet("getAlbums")]
-		public async Task<IActionResult> getAlbums(string searchString)
+		public async Task<IActionResult> getAlbums([FromBody] string searchString)
 		{
 			if (!string.IsNullOrEmpty(searchString))
 			{
@@ -53,7 +53,7 @@ namespace RhythmBox.Repositories.Controller
 		}
 
 		[HttpGet("getArtist")]
-		public async Task<IActionResult> getArtists(string searchString)
+		public async Task<IActionResult> getArtists([FromBody] string searchString)
 		{
 			if (!string.IsNullOrEmpty(searchString))
 			{
@@ -78,7 +78,7 @@ namespace RhythmBox.Repositories.Controller
 		}
 
 		[HttpGet("getTracks")]
-		public async Task<IActionResult> getTracks(string searchString)
+		public async Task<IActionResult> getTracks([FromBody] string searchString)
 		{
 			if (!string.IsNullOrEmpty(searchString))
 			{
@@ -103,7 +103,7 @@ namespace RhythmBox.Repositories.Controller
 		}
 
 		[HttpGet("getUsers")]
-		public async Task<IActionResult> getUsers(string searchString)
+		public async Task<IActionResult> getUsers([FromBody] string searchString)
 		{
 			if (!string.IsNullOrEmpty(searchString))
 			{

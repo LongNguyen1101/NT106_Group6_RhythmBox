@@ -15,15 +15,15 @@ using System.Text;
 
 namespace RhythmBox.Repositories.Controller
 {
-    [Route("api/[controller]")]
-    [ApiController, Authorize]
-    public class AlbumsUserController : ControllerBase
+	[Route("api/[controller]")]
+	[ApiController, Authorize]
+	public class AlbumsUserController : ControllerBase
 	{
-        private readonly RhythmboxdbContext _context;
+		private readonly RhythmboxdbContext _context;
 		private readonly IAlbumsUser _albums;
-        private readonly IUserService _user;
+		private readonly IUserService _user;
 
-        public AlbumsUserController(RhythmboxdbContext context, IAlbumsUser albums, IUserService user)
+		public AlbumsUserController(RhythmboxdbContext context, IAlbumsUser albums, IUserService user)
 		{
 			_context = context;
 			_albums = albums;
@@ -31,7 +31,7 @@ namespace RhythmBox.Repositories.Controller
 		}
 
 		[HttpGet("getInfoAlbum")]
-		public async Task<IActionResult> getInfoAlbum(int albumId)
+		public async Task<IActionResult> getInfoAlbum([FromBody] int albumId)
 		{
 			try
 			{
@@ -53,11 +53,11 @@ namespace RhythmBox.Repositories.Controller
 		}
 
 		[HttpGet("getOtherAlbum")]
-		public async Task<IActionResult> getOtherAlbum(int albumId, int artistId)
+		public async Task<IActionResult> getOtherAlbum([FromBody] AlbumArtistId model)
 		{
 			try
 			{
-				var albums = await _albums.getOtherAlbums(_context, albumId, artistId);
+				var albums = await _albums.getOtherAlbums(_context, model.albumId, model.artistId);
 
 				if (albums != null)
 				{
@@ -74,7 +74,7 @@ namespace RhythmBox.Repositories.Controller
 		}
 
 		[HttpGet("findAlbum")]
-		public async Task<IActionResult> findAlbum(string searchString)
+		public async Task<IActionResult> findAlbum([FromBody] string searchString)
 		{
 			try
 			{
@@ -96,7 +96,7 @@ namespace RhythmBox.Repositories.Controller
 		}
 
 		[HttpGet("albumLoad")]
-		public async Task<IActionResult> albumLoading(int artistId)
+		public async Task<IActionResult> albumLoading([FromBody] int artistId)
 		{
 			try
 			{

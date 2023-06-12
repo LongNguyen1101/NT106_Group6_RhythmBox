@@ -29,7 +29,6 @@ builder.Services.AddScoped<ISearch, Search>();
 builder.Services.AddScoped<IPlaylist, Playlists>();
 builder.Services.AddScoped<IAlbumsUser, AlbumsUser>();
 builder.Services.AddScoped<IAlbumsArtist, AlbumsArtist>();
-builder.Services.AddScoped<IHistory, History>();
 builder.Services.AddAuthentication().AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new TokenValidationParameters

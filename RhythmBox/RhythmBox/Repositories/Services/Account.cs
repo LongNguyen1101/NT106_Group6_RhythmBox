@@ -29,7 +29,7 @@ namespace RhythmBox.Repositories.Services
             catch { return null; }
         }
 
-        public User Register(RhythmboxdbContext dbContext, string userName, string email, string password, string birthday, string gender)
+        public User? Register(RhythmboxdbContext dbContext, string userName, string email, string password, string birthday, string gender)
         {
             var exist = getEmail(dbContext, email);
 

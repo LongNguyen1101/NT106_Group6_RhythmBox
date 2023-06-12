@@ -31,10 +31,12 @@
     <None Remove="Repositories\" />
     <None Remove="Repositories\Controller\" />
     <None Remove="Repositories\Interface\" />
+    <None Remove="Models\DTO\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Repositories\" />
     <Folder Include="Repositories\Controller\" />
     <Folder Include="Repositories\Interface\" />
+    <Folder Include="Models\DTO\" />
   </ItemGroup>
 </Project>
