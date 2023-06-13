@@ -1,11 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RhythmBox.Repositories.Interface;
 
 namespace RhythmBox.Repositories.Controller
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController, Authorize]
     public class PlayController : ControllerBase
     {
         private readonly IPlay _play;

@@ -57,7 +57,6 @@ namespace RhythmBox.Repositories.Services
 
         private Task updateHistory(int trackID)
         {
-            TimeSpan ts = new TimeSpan(0, 3, 2);
             History history = new History()
             {
                 TracksId = trackID,
@@ -67,19 +66,19 @@ namespace RhythmBox.Repositories.Services
 
             _dbContext.Histories.Add(history);
 
-            //int maxRecords = 100; // Số lượng bản ghi tối đa được chèn
-            //int newRecordsCount = _dbContext.ChangeTracker.Entries().Count(e => e.State == EntityState.Added);
-            //if (newRecordsCount > maxRecords)
-            //{
-            //    DateTime cutoffDate = DateTime.Now.AddDays(-1);
-            //    var recordsToDelete = _dbContext.Histories.Where(r => r.PlayedAt < cutoffDate);
-            //    _dbContext.Histories.RemoveRange(recordsToDelete);
-            //    _dbContext.SaveChanges();
-            //}
-            //else
-            //{
+            int maxRecords = 100; // Số lượng bản ghi tối đa được chèn
+            int newRecordsCount = _dbContext.ChangeTracker.Entries().Count(e => e.State == EntityState.Added);
+            if (newRecordsCount > maxRecords)
+            {
+                DateTime cutoffDate = DateTime.Now.AddDays(-1);
+                var recordsToDelete = _dbContext.Histories.Where(r => r.PlayedAt < cutoffDate);
+                _dbContext.Histories.RemoveRange(recordsToDelete);
                 _dbContext.SaveChanges();
-            //}
+            }
+            else
+            {
+                _dbContext.SaveChanges();
+            }
             return Task.CompletedTask;
         }
     }
