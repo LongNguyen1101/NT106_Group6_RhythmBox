@@ -11599,25 +11599,26 @@
     ]
   },
   "packageFolders": {
-    "/Users/longnguyen/.nuget/packages/": {}
+    "C:\\Users\\PC MSI\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/RhythmBox.csproj",
+      "projectUniqueName": "C:\\Users\\PC MSI\\Desktop\\Project\\NT106_Group6_RhythmBox\\RhythmBox\\RhythmBox\\RhythmBox.csproj",
       "projectName": "RhythmBox",
-      "projectPath": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/RhythmBox.csproj",
-      "packagesPath": "/Users/longnguyen/.nuget/packages/",
-      "outputPath": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/obj/",
+      "projectPath": "C:\\Users\\PC MSI\\Desktop\\Project\\NT106_Group6_RhythmBox\\RhythmBox\\RhythmBox\\RhythmBox.csproj",
+      "packagesPath": "C:\\Users\\PC MSI\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\PC MSI\\Desktop\\Project\\NT106_Group6_RhythmBox\\RhythmBox\\RhythmBox\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/longnguyen/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\PC MSI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "/usr/local/share/dotnet/sdk/7.0.302/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -11700,7 +11701,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.302/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -37,6 +37,5 @@
     <Folder Include="Repositories\" />
     <Folder Include="Repositories\Controller\" />
     <Folder Include="Repositories\Interface\" />
-    <Folder Include="Models\DTO\" />
   </ItemGroup>
 </Project>

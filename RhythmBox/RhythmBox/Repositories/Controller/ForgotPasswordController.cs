@@ -38,7 +38,7 @@ namespace RhythmBox.Repositories.Controller
         public async Task<ActionResult> authOTP([FromBody] EmailOtp model)
         {
             var storedOtp = await Task.Run(() => _contextAccessor.HttpContext!.Session.GetInt32(model.email));
-            if (model.enteredOtp != storedOtp)
+            if (model.enteredOtp != storedOtp!.Value)
             {
                 return BadRequest();
             }

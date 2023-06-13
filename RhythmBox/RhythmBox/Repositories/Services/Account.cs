@@ -2,8 +2,11 @@
 using Microsoft.IdentityModel.Tokens;
 using RhythmBox.Data;
 using RhythmBox.Models;
+using RhythmBox.Models.DTO;
 using RhythmBox.Repositories.Interface;
+using System.Data;
 using System.IdentityModel.Tokens.Jwt;
+using System.IO;
 using System.Security.Claims;
 using System.Text;
 
@@ -11,6 +14,12 @@ namespace RhythmBox.Repositories.Services
 {
     public class Account : IAccount
     {
+        private readonly IFileShare _fileShare;
+        
+        public Account(IFileShare fileShare)
+        {
+            _fileShare = fileShare;
+        }
         private User? getEmail(RhythmboxdbContext dbContext, string email)
         {
             try
@@ -64,20 +73,29 @@ namespace RhythmBox.Repositories.Services
             {
                 return "Wrong password";
             }
-            if (exist.ArtistsId != null)
-            {
-                CreateTokenArtist(exist, config);
-            }
-            return CreateTokenUser(exist, config) ;
+
+            return CreateToken(exist, config);
         }
 
-        private string CreateTokenUser(User user, IConfiguration configuration)
+        private string CreateToken(User user, IConfiguration configuration)
         {
-            List<Claim> claims = new List<Claim> {
+            List<Claim> claims;
+            if (user.ArtistsId != null)
+            {
+                claims = new List<Claim> {
+                new Claim(ClaimTypes.NameIdentifier, user.UsersId.ToString()),
+                new Claim(ClaimTypes.Email, user.Email!),
+                new Claim(ClaimTypes.Role, "Artist")
+            };
+            }
+            else
+            {
+                claims = new List<Claim> {
                 new Claim(ClaimTypes.NameIdentifier, user.UsersId.ToString()),
                 new Claim(ClaimTypes.Email, user.Email!),
                 new Claim(ClaimTypes.Role, "User")
             };
+            }
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
                 configuration.GetSection("AppSettings:Token").Value!));
@@ -94,29 +112,25 @@ namespace RhythmBox.Repositories.Services
 
             return jwt;
         }
-
-        private string CreateTokenArtist(User user, IConfiguration configuration)
+        public bool updateUser(RhythmboxdbContext dbContext, ArtistInfo artistInfo)
         {
-            List<Claim> claims = new List<Claim> {
-                new Claim(ClaimTypes.NameIdentifier, user.UsersId.ToString()),
-                new Claim(ClaimTypes.Email, user.Email!),
-                new Claim(ClaimTypes.Role, "Admin")
+            var artist = new Artist()
+            {
+                FullName = artistInfo.fullName
             };
+            dbContext.Artists.Add(artist);
+            dbContext.SaveChanges();
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
-                configuration.GetSection("AppSettings:Token").Value!));
+            var bioContext = new FileContent(artistInfo.bioData, artistInfo.bioFileName);
+            var imageContext = new FileContent(artistInfo.imageData, artistInfo.imageFileName);
 
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);
+            artist.BioUrl = _fileShare.fileUploadAsync(bioContext, $"{artist.ArtistsId}", "Bio", false).Result;
+            artist.ArtistsImage = _fileShare.fileUploadAsync(imageContext, $"{artist.ArtistsId}", "Ava", false).Result;
 
-            var token = new JwtSecurityToken(
-                    claims: claims,
-                    expires: DateTime.Now.AddDays(1),
-                    signingCredentials: creds
-                );
+            dbContext.Artists.Update(artist);
+            dbContext.SaveChanges();
 
-            var jwt = new JwtSecurityTokenHandler().WriteToken(token);
-
-            return jwt;
+            return true;
         }
     }
 }
