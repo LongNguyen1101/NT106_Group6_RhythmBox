@@ -29,7 +29,7 @@ namespace RhythmBox.Repositories.Controller
         }
 
         [HttpDelete("deleteArtist")]
-        public async Task<IActionResult> deleteAlbumsLib([FromBody] int artistsLibId)
+        public async Task<IActionResult> deleteAlbumsLib(int artistsLibId)
         {
             try
             {

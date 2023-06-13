@@ -106,7 +106,7 @@ namespace RhythmBox.Repositories.Controller
         }
 
         [HttpGet("getTracksLoad")]
-        public async Task<IActionResult> getTracksLoading([FromBody] int playlistId)
+        public async Task<IActionResult> getTracksLoading(int playlistId)
         {
             try
             {
@@ -137,7 +137,7 @@ namespace RhythmBox.Repositories.Controller
         }
 
         [HttpGet("getDuration")]
-        public async Task<IActionResult> getDuration([FromBody] int playlistId)
+        public async Task<IActionResult> getDuration(int playlistId)
         {
             (string?, TimeSpan?)? duration;
             try
@@ -155,8 +155,8 @@ namespace RhythmBox.Repositories.Controller
             return Ok(JsonConvert.SerializeObject(duration.GetValueOrDefault().Item2));
         }
 
-        [HttpPost("deletePlaylist")]
-        public async Task<IActionResult> deletePlaylist([FromBody] int playlistId)
+        [HttpDelete("deletePlaylist")]
+        public async Task<IActionResult> deletePlaylist(int playlistId)
         {
             try
             {
@@ -191,12 +191,12 @@ namespace RhythmBox.Repositories.Controller
             return StatusCode(201);
         }
 
-        [HttpPost("deleteTrack")]
-        public async Task<IActionResult> deleteTrack([FromBody] PlaylistTrackId model)
+        [HttpDelete("deleteTrack")]
+        public async Task<IActionResult> deleteTrack(int playlistId, int trackId)
         {
             try
             {
-                var check = await _playlist.deleteTrackAsync(_context, model.playlistId, model.trackId);
+                var check = await _playlist.deleteTrackAsync(_context, playlistId, trackId);
 
                 if (check == -1) return BadRequest("Error");
                 else if (check == 0) return BadRequest("Play list or track not found");

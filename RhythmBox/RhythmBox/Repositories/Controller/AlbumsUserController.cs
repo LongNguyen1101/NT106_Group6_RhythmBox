@@ -31,7 +31,7 @@ namespace RhythmBox.Repositories.Controller
 		}
 
 		[HttpGet("getInfoAlbum")]
-		public async Task<IActionResult> getInfoAlbum([FromBody] int albumId)
+		public async Task<IActionResult> getInfoAlbum(int albumId)
 		{
 			try
 			{
@@ -53,11 +53,11 @@ namespace RhythmBox.Repositories.Controller
 		}
 
 		[HttpGet("getOtherAlbum")]
-		public async Task<IActionResult> getOtherAlbum([FromBody] AlbumArtistId model)
+		public async Task<IActionResult> getOtherAlbum(int albumId, int artistId)
 		{
 			try
 			{
-				var albums = await _albums.getOtherAlbums(_context, model.albumId, model.artistId);
+				var albums = await _albums.getOtherAlbums(_context, albumId, artistId);
 
 				if (albums != null)
 				{
@@ -74,7 +74,7 @@ namespace RhythmBox.Repositories.Controller
 		}
 
 		[HttpGet("findAlbum")]
-		public async Task<IActionResult> findAlbum([FromBody] string searchString)
+		public async Task<IActionResult> findAlbum(string searchString)
 		{
 			try
 			{
@@ -96,7 +96,7 @@ namespace RhythmBox.Repositories.Controller
 		}
 
 		[HttpGet("albumLoad")]
-		public async Task<IActionResult> albumLoading([FromBody] int artistId)
+		public async Task<IActionResult> albumLoading(int artistId)
 		{
 			try
 			{
