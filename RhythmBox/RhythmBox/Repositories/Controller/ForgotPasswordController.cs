@@ -23,15 +23,15 @@ namespace RhythmBox.Repositories.Controller
         }
 
         [HttpPost]
-        public async Task<ActionResult> ForgotPass([FromBody] string email)
+        public async Task<ActionResult> ForgotPass([FromBody] ForgotPassword model)
         {
-            int? OTP = await Task.Run(() => _forgotPassword.forgotPassword(_context, email));
+            int? OTP = await Task.Run(() => _forgotPassword.forgotPassword(_context, model.email));
             if (OTP == null) 
             {
                 return BadRequest();
             }
-            _contextAccessor.HttpContext!.Session.SetInt32(email, OTP.Value);
-            return Ok(email);
+            _contextAccessor.HttpContext!.Session.SetInt32(model.email, OTP.Value);
+            return Ok(model.email);
         }
 
         [HttpPost("Authentication")]

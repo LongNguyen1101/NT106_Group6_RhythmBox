@@ -1,38 +1,44 @@
 ﻿<Properties StartupConfiguration="{AD269B11-7B94-49DF-A325-7CE854B60E76}|Default">
-  <MonoDevelop.Ide.ItemProperties.RhythmBox PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="RhythmBox/Program.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="RhythmBox/Repositories/Interface/IAccount.cs">
     <Files>
-      <File FileName="RhythmBox/Repositories/Services/Playlists.cs" Line="180" Column="55" />
-      <File FileName="RhythmBox/Repositories/Interface/IPlaylist.cs" Line="29" Column="39" />
-      <File FileName="RhythmBox/Repositories/Services/AlbumsLib.cs" Line="60" Column="33" />
-      <File FileName="RhythmBox/Repositories/Services/Account.cs" Line="39" Column="61" />
-      <File FileName="RhythmBox/Repositories/Controller/PlaylistController.cs" Line="1" Column="1" />
-      <File FileName="RhythmBox/Repositories/Controller/SearchController.cs" Line="17" Column="31" />
-      <File FileName="RhythmBox/Program.cs" Line="57" Column="34" />
+      <File FileName="RhythmBox/Repositories/Controller/AlbumsArtistController.cs" Line="40" Column="1" />
+      <File FileName="RhythmBox/Program.cs" Line="18" Column="23" />
+      <File FileName="RhythmBox/Repositories/Interface/IPlay.cs" Line="1" Column="1" />
+      <File FileName="RhythmBox/Repositories/Interface/IAccount.cs" Line="1" Column="1" />
+      <File FileName="RhythmBox/Repositories/Services/Account.cs" Line="1" Column="1" />
+      <File FileName="RhythmBox/Repositories/Controller/ForgotPasswordController.cs" Line="28" Column="1" />
+      <File FileName="RhythmBox/Repositories/Services/ForgotPassword.cs" Line="47" Column="1" />
+      <File FileName="RhythmBox/Models/DTO/ForgotPassword.cs" Line="11" Column="1" />
+      <File FileName="RhythmBox/Data/RhythmboxdbContext.cs" Line="252" Column="12" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="RhythmBox" expanded="True">
             <Node name="RhythmBox" expanded="True">
+              <Node name="Dependencies" expanded="True" />
               <Node name="Data" expanded="True" />
-              <Node name="Models" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="DTO" expanded="True" />
+              </Node>
               <Node name="Repositories" expanded="True">
                 <Node name="Controller" expanded="True" />
                 <Node name="Interface" expanded="True" />
                 <Node name="Services" expanded="True" />
               </Node>
-              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBox/RhythmBox/Repositories/Controller/ForgotPasswordController.cs" relfile="RhythmBox/Repositories/Controller/ForgotPasswordController.cs" line="28" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.RhythmBox PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>
