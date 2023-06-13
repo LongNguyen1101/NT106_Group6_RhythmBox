@@ -20,21 +20,25 @@ namespace RhythmBox.Repositories.Controller
             _userService = userService;
             _home = home;
         }
+
         [HttpGet("album")]
         public ActionResult AlbumLoad()
         {
             return Ok(_home.getAlbums());
         }
+
         [HttpGet("artist")]
         public ActionResult ArtistLoad()
         {
             return Ok(_home.getArtists());
         }
+
         [HttpGet("track")]
         public ActionResult TrackLoad()
         {
             return Ok(_home.getTracks());
         }
+
         [HttpGet("recentlyPlayed")]
         public ActionResult RecentlyPlayedLoad() 
         {

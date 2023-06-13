@@ -173,7 +173,7 @@ namespace RhythmBox.Repositories.Controller
             return StatusCode(201);
         }
 
-        [HttpPost("updateTitle")]
+        [HttpPut("updateTitle")]
         public async Task<IActionResult> updateTitle([FromBody] PlaylistTitle model)
         {
             try

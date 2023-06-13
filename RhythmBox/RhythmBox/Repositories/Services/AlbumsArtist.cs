@@ -286,7 +286,7 @@ namespace RhythmBox.Repositories.Services
             }
         }
 
-        public async Task<string> postUpdateInformationAsync(RhythmboxdbContext context, int albumId, string? title, DateTime? releaseDate, byte[]? image)
+        public async Task<string> putUpdateInformationAsync(RhythmboxdbContext context, int albumId, string? title, DateTime? releaseDate, byte[]? image)
         {
             try
             {

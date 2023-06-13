@@ -28,7 +28,7 @@ namespace RhythmBox.Repositories.Interface
         Task<string> deleteTrackAsync(RhythmboxdbContext context, int albumId, int trackId);
 
         // Update information of album
-        Task<string> postUpdateInformationAsync(RhythmboxdbContext context, int albumId, string? title, DateTime? releaseDate, byte[]? image);
+        Task<string> putUpdateInformationAsync(RhythmboxdbContext context, int albumId, string? title, DateTime? releaseDate, byte[]? image);
     }
 }
 

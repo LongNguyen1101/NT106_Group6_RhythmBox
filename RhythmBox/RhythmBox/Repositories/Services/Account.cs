@@ -112,6 +112,7 @@ namespace RhythmBox.Repositories.Services
 
             return jwt;
         }
+
         public bool updateUser(RhythmboxdbContext dbContext, ArtistInfo artistInfo)
         {
             var artist = new Artist()
@@ -121,8 +122,8 @@ namespace RhythmBox.Repositories.Services
             dbContext.Artists.Add(artist);
             dbContext.SaveChanges();
 
-            var bioContext = new FileContent(artistInfo.bioData, artistInfo.bioFileName);
-            var imageContext = new FileContent(artistInfo.imageData, artistInfo.imageFileName);
+            var bioContext = new FileContent(artistInfo.bioData!, artistInfo.bioFileName!);
+            var imageContext = new FileContent(artistInfo.imageData!, artistInfo.imageFileName!);
 
             artist.BioUrl = _fileShare.fileUploadAsync(bioContext, $"{artist.ArtistsId}", "Bio", false).Result;
             artist.ArtistsImage = _fileShare.fileUploadAsync(imageContext, $"{artist.ArtistsId}", "Ava", false).Result;

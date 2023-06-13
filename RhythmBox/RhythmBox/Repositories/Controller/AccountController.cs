@@ -52,7 +52,8 @@ namespace RhythmBox.Repositories.Controller
 
             return Ok(result);
         }
-        [HttpPost("updateAccount"), Authorize("User")]
+
+        [HttpPut("updateAccount"), Authorize("User")]
         public ActionResult UpdateAccount([FromBody] ArtistInfo artistInfo)
         {
             bool isUpdated = _account.updateUser(_dbContext, artistInfo);

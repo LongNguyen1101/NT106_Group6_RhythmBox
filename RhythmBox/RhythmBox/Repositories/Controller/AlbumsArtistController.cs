@@ -16,7 +16,7 @@ using System.Text;
 namespace RhythmBox.Repositories.Controller
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController, Authorize("Artist")]
     public class AlbumsArtistController : ControllerBase
 	{
         private readonly RhythmboxdbContext _context;
@@ -29,21 +29,12 @@ namespace RhythmBox.Repositories.Controller
             _albums = albums;
         }
 
-        // check
         [HttpPost("createAlbum")]
-        public async Task<IActionResult> createAlbum(int artistId, string title, DateTime releaseDate, [FromForm] FileDetails image)
+        public async Task<IActionResult> createAlbum([FromBody] CreateAlbum model)
         {
             try
             {
-                byte[]? imageBytes = null;
-
-                using (MemoryStream stream = new MemoryStream())
-                {
-                    await image.fileDetail.CopyToAsync(stream);
-                    imageBytes = stream.ToArray();
-                }
-
-                var check = await _albums.postCreateAlbumAsync(_context, artistId, title, releaseDate, imageBytes);
+                var check = await _albums.postCreateAlbumAsync(_context, model.artistId, model.title, model.releaseDate, model.image);
 
                 if (check.Contains("Error")) return BadRequest(check);
 
@@ -56,11 +47,11 @@ namespace RhythmBox.Repositories.Controller
         }
 
         [HttpPost("addTrack")]
-        public async Task<IActionResult> addTrack(int albumId, int trackId)
+        public async Task<IActionResult> addTrack([FromBody] CreateTrack model)
         {
             try
             {
-                var check = await _albums.postAddTrackToAlbumAsync(_context, albumId, trackId);
+                var check = await _albums.postAddTrackToAlbumAsync(_context, model.albumId, model.trackId);
 
                 if (check.Contains("Error")) return BadRequest(check);
 
@@ -106,24 +97,12 @@ namespace RhythmBox.Repositories.Controller
             }
         }
 
-        // check
-        [HttpPost("updateInformation")]
-        public async Task<IActionResult> updateInformation(int albumId, string? title, DateTime? releaseDate, [FromForm] FileDetails? image)
+        [HttpPut("updateInformation")]
+        public async Task<IActionResult> updateInformation([FromBody] UpdateAlbum model)
         {
             try
             {
-                byte[]? imageBytes = null;
-
-                if (image != null)
-                {
-                    using (MemoryStream stream = new MemoryStream())
-                    {
-                        await image.fileDetail.CopyToAsync(stream);
-                        imageBytes = stream.ToArray();
-                    }
-                }
-
-                var check = await _albums.postUpdateInformationAsync(_context, albumId, title, releaseDate, imageBytes);
+                var check = await _albums.putUpdateInformationAsync(_context, model.albumId, model.title, model.releaseDate, model.image);
 
                 if (check.Contains("Error")) return BadRequest(check);
 

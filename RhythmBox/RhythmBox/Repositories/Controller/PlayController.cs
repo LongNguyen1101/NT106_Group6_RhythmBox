@@ -14,6 +14,7 @@ namespace RhythmBox.Repositories.Controller
         {
             _play = play;
         }
+
         [HttpGet("{trackID}")]
         public async Task<IActionResult> playTrack(int trackID)
         {
