@@ -15,10 +15,12 @@ namespace RhythmBox.Repositories.Services
         public string getUserID()
         {
             string result = string.Empty;
+
             if (_contextAccessor.HttpContext is not null)
             {
                 result = _contextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier)!;
             }
+
             return result!;
         }
     }

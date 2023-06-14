@@ -1,9 +1,5 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.SqlServer;
-using RhythmBox.Data;
+﻿using RhythmBox.Data;
 using RhythmBox.Models;
-using Azure.Storage.Files.Shares;
-using Azure.Storage.Files.Shares.Models;
 using RhythmBox.Repositories.Interface;
 
 namespace RhythmBox.Repositories

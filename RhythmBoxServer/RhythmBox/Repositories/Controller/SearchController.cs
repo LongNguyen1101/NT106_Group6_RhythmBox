@@ -1,14 +1,7 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using RhythmBox.Data;
-using RhythmBox.Models;
-using Microsoft.EntityFrameworkCore.SqlServer;
-using Microsoft.EntityFrameworkCore;
-using Azure.Storage.Files.Shares;
-using Azure.Storage.Files.Shares.Models;
 using RhythmBox.Repositories.Interface;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc.Authorization;
 using Newtonsoft.Json;
 
 namespace RhythmBox.Repositories.Controller

@@ -1,8 +1,4 @@
-﻿using System;
-using RhythmBox.Data;
-using RhythmBox.Models;
-using Azure.Storage.Files.Shares;
-using Azure.Storage.Files.Shares.Models;
+﻿using RhythmBox.Data;
 
 namespace RhythmBox.Repositories.Interface
 {
