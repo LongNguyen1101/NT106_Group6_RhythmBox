@@ -40,6 +40,9 @@
     <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -63,6 +66,7 @@
     <Compile Include="Album.Designer.cs">
       <DependentUpon>Album.cs</DependentUpon>
     </Compile>
+    <Compile Include="ApiService.cs" />
     <Compile Include="Artist.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +141,7 @@
     <Compile Include="signUpGoogle.Designer.cs">
       <DependentUpon>signUpGoogle.cs</DependentUpon>
     </Compile>
+    <Compile Include="TokenManager.cs" />
     <Compile Include="UploadTrack.cs">
       <SubType>Form</SubType>
     </Compile>
