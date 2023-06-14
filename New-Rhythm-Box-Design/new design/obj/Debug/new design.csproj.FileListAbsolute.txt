@@ -1,0 +1,410 @@
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\new design.exe.config
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\new design.exe
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\new design.pdb
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\Bunifu.Charts.WinForms.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\Bunifu.Dataviz.WinForms.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\Bunifu.UI.WinForms.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\Bunifu.UI.WinForms.1.5.3.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\Microsoft.Win32.Registry.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\Microsoft.Win32.Registry.AccessControl.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\Microsoft.Win32.SystemEvents.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\Newtonsoft.Json.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\RestSharp.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.Buffers.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.CodeDom.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.Data.Odbc.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.Data.OleDb.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.Data.SqlClient.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.Diagnostics.EventLog.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.Diagnostics.PerformanceCounter.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.Drawing.Common.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.IO.FileSystem.AccessControl.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.IO.Packaging.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.IO.Ports.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.Memory.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.Numerics.Vectors.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.Security.AccessControl.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.Security.Cryptography.Cng.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.Security.Cryptography.Pkcs.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.Security.Cryptography.Xml.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.Security.Permissions.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.Security.Principal.Windows.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.ServiceModel.Syndication.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.ServiceProcess.ServiceController.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.Text.Encoding.CodePages.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\bin\Debug\System.Threading.AccessControl.xml
+D:\Học tập\Lap trinh mang can ban\new design\new design\obj\Debug\new design.csproj.AssemblyReference.cache
+D:\Học tập\Lap trinh mang can ban\new design\new design\obj\Debug\new design.csproj.SuggestedBindingRedirects.cache
+D:\Học tập\Lap trinh mang can ban\new design\new design\obj\Debug\new_design.Form1.resources
+D:\Học tập\Lap trinh mang can ban\new design\new design\obj\Debug\new_design.Properties.Resources.resources
+D:\Học tập\Lap trinh mang can ban\new design\new design\obj\Debug\new design.csproj.GenerateResource.cache
+D:\Học tập\Lap trinh mang can ban\new design\new design\obj\Debug\new design.csproj.CoreCompileInputs.cache
+D:\Học tập\Lap trinh mang can ban\new design\new design\obj\Debug\new design.csproj.Fody.CopyLocal.cache
+D:\Học tập\Lap trinh mang can ban\new design\new design\obj\Debug\new design.csproj.CopyComplete
+D:\Học tập\Lap trinh mang can ban\new design\new design\obj\Debug\new design.exe
+D:\Học tập\Lap trinh mang can ban\new design\new design\obj\Debug\new design.pdb
+D:\Học tập\Lap trinh mang can ban\new design\new design\obj\Debug\new design.exe.licenses
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\new design.exe.config
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\new design.exe
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\new design.pdb
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\Bunifu.Charts.WinForms.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\Bunifu.Dataviz.WinForms.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\Bunifu.UI.WinForms.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\Bunifu.UI.WinForms.1.5.3.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\Microsoft.Win32.Registry.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\Microsoft.Win32.Registry.AccessControl.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\Microsoft.Win32.SystemEvents.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\Newtonsoft.Json.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\RestSharp.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.Buffers.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.CodeDom.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.Data.Odbc.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.Data.OleDb.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.Data.SqlClient.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.Diagnostics.EventLog.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.Diagnostics.PerformanceCounter.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.Drawing.Common.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.IO.FileSystem.AccessControl.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.IO.Packaging.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.IO.Ports.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.Memory.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.Numerics.Vectors.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.Security.AccessControl.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.Security.Cryptography.Cng.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.Security.Cryptography.Pkcs.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.Security.Cryptography.Xml.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.Security.Permissions.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.Security.Principal.Windows.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.ServiceModel.Syndication.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.ServiceProcess.ServiceController.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.Text.Encoding.CodePages.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\bin\Debug\System.Threading.AccessControl.xml
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new design.csproj.AssemblyReference.cache
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new design.csproj.SuggestedBindingRedirects.cache
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new_design.MainPage.resources
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new_design.Properties.Resources.resources
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new design.csproj.GenerateResource.cache
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new design.exe.licenses
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new design.csproj.CoreCompileInputs.cache
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new design.csproj.Fody.CopyLocal.cache
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new design.csproj.CopyComplete
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new design.exe
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new design.pdb
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new_design.MainPageForArtists.resources
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new_design.Profile.resources
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new_design.Upload.resources
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new_design.MyAlbums.resources
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new_design.Settings.resources
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new_design.Album.resources
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new_design.ArtistsLibrary.resources
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new_design.Playlist.resources
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new_design.Sign_In.resources
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new_design.Sign_Up.resources
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new_design.forgotPassword.resources
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new_design.OTP.resources
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new_design.resetPassword.resources
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new_design.MyAlbumNew.resources
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new_design.ProfileNew.resources
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new_design.SettingsNew.resources
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new_design.AlbumNew.resources
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new_design.ArtistNew.resources
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new_design.HomeNew.resources
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new_design.PlaylistNew.resources
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new_design.UploadNew.resources
+D:\Học tập\Lap trinh mang can ban\New Design For Rhythmbox\new design\obj\Debug\new_design.HomeForArtistsNew.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\new design.exe.config
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\new design.exe
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\new design.pdb
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\Bunifu.Charts.WinForms.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\Bunifu.Dataviz.WinForms.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\Bunifu.UI.WinForms.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\Bunifu.UI.WinForms.1.5.3.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\Microsoft.Win32.Registry.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\Microsoft.Win32.Registry.AccessControl.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\Microsoft.Win32.SystemEvents.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\Newtonsoft.Json.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\RestSharp.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.Buffers.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.CodeDom.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.Configuration.ConfigurationManager.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.Data.Odbc.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.Data.OleDb.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.Data.SqlClient.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.Diagnostics.EventLog.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.Diagnostics.PerformanceCounter.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.Drawing.Common.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.IO.FileSystem.AccessControl.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.IO.Packaging.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.IO.Ports.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.Memory.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.Numerics.Vectors.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.AccessControl.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.Cryptography.Cng.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.Cryptography.Pkcs.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.Cryptography.Xml.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.Permissions.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.Principal.Windows.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.ServiceModel.Syndication.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.ServiceProcess.ServiceController.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.Text.Encoding.CodePages.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\bin\Debug\System.Threading.AccessControl.xml
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new design.csproj.AssemblyReference.cache
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new design.csproj.SuggestedBindingRedirects.cache
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Album.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new_design.AlbumNew.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new_design.ArtistNew.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new_design.ArtistsLibrary.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new_design.forgotPassword.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new_design.HomeForArtistsNew.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new_design.HomeNew.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new_design.MainPage.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new_design.MainPageForArtists.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new_design.MyAlbumNew.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new_design.MyAlbums.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new_design.OTP.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Playlist.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new_design.PlaylistNew.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Profile.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new_design.ProfileNew.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Properties.Resources.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new_design.resetPassword.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Settings.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new_design.SettingsNew.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Sign_In.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Sign_Up.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Upload.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new_design.UploadNew.resources
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new design.csproj.GenerateResource.cache
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new design.exe.licenses
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new design.csproj.CoreCompileInputs.cache
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new design.csproj.Fody.CopyLocal.cache
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new design.csproj.CopyComplete
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new design.exe
+E:\C#\github\New-Rhythm-Box-Design\new design\obj\Debug\new design.pdb
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\new design.exe.config
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\new design.exe
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\new design.pdb
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\Bunifu.Charts.WinForms.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\Bunifu.Dataviz.WinForms.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\Bunifu.UI.WinForms.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\Bunifu.UI.WinForms.1.5.3.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\Microsoft.Win32.Registry.AccessControl.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\Microsoft.Win32.SystemEvents.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\Newtonsoft.Json.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\RestSharp.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.Buffers.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.CodeDom.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.Data.Odbc.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.Data.OleDb.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.Data.SqlClient.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.Diagnostics.EventLog.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.Diagnostics.PerformanceCounter.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.Drawing.Common.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.IO.FileSystem.AccessControl.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.IO.Packaging.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.IO.Ports.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.Memory.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.AccessControl.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.Cryptography.Cng.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.Cryptography.Pkcs.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.Cryptography.Xml.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.Permissions.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.ServiceModel.Syndication.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.ServiceProcess.ServiceController.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.Text.Encoding.CodePages.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\System.Threading.AccessControl.xml
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new design.csproj.AssemblyReference.cache
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new design.csproj.SuggestedBindingRedirects.cache
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Album.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.AlbumNew.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.ArtistNew.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.ArtistsLibrary.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.forgotPassword.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.HomeForArtistsNew.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.HomeNew.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.MainPage.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.MainPageForArtists.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.MyAlbumNew.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.MyAlbums.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.OTP.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Playlist.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.PlaylistNew.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Profile.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.ProfileNew.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Properties.Resources.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.resetPassword.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Settings.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.SettingsNew.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Sign_In.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Sign_Up.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Upload.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.UploadNew.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new design.csproj.GenerateResource.cache
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new design.exe.licenses
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new design.csproj.CoreCompileInputs.cache
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new design.csproj.Fody.CopyLocal.cache
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new design.csproj.CopyComplete
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new design.exe
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new design.pdb
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Item.resources
+C:\Users\PC MSI\Desktop\Project\New-Rhythm-Box-Design\new design\bin\Debug\NAudio.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new design.csproj.AssemblyReference.cache
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new design.csproj.SuggestedBindingRedirects.cache
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Album.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.AlbumNew.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.ArtistNew.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.ArtistsLibrary.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.forgotPassword.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.HomeForArtistsNew.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.HomeNew.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Item.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.MainPage.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.MainPageForArtists.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.MyAlbumNew.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.MyAlbums.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.OTP.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Playlist.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.PlaylistNew.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Profile.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.ProfileNew.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Properties.Resources.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.resetPassword.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Settings.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.SettingsNew.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Sign_In.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Sign_Up.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Upload.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new_design.UploadNew.resources
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new design.csproj.GenerateResource.cache
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new design.exe.licenses
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new design.csproj.CoreCompileInputs.cache
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new design.exe
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new design.pdb
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\new design.exe.config
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\new design.exe
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\new design.pdb
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\Bunifu.Charts.WinForms.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\Bunifu.Dataviz.WinForms.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\Bunifu.UI.WinForms.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\Bunifu.UI.WinForms.1.5.3.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\Microsoft.Win32.Registry.AccessControl.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\Microsoft.Win32.SystemEvents.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\NAudio.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\RestSharp.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.Buffers.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.CodeDom.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.Data.Odbc.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.Data.OleDb.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.Data.SqlClient.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.Diagnostics.EventLog.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.Diagnostics.PerformanceCounter.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.Drawing.Common.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.IO.FileSystem.AccessControl.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.IO.Packaging.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.IO.Ports.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.Memory.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.AccessControl.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.Cryptography.Cng.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.Cryptography.Pkcs.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.Cryptography.Xml.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.Permissions.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.ServiceModel.Syndication.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.ServiceProcess.ServiceController.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.Text.Encoding.CodePages.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\bin\Debug\System.Threading.AccessControl.xml
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new design.csproj.Fody.CopyLocal.cache
+C:\Users\Long Nguyen\Desktop\New-Rhythm-Box-Design\new design\obj\Debug\new design.csproj.CopyComplete
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\new design.exe.config
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\new design.exe
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\new design.pdb
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\Bunifu.Charts.WinForms.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\Bunifu.Dataviz.WinForms.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\Bunifu.UI.WinForms.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\Bunifu.UI.WinForms.1.5.3.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\Microsoft.Win32.Registry.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\Microsoft.Win32.Registry.AccessControl.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\Microsoft.Win32.SystemEvents.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\NAudio.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\RestSharp.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.Buffers.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.CodeDom.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.Data.Odbc.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.Data.OleDb.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.Data.SqlClient.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.Diagnostics.EventLog.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.Diagnostics.PerformanceCounter.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.Drawing.Common.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.IO.FileSystem.AccessControl.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.IO.Packaging.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.IO.Ports.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.Memory.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.AccessControl.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.Cryptography.Cng.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.Cryptography.Pkcs.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.Cryptography.Xml.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.Permissions.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.Security.Principal.Windows.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.ServiceModel.Syndication.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.ServiceProcess.ServiceController.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.Text.Encoding.CodePages.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\bin\Debug\System.Threading.AccessControl.xml
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new design.csproj.AssemblyReference.cache
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new design.csproj.SuggestedBindingRedirects.cache
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Album.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.AlbumNew.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.ArtistNew.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.ArtistsLibrary.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.forgotPassword.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.HomeForArtistsNew.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.HomeNew.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Item.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.MainPage.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.MainPageForArtists.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.MyAlbumNew.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.MyAlbums.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.OTP.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Playlist.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.PlaylistNew.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Profile.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.ProfileNew.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Properties.Resources.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.resetPassword.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Settings.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.SettingsNew.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Sign_In.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Sign_Up.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.Upload.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new_design.UploadNew.resources
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new design.csproj.GenerateResource.cache
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new design.exe.licenses
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new design.csproj.CoreCompileInputs.cache
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new design.csproj.Fody.CopyLocal.cache
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new design.csproj.CopyComplete
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new design.exe
+C:\Users\Long Nguyen\Desktop\NT106_Group6_RhythmBox\New-Rhythm-Box-Design\new design\obj\Debug\new design.pdb
