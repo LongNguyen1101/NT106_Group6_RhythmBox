@@ -11,17 +11,19 @@ namespace RhythmBox.Repositories.Services
         private RhythmboxdbContext _dbContext;
         private IUserService _userService;
         private IFileShare _fileShare;
+
         public Home(RhythmboxdbContext dbContext, IFileShare fileShare, IUserService userService)
         {
             _dbContext = dbContext;
             _fileShare = fileShare;
             _userService = userService;
         }
-        public Task getAlbums()
+
+        public string getAlbums()
         {
-            object data = _dbContext.Albums.ToList().Join(_dbContext.Artists.ToList(), alb => alb.ArtistsId, art => art.ArtistsId, (albs, arts) =>
+            object data = _dbContext.Albums.ToList().Join(_dbContext.Artists.ToList(), alb => alb.ArtistsId, art => art.ArtistsId, async (albs, arts) =>
             {
-                byte[] albumImage = _fileShare.fileAlbumCoverDownloadAsync(albs.AlbumImage!).Result;
+                byte[] albumImage = await _fileShare.fileAlbumCoverDownloadAsync(albs.AlbumImage!);
                 return new
                 {
                     AlbumID = albs.AlbumsId,
@@ -31,11 +33,12 @@ namespace RhythmBox.Repositories.Services
                 };
             }).Take(10);
 
+
             var jsonString = JsonConvert.SerializeObject(data);
-            return Task.FromResult(jsonString);
+            return jsonString;
         }
 
-        public Task getArtists()
+        public string getArtists()
         {
             object data = _dbContext.Artists.ToList().Select(artist =>
             {
@@ -49,9 +52,10 @@ namespace RhythmBox.Repositories.Services
             }).Take(10);
 
             var jsonString = JsonConvert.SerializeObject(data);
-            return Task.FromResult(jsonString);
-        }    
-        public Task getTracks()
+            return jsonString;
+        }
+
+        public string getTracks()
         {
             
             object data = _dbContext.Tracks.ToList().Join(_dbContext.Artists.ToList(), trk => trk.ArtistsId, art => art.ArtistsId, (track, artist) =>
@@ -74,9 +78,10 @@ namespace RhythmBox.Repositories.Services
                 };
             }).Take(10);
             var jsonString = JsonConvert.SerializeObject(data);
-            return Task.FromResult(jsonString);   
+            return jsonString;
         }
-        public Task getRecentlyPlayed()
+
+        public string getRecentlyPlayed()
         {
             var userID = Convert.ToInt32(_userService.getUserID());
             var data = (from user in _dbContext.Users
@@ -115,7 +120,7 @@ namespace RhythmBox.Repositories.Services
             .Take(10);
 
             var jsonString = JsonConvert.SerializeObject(data);
-            return Task.FromResult(jsonString);
+            return jsonString;
         }
     }
 }
