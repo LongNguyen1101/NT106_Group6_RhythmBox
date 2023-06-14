@@ -1,0 +1,50 @@
+﻿<Properties StartupConfiguration="{AD269B11-7B94-49DF-A325-7CE854B60E76}|Default">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.RhythmBox PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="RhythmBox/Repositories/Controller/ForgotPasswordController.cs">
+    <Files>
+      <File FileName="RhythmBox/Repositories/Controller/AlbumsArtistController.cs" />
+      <File FileName="RhythmBox/Program.cs" />
+      <File FileName="RhythmBox/Repositories/Interface/IPlay.cs" />
+      <File FileName="RhythmBox/Repositories/Interface/IAccount.cs" />
+      <File FileName="RhythmBox/Repositories/Services/Account.cs" />
+      <File FileName="RhythmBox/Repositories/Controller/ForgotPasswordController.cs" Line="28" Column="27" />
+      <File FileName="RhythmBox/Repositories/Services/ForgotPassword.cs" />
+      <File FileName="RhythmBox/Models/DTO/ForgotPassword.cs" />
+      <File FileName="RhythmBox/Data/RhythmboxdbContext.cs" />
+      <File FileName="RhythmBox/Repositories/Controller/AccountController.cs" />
+      <File FileName="RhythmBox/Repositories/Controller/PlayController.cs" />
+      <File FileName="RhythmBox/Repositories/Services/Home.cs" />
+      <File FileName="RhythmBox/Repositories/Controller/HomeController.cs" />
+      <File FileName="RhythmBox/Repositories/Interface/IHome.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="RhythmBox" expanded="True">
+            <Node name="RhythmBox" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="DTO" expanded="True" />
+              </Node>
+              <Node name="Repositories" expanded="True">
+                <Node name="Controller" expanded="True">
+                  <Node name="ForgotPasswordController.cs" selected="True" />
+                </Node>
+                <Node name="Interface" expanded="True" />
+                <Node name="Services" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>

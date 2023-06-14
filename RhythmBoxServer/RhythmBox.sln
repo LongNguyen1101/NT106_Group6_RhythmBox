@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1705.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RhythmBox", "RhythmBox\RhythmBox.csproj", "{AD269B11-7B94-49DF-A325-7CE854B60E76}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD269B11-7B94-49DF-A325-7CE854B60E76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD269B11-7B94-49DF-A325-7CE854B60E76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD269B11-7B94-49DF-A325-7CE854B60E76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD269B11-7B94-49DF-A325-7CE854B60E76}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B6C0082-9411-4574-9103-3370A03D72AA}
+	EndGlobalSection
+EndGlobal
