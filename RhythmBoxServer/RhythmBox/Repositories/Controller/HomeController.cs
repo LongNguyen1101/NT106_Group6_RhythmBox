@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using RhythmBox.Data;
+using RhythmBox.Models.DTO;
 using RhythmBox.Repositories.Interface;
 using System.Data;
 
@@ -48,6 +49,11 @@ namespace RhythmBox.Repositories.Controller
         public ActionResult ProfileLoad()
         {
             return Ok(_home.getProfile());
+        }
+        [HttpPost("postProfile")]
+        public ActionResult ProfileUpdate([FromBody] NewProfile user) 
+        {
+            return _home.updateProfile(user.userName, user.Email, user.Gender, user.birthday)? Ok(): BadRequest();
         }
 
     }
