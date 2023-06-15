@@ -96,7 +96,7 @@ namespace RhythmBox
 
         private void btnShowHidePass_MouseUp(object sender, MouseEventArgs e)
         {
-            if (txtPassword.Text.Length != 0)
+            if (txtConfirmPassword.Text.Length != 0)
             {
                 txtPassword.PasswordChar = '●';
                 txtConfirmPassword.PasswordChar = '●';
@@ -162,6 +162,11 @@ namespace RhythmBox
             SignIn_UpgradeForm signIn = new SignIn_UpgradeForm();
             signIn.Show();
             this.Hide();
+        }
+
+        private void linkForgotPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            new ForgotPassword_UpgradeForm().ShowDialog();
         }
     }
 }
