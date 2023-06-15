@@ -8,5 +8,6 @@ namespace RhythmBox.Repositories.Interface
         public string getArtists();
         public string getTracks();
         public string getRecentlyPlayed();
+        public string getProfile();
     }
 }

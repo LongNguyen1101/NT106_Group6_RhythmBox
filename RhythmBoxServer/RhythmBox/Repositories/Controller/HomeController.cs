@@ -14,7 +14,7 @@ namespace RhythmBox.Repositories.Controller
     {
         private readonly IUserService _userService;
         private readonly IHome _home;
-        
+
         public HomeController(IUserService userService, IHome home)
         {
             _userService = userService;
@@ -40,9 +40,15 @@ namespace RhythmBox.Repositories.Controller
         }
 
         [HttpGet("recentlyPlayed")]
-        public ActionResult RecentlyPlayedLoad() 
+        public ActionResult RecentlyPlayedLoad()
         {
             return Ok(_home.getRecentlyPlayed());
         }
+        [HttpGet("profile")]
+        public ActionResult ProfileLoad()
+        {
+            return Ok(_home.getProfile());
+        }
+
     }
 }

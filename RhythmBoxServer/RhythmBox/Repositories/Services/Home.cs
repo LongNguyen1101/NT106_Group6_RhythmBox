@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using RhythmBox.Data;
 using RhythmBox.Models;
 using RhythmBox.Repositories.Interface;
@@ -120,6 +121,20 @@ namespace RhythmBox.Repositories.Services
             .Take(10);
 
             var jsonString = JsonConvert.SerializeObject(data);
+            return jsonString;
+        }
+        public string getProfile()
+        {
+            var user = from u in _dbContext.Users
+                       where u.UsersId == Convert.ToInt32(_userService.getUserID())
+                       select new
+                       {
+                           userName = u.UserName,
+                           email = u.Email,
+                           gender = u.Gender,
+                           date = u.Birthday
+                       };
+            var jsonString = JsonConvert.SerializeObject(user);
             return jsonString;
         }
     }
