@@ -35,14 +35,14 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rbtnOther = new System.Windows.Forms.RadioButton();
+            this.rbtnMale = new System.Windows.Forms.RadioButton();
+            this.rbtnFemale = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtYear = new System.Windows.Forms.TextBox();
             this.cbMonth = new System.Windows.Forms.ComboBox();
-            this.txtDate = new System.Windows.Forms.TextBox();
+            this.txtDay = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -128,7 +128,7 @@
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.txtYear);
             this.panel2.Controls.Add(this.cbMonth);
-            this.panel2.Controls.Add(this.txtDate);
+            this.panel2.Controls.Add(this.txtDay);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.panel5);
@@ -157,46 +157,46 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.radioButton3);
-            this.panel6.Controls.Add(this.radioButton1);
-            this.panel6.Controls.Add(this.radioButton2);
+            this.panel6.Controls.Add(this.rbtnOther);
+            this.panel6.Controls.Add(this.rbtnMale);
+            this.panel6.Controls.Add(this.rbtnFemale);
             this.panel6.Location = new System.Drawing.Point(66, 411);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(201, 31);
             this.panel6.TabIndex = 29;
             // 
-            // radioButton3
+            // rbtnOther
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(132, 6);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(55, 19);
-            this.radioButton3.TabIndex = 28;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Other";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbtnOther.AutoSize = true;
+            this.rbtnOther.Location = new System.Drawing.Point(132, 6);
+            this.rbtnOther.Name = "rbtnOther";
+            this.rbtnOther.Size = new System.Drawing.Size(55, 19);
+            this.rbtnOther.TabIndex = 28;
+            this.rbtnOther.TabStop = true;
+            this.rbtnOther.Text = "Other";
+            this.rbtnOther.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbtnMale
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 6);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(51, 19);
-            this.radioButton1.TabIndex = 26;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Male";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbtnMale.AutoSize = true;
+            this.rbtnMale.Location = new System.Drawing.Point(6, 6);
+            this.rbtnMale.Name = "rbtnMale";
+            this.rbtnMale.Size = new System.Drawing.Size(51, 19);
+            this.rbtnMale.TabIndex = 26;
+            this.rbtnMale.TabStop = true;
+            this.rbtnMale.Text = "Male";
+            this.rbtnMale.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbtnFemale
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(63, 6);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(63, 19);
-            this.radioButton2.TabIndex = 27;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Female";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbtnFemale.AutoSize = true;
+            this.rbtnFemale.Location = new System.Drawing.Point(63, 6);
+            this.rbtnFemale.Name = "rbtnFemale";
+            this.rbtnFemale.Size = new System.Drawing.Size(63, 19);
+            this.rbtnFemale.TabIndex = 27;
+            this.rbtnFemale.TabStop = true;
+            this.rbtnFemale.Text = "Female";
+            this.rbtnFemale.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -227,26 +227,41 @@
             this.txtYear.TabIndex = 23;
             this.txtYear.Text = "yyyy";
             this.txtYear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtYear.Click += new System.EventHandler(this.txtYear_Click);
             // 
             // cbMonth
             // 
             this.cbMonth.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.cbMonth.FormattingEnabled = true;
+            this.cbMonth.Items.AddRange(new object[] {
+            "January",
+            "Frebruary",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"});
             this.cbMonth.Location = new System.Drawing.Point(105, 355);
             this.cbMonth.Name = "cbMonth";
             this.cbMonth.Size = new System.Drawing.Size(104, 23);
             this.cbMonth.TabIndex = 22;
             this.cbMonth.Text = "month";
             // 
-            // txtDate
+            // txtDay
             // 
-            this.txtDate.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.txtDate.Location = new System.Drawing.Point(66, 355);
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(33, 23);
-            this.txtDate.TabIndex = 21;
-            this.txtDate.Text = "dd";
-            this.txtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDay.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtDay.Location = new System.Drawing.Point(66, 355);
+            this.txtDay.Name = "txtDay";
+            this.txtDay.Size = new System.Drawing.Size(33, 23);
+            this.txtDay.TabIndex = 21;
+            this.txtDay.Text = "dd";
+            this.txtDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDay.Click += new System.EventHandler(this.txtDay_Click);
             // 
             // label8
             // 
@@ -279,7 +294,7 @@
             // 
             this.txtPassword.BackColor = System.Drawing.Color.White;
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtPassword.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtPassword.Location = new System.Drawing.Point(66, 246);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtPassword.Name = "txtPassword";
@@ -319,7 +334,7 @@
             // 
             this.txtUsername.BackColor = System.Drawing.Color.White;
             this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtUsername.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtUsername.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtUsername.Location = new System.Drawing.Point(67, 192);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtUsername.Name = "txtUsername";
@@ -352,7 +367,7 @@
             // 
             this.txtConfirmPassword.BackColor = System.Drawing.Color.White;
             this.txtConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConfirmPassword.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtConfirmPassword.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtConfirmPassword.Location = new System.Drawing.Point(67, 301);
             this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
@@ -379,6 +394,7 @@
             this.linkSignIn.TabIndex = 8;
             this.linkSignIn.TabStop = true;
             this.linkSignIn.Text = "Sign in";
+            this.linkSignIn.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkSignIn_LinkClicked);
             // 
             // linkForgotPass
             // 
@@ -415,6 +431,7 @@
             this.btnSignUp.TabIndex = 1;
             this.btnSignUp.Text = "Sign Up";
             this.btnSignUp.UseVisualStyleBackColor = false;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // label2
             // 
@@ -441,7 +458,7 @@
             // 
             this.txtEmail.BackColor = System.Drawing.Color.White;
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEmail.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.txtEmail.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtEmail.Location = new System.Drawing.Point(66, 135);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.txtEmail.Name = "txtEmail";
@@ -497,15 +514,15 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtDate;
+        private System.Windows.Forms.TextBox txtDay;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtYear;
         private System.Windows.Forms.ComboBox cbMonth;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbtnFemale;
+        private System.Windows.Forms.RadioButton rbtnMale;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton rbtnOther;
         private System.Windows.Forms.Panel panel6;
     }
 }
