@@ -9,11 +9,13 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.Design;
 
 namespace RhythmBox
 {
     public partial class Profile : Form
     {
+        ApiService apiService = new ApiService();
         private int borderSize = 2;
         private Size formSize;
         private IconButton currentBtn;
@@ -174,6 +176,25 @@ namespace RhythmBox
         {
             new UploadTrack ().Show();
             this.Hide();
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            DateTime dBirthday;
+            int iYear = int.Parse(txt_year.Text);
+            int iMonth = int.Parse(txt_month.Text);
+            int iDay = int.Parse(txt_day.Text);
+            dBirthday = new DateTime(iYear, iMonth, iDay);
+
+            var response = await apiService.Home_postProfile(txt_user.Text, txt_email.Text, txt_gender.Text, dBirthday);
+            if (response)
+            {
+                MessageBox.Show("Update successfully!");
+            }
+            else
+            {
+                MessageBox.Show("Error", "Please try again", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
