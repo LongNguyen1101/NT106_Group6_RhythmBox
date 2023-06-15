@@ -2,7 +2,6 @@
 {
     public interface IPlay
     {
-        Task<string> getTrack(int trackID);
-
+        Task<(int, string?, TimeSpan?, byte[])?> getTrack(int trackID);
     }
 }

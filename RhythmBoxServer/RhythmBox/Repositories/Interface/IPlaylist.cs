@@ -4,11 +4,11 @@ namespace RhythmBox.Repositories.Interface
 {
 	public interface IPlaylist
 	{
-		// Create new playlist
-		Task<int> postCreatePlaylistAsync(RhythmboxdbContext context, int userId);
+        // Create new playlist
+        Task<(int, string?, byte[])?> postCreatePlaylistAsync(RhythmboxdbContext context, int userId);
 
-		// Add track to playlist
-		Task<int> postAddTrackToPlaylistAsync(RhythmboxdbContext context, int playlistId, int trackId);
+        // Add track to playlist
+        Task<int> postAddTrackToPlaylistAsync(RhythmboxdbContext context, int playlistId, int trackId);
 
 		// Add album to playlist
 		Task<int> postAddAlbumToPlaylistAsync(RhythmboxdbContext context, int playlistId, int albumId);

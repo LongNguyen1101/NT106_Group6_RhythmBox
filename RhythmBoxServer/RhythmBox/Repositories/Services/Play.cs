@@ -21,66 +21,49 @@ namespace RhythmBox.Repositories.Services
             _userService = userService;
         }
 
-        public async Task<string> getTrack(int trackID)
+        public async Task<(int, string?, TimeSpan?, byte[])?> getTrack(int trackID)
         {
-            //var wTrack = _dbContext.Tracks.Where(track => track.TracksId == trackID).FirstOrDefault();
-            var Track = _dbContext.Tracks.ToList().Join(_dbContext.Artists.ToList(), track => track.ArtistsId, artist => artist.ArtistsId, (trk, art) =>
+            try
             {
-                if (trk.TracksId == trackID)
-                {
-                    byte[] musicData = _fileShare.fileDownloadAsync(trk.SongUrl!).Result;
-                    return new
-                    {
-                        ID = trk.TracksId,
-                        Title = trk.Title,
-                        FullName = art.FullName,
-                        Duration = trk.Duration,
-                        MusicData = musicData
-                    };
-                }
-                return null;  
-            });
-            var track = Track.Where(track =>
-            {
+                var track = await Task.Run(() => _dbContext.Tracks
+                                                            .Where(con => con.TracksId == trackID)
+                                                            .SingleOrDefault());
+
                 if (track != null)
                 {
-                    return (track.ID == trackID);
+                    var check = await updateHistory(trackID);
+
+                    if (check.Contains("Error")) return null;
+                    else return (track.TracksId, track.Title, track.Duration, await _fileShare.fileDownloadAsync(track.SongUrl!));
                 }
-                return false;
-            });
-
-             await updateHistory(trackID);
-
-            var jsonString = JsonConvert.SerializeObject(track);
-            return jsonString;
+                else return null;
+            }
+            catch { return null; }
         }
 
-        private Task updateHistory(int trackID)
+        private async Task<string> updateHistory(int trackID)
         {
-            TimeSpan ts = new TimeSpan(0, 3, 2);
-            History history = new History()
+            try
             {
-                TracksId = trackID,
-                UsersId = Convert.ToInt32(_userService.getUserID()),
-                PlayedAt = DateTime.Now
-            };
+                await Task.Run(() =>
+                {
+                    History history = new History()
+                    {
+                        TracksId = trackID,
+                        UsersId = Convert.ToInt32(_userService.getUserID()),
+                        PlayedAt = DateTime.Now
+                    };
 
-            _dbContext.Histories.Add(history);
+                    _dbContext.Histories.Add(history);
+                    _dbContext.SaveChanges();
+                });
 
-            //int maxRecords = 100; // Số lượng bản ghi tối đa được chèn
-            //int newRecordsCount = _dbContext.ChangeTracker.Entries().Count(e => e.State == EntityState.Added);
-            //if (newRecordsCount > maxRecords)
-            //{
-            //    DateTime cutoffDate = DateTime.Now.AddDays(-1);
-            //    var recordsToDelete = _dbContext.Histories.Where(r => r.PlayedAt < cutoffDate);
-            //    _dbContext.Histories.RemoveRange(recordsToDelete);
-            //    _dbContext.SaveChanges();
-            //}
-            //else
-            //{
-                _dbContext.SaveChanges();
-            //}
-            return Task.CompletedTask;
+                return "Add successful";
+            }
+            catch (Exception ex)
+            {
+                return $"Error {ex.Message}";
+            }
         }
     }
 }

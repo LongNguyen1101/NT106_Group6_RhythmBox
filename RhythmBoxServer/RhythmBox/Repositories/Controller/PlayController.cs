@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RhythmBox.Repositories.Interface;
+using Microsoft.AspNetCore.Authorization;
+using Newtonsoft.Json;
 
 namespace RhythmBox.Repositories.Controller
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController, Authorize]
     public class PlayController : ControllerBase
     {
         private readonly IPlay _play;
@@ -15,12 +17,26 @@ namespace RhythmBox.Repositories.Controller
             _play = play;
         }
 
-        [HttpGet("{trackID}")]
+        [HttpGet("trackID")]
         public async Task<IActionResult> playTrack(int trackID)
         {
-            string segmentData = await _play.getTrack(trackID);
+            try
+            {
+                var content = await _play.getTrack(trackID);
 
-            return Ok(segmentData);
+                if (content != null)
+                {
+                    string json = JsonConvert.SerializeObject(content);
+
+                    return Ok(json);
+                }
+
+                return BadRequest("Error");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

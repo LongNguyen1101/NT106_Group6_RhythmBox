@@ -22,21 +22,20 @@ namespace RhythmBox.Repositories.Services
 
         public string getAlbums()
         {
-            object data = _dbContext.Albums.ToList().Join(_dbContext.Artists.ToList(), alb => alb.ArtistsId, art => art.ArtistsId, async (albs, arts) =>
+            object data = _dbContext.Albums.ToList().Select(async albs =>
             {
                 byte[] albumImage = await _fileShare.fileAlbumCoverDownloadAsync(albs.AlbumImage!);
                 return new
                 {
                     AlbumID = albs.AlbumsId,
                     Title = albs.Title,
-                    FullName = arts.FullName,
                     AlbumImage = albumImage
                 };
             }).Take(10);
 
 
             var jsonString = JsonConvert.SerializeObject(data);
-            return jsonString;
+            return jsonString!;
         }
 
         public string getArtists()
@@ -53,7 +52,7 @@ namespace RhythmBox.Repositories.Services
             }).Take(10);
 
             var jsonString = JsonConvert.SerializeObject(data);
-            return jsonString;
+            return jsonString!;
         }
 
         public string getTracks()
@@ -79,23 +78,21 @@ namespace RhythmBox.Repositories.Services
                 };
             }).Take(10);
             var jsonString = JsonConvert.SerializeObject(data);
-            return jsonString;
+            return jsonString!;
         }
 
         public string getRecentlyPlayed()
         {
             var userID = Convert.ToInt32(_userService.getUserID());
-            var data = (from user in _dbContext.Users
-                        join history in _dbContext.Histories on user.UsersId equals history.UsersId
+
+            var data = (from history in _dbContext.Histories 
                         join track in _dbContext.Tracks on history.TracksId equals track.TracksId
-                        join artist in _dbContext.Artists on track.ArtistsId equals artist.ArtistsId
-                        where user.UsersId == userID
+                        where history.UsersId == userID
                         orderby history.PlayedAt descending
                         select new
                         {
                             TrackID = track.TracksId,
                             Title = track.Title,
-                            FullName = artist.FullName,
                             TrackImage = track.TrackImage
                         })
             .ToList()
@@ -114,15 +111,15 @@ namespace RhythmBox.Repositories.Services
                 {
                     item.TrackID,
                     item.Title,
-                    item.FullName,
                     TrackImage = trackImage
                 };
             })
             .Take(10);
 
             var jsonString = JsonConvert.SerializeObject(data);
-            return jsonString;
+            return jsonString!;
         }
+
         public string getProfile()
         {
             var user = from u in _dbContext.Users
@@ -135,8 +132,9 @@ namespace RhythmBox.Repositories.Services
                            date = u.Birthday
                        };
             var jsonString = JsonConvert.SerializeObject(user);
-            return jsonString;
+            return jsonString!;
         }
+
         public bool updateProfile(string userName, string email, string gender, DateTime birthday)
         {
             var user = _dbContext.Users.FirstOrDefault(u => u.UsersId == Convert.ToInt32(_userService.getUserID()));

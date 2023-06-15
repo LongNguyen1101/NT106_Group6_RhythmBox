@@ -34,16 +34,21 @@ namespace RhythmBox.Repositories.Controller
         {
             try
             {
-                var check = await _playlist.postCreatePlaylistAsync(_context, int.Parse(_user.getUserID()));
+                var content = await _playlist.postCreatePlaylistAsync(_context, int.Parse(_user.getUserID()));
 
-                if (check == -1) return BadRequest("Error");
+                if (content != null)
+                {
+                    string json = JsonConvert.SerializeObject(content);
+
+                    return Ok(json);
+                }
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
 
-            return StatusCode(201);
+            return BadRequest("Error");
         }
 
         [HttpPost("addTrack")]

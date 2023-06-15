@@ -277,7 +277,7 @@ namespace RhythmBox.Repositories
 			catch { return -1; } // Error
 		}
 
-		public async Task<int> postCreatePlaylistAsync(RhythmboxdbContext context, int userId)
+		public async Task<(int, string?, byte[])?> postCreatePlaylistAsync(RhythmboxdbContext context, int userId)
 		{
 			try
 			{
@@ -297,9 +297,9 @@ namespace RhythmBox.Repositories
 				context.Playlists.Add(playlist);
 				context.SaveChanges();
 
-				return 1; // Add successful
+				return (playlist.PlaylistId, playlist.Title, await _fileShare.fileDownloadAsync(playlist.PlaylistCover!));
 			}
-			catch { return -1; } // Error
+			catch { return null; } // Error
 		}
 
 		public async Task<int> postUpdateInformationAsync(RhythmboxdbContext context, int playlistId, string newTitle)
