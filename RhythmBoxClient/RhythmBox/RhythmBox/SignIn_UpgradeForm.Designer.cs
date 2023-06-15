@@ -45,6 +45,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbMessageIncorrect = new System.Windows.Forms.Label();
             this.panelTitleBar.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -94,6 +95,7 @@
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.lbMessageIncorrect);
             this.panel2.Controls.Add(this.btnShowHidePass);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.txtPassword);
@@ -122,6 +124,8 @@
             this.btnShowHidePass.Size = new System.Drawing.Size(28, 23);
             this.btnShowHidePass.TabIndex = 12;
             this.btnShowHidePass.UseVisualStyleBackColor = true;
+            this.btnShowHidePass.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnShowHidePass_MouseDown);
+            this.btnShowHidePass.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnShowHidePass_MouseUp);
             // 
             // panel3
             // 
@@ -201,6 +205,7 @@
             this.btnSignIn.TabIndex = 1;
             this.btnSignIn.Text = "Sign In";
             this.btnSignIn.UseVisualStyleBackColor = false;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // label2
             // 
@@ -247,6 +252,16 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // lbMessageIncorrect
+            // 
+            this.lbMessageIncorrect.AutoSize = true;
+            this.lbMessageIncorrect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbMessageIncorrect.Location = new System.Drawing.Point(34, 252);
+            this.lbMessageIncorrect.Name = "lbMessageIncorrect";
+            this.lbMessageIncorrect.Size = new System.Drawing.Size(167, 15);
+            this.lbMessageIncorrect.TabIndex = 13;
+            this.lbMessageIncorrect.Text = "Email or password is incorrect!";
+            // 
             // SignIn_UpgradeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -289,5 +304,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnShowHidePass;
+        private System.Windows.Forms.Label lbMessageIncorrect;
     }
 }

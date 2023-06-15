@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,9 +14,29 @@ namespace RhythmBox
     public partial class SignIn_UpgradeForm : Form
     {
         bool isMouseDown = true;
+
+        ApiService apiService = new ApiService();
+
+        private string hashPassword(string password)
+        {
+            SHA256 sha256Hash = SHA256.Create();
+            byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
+            return Convert.ToBase64String(bytes);
+            //return password;
+        }
+
+        // Hàm này sẽ được dùng nếu cần thiết
+        public bool isEmail(string text)
+        {
+            if (text.Contains("@"))
+                return true;
+            return false;
+        }
+
         public SignIn_UpgradeForm()
         {
             InitializeComponent();
+            lbMessageIncorrect.Hide();
         }
 
         private void btnCloseWindow_Click(object sender, EventArgs e)
@@ -88,6 +109,24 @@ namespace RhythmBox
             SignUp_UpgradeForm signup = new SignUp_UpgradeForm();
             this.Hide();
             signup.Show();
+        }
+
+        private async void btnSignIn_Click(object sender, EventArgs e)
+        {
+            bool signinRes = await apiService.Account_SignIn(txtEmail.Text, hashPassword(txtPassword.Text));
+            //bool signinRes = await apiService.SignIn(txt_userSI.Text, (txt_passwordSI.Text));
+
+            if (signinRes)
+            {
+                new MainPage().Show();
+                this.Hide();
+            }
+            else
+            {
+                lbMessageIncorrect.Show();
+                txtPassword.Clear();
+                return;
+            }
         }
     }
 }
