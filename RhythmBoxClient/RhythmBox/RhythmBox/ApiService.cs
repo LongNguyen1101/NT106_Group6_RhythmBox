@@ -1042,6 +1042,59 @@ namespace RhythmBox
             }
         }
 
+        public async Task<HttpResponseMessage> Home_profile()
+        {
+            try
+            {
+                var URLendpoint = $"{BaseUrl}/Home/postProfile";
+
+                var response = await httpClient.GetAsync(URLendpoint);
+
+                var responseJson = response.Content.ReadAsStringAsync();
+                if (response.IsSuccessStatusCode)
+                    return response;
+                else
+                {
+                    Console.WriteLine(response.StatusCode);
+                    return null;
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
+        }
+
+        public async Task<bool> Home_postProfile(string userName, string email, string gender, DateTime birthday)
+        {
+            try
+            {
+                var request = new
+                {
+                    userName = userName,
+                    email = email,
+                    gender = gender,
+                    birthday = birthday
+                };
+
+                var requestJson = JsonConvert.SerializeObject(request);
+
+                var content = new StringContent(requestJson);
+
+                var response = await httpClient.PutAsync($"{BaseUrl}/Home/postProfile", content);
+
+                var responseJson = response.Content?.ReadAsStringAsync();
+
+                return response.IsSuccessStatusCode;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+
         // Play //
         public async Task<HttpResponseMessage> playTrack(int trackID)
         {
