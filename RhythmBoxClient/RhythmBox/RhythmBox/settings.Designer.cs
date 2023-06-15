@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(settings));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_upload = new FontAwesome.Sharp.IconButton();
             this.btn_album = new FontAwesome.Sharp.IconButton();
             this.btn_artist = new FontAwesome.Sharp.IconButton();
             this.btn_playlist = new FontAwesome.Sharp.IconButton();
@@ -67,7 +68,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txt_location = new System.Windows.Forms.TextBox();
             this.btn_changeLocation = new System.Windows.Forms.Button();
-            this.btn_upload = new FontAwesome.Sharp.IconButton();
             this.panelMenu.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -88,8 +88,9 @@
             this.panelMenu.Controls.Add(this.panel4);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(230, 758);
+            this.panelMenu.Size = new System.Drawing.Size(173, 616);
             this.panelMenu.TabIndex = 1;
             // 
             // panel3
@@ -99,10 +100,34 @@
             this.panel3.Controls.Add(this.btn_album);
             this.panel3.Controls.Add(this.btn_artist);
             this.panel3.Controls.Add(this.btn_playlist);
-            this.panel3.Location = new System.Drawing.Point(12, 505);
+            this.panel3.Location = new System.Drawing.Point(9, 410);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 250);
+            this.panel3.Size = new System.Drawing.Size(150, 203);
             this.panel3.TabIndex = 9;
+            // 
+            // btn_upload
+            // 
+            this.btn_upload.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_upload.FlatAppearance.BorderSize = 0;
+            this.btn_upload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_upload.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_upload.IconChar = FontAwesome.Sharp.IconChar.Upload;
+            this.btn_upload.IconColor = System.Drawing.Color.Black;
+            this.btn_upload.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btn_upload.IconSize = 30;
+            this.btn_upload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_upload.Location = new System.Drawing.Point(0, 135);
+            this.btn_upload.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_upload.Name = "btn_upload";
+            this.btn_upload.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.btn_upload.Size = new System.Drawing.Size(150, 45);
+            this.btn_upload.TabIndex = 6;
+            this.btn_upload.Text = "Upload";
+            this.btn_upload.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_upload.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_upload.UseVisualStyleBackColor = true;
+            this.btn_upload.Click += new System.EventHandler(this.btn_upload_Click);
             // 
             // btn_album
             // 
@@ -115,10 +140,11 @@
             this.btn_album.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btn_album.IconSize = 30;
             this.btn_album.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_album.Location = new System.Drawing.Point(0, 110);
+            this.btn_album.Location = new System.Drawing.Point(0, 90);
+            this.btn_album.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_album.Name = "btn_album";
-            this.btn_album.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btn_album.Size = new System.Drawing.Size(200, 55);
+            this.btn_album.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.btn_album.Size = new System.Drawing.Size(150, 45);
             this.btn_album.TabIndex = 4;
             this.btn_album.Text = "Album";
             this.btn_album.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -137,10 +163,11 @@
             this.btn_artist.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btn_artist.IconSize = 30;
             this.btn_artist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_artist.Location = new System.Drawing.Point(0, 55);
+            this.btn_artist.Location = new System.Drawing.Point(0, 45);
+            this.btn_artist.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_artist.Name = "btn_artist";
-            this.btn_artist.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btn_artist.Size = new System.Drawing.Size(200, 55);
+            this.btn_artist.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.btn_artist.Size = new System.Drawing.Size(150, 45);
             this.btn_artist.TabIndex = 2;
             this.btn_artist.Text = "Artist";
             this.btn_artist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -160,9 +187,10 @@
             this.btn_playlist.IconSize = 30;
             this.btn_playlist.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_playlist.Location = new System.Drawing.Point(0, 0);
+            this.btn_playlist.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_playlist.Name = "btn_playlist";
-            this.btn_playlist.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btn_playlist.Size = new System.Drawing.Size(200, 55);
+            this.btn_playlist.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.btn_playlist.Size = new System.Drawing.Size(150, 45);
             this.btn_playlist.TabIndex = 1;
             this.btn_playlist.Text = "Playlist";
             this.btn_playlist.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -179,9 +207,10 @@
             this.panel1.Controls.Add(this.btn_profile);
             this.panel1.Controls.Add(this.btn_user);
             this.panel1.Controls.Add(this.btn_home);
-            this.panel1.Location = new System.Drawing.Point(12, 104);
+            this.panel1.Location = new System.Drawing.Point(9, 84);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 343);
+            this.panel1.Size = new System.Drawing.Size(150, 279);
             this.panel1.TabIndex = 8;
             // 
             // btn_search
@@ -195,10 +224,11 @@
             this.btn_search.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btn_search.IconSize = 30;
             this.btn_search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_search.Location = new System.Drawing.Point(0, 200);
+            this.btn_search.Location = new System.Drawing.Point(0, 162);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_search.Name = "btn_search";
-            this.btn_search.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btn_search.Size = new System.Drawing.Size(200, 55);
+            this.btn_search.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.btn_search.Size = new System.Drawing.Size(150, 45);
             this.btn_search.TabIndex = 7;
             this.btn_search.Text = "Search";
             this.btn_search.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -217,10 +247,11 @@
             this.btn_logout.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btn_logout.IconSize = 20;
             this.btn_logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_logout.Location = new System.Drawing.Point(0, 170);
+            this.btn_logout.Location = new System.Drawing.Point(0, 138);
+            this.btn_logout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_logout.Name = "btn_logout";
-            this.btn_logout.Padding = new System.Windows.Forms.Padding(40, 0, 20, 0);
-            this.btn_logout.Size = new System.Drawing.Size(200, 30);
+            this.btn_logout.Padding = new System.Windows.Forms.Padding(30, 0, 15, 0);
+            this.btn_logout.Size = new System.Drawing.Size(150, 24);
             this.btn_logout.TabIndex = 6;
             this.btn_logout.Text = "Log out";
             this.btn_logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -239,10 +270,11 @@
             this.btn_settings.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btn_settings.IconSize = 20;
             this.btn_settings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_settings.Location = new System.Drawing.Point(0, 140);
+            this.btn_settings.Location = new System.Drawing.Point(0, 114);
+            this.btn_settings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_settings.Name = "btn_settings";
-            this.btn_settings.Padding = new System.Windows.Forms.Padding(40, 0, 20, 0);
-            this.btn_settings.Size = new System.Drawing.Size(200, 30);
+            this.btn_settings.Padding = new System.Windows.Forms.Padding(30, 0, 15, 0);
+            this.btn_settings.Size = new System.Drawing.Size(150, 24);
             this.btn_settings.TabIndex = 5;
             this.btn_settings.Text = "Settings";
             this.btn_settings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -260,10 +292,11 @@
             this.btn_profile.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btn_profile.IconSize = 20;
             this.btn_profile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_profile.Location = new System.Drawing.Point(0, 110);
+            this.btn_profile.Location = new System.Drawing.Point(0, 90);
+            this.btn_profile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_profile.Name = "btn_profile";
-            this.btn_profile.Padding = new System.Windows.Forms.Padding(40, 0, 20, 0);
-            this.btn_profile.Size = new System.Drawing.Size(200, 30);
+            this.btn_profile.Padding = new System.Windows.Forms.Padding(30, 0, 15, 0);
+            this.btn_profile.Size = new System.Drawing.Size(150, 24);
             this.btn_profile.TabIndex = 4;
             this.btn_profile.Text = "Profile";
             this.btn_profile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -282,10 +315,11 @@
             this.btn_user.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btn_user.IconSize = 30;
             this.btn_user.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_user.Location = new System.Drawing.Point(0, 55);
+            this.btn_user.Location = new System.Drawing.Point(0, 45);
+            this.btn_user.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_user.Name = "btn_user";
-            this.btn_user.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btn_user.Size = new System.Drawing.Size(200, 55);
+            this.btn_user.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.btn_user.Size = new System.Drawing.Size(150, 45);
             this.btn_user.TabIndex = 2;
             this.btn_user.Text = "User";
             this.btn_user.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -304,9 +338,10 @@
             this.btn_home.IconSize = 30;
             this.btn_home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_home.Location = new System.Drawing.Point(0, 0);
+            this.btn_home.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_home.Name = "btn_home";
-            this.btn_home.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btn_home.Size = new System.Drawing.Size(200, 55);
+            this.btn_home.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.btn_home.Size = new System.Drawing.Size(150, 45);
             this.btn_home.TabIndex = 1;
             this.btn_home.Text = "Home";
             this.btn_home.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -318,8 +353,9 @@
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(228, 85);
+            this.panel4.Size = new System.Drawing.Size(171, 69);
             this.panel4.TabIndex = 0;
             // 
             // panel2
@@ -327,9 +363,10 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.label5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(230, 0);
+            this.panel2.Location = new System.Drawing.Point(173, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1494, 209);
+            this.panel2.Size = new System.Drawing.Size(1120, 170);
             this.panel2.TabIndex = 2;
             // 
             // label5
@@ -338,8 +375,9 @@
             this.label5.Dock = System.Windows.Forms.DockStyle.Top;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(0, 0);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(161, 20);
+            this.label5.Size = new System.Drawing.Size(140, 17);
             this.label5.TabIndex = 3;
             this.label5.Text = "Panel Background";
             // 
@@ -353,18 +391,20 @@
             this.panel6.Controls.Add(this.label4);
             this.panel6.Controls.Add(this.panel10);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(1461, 209);
+            this.panel6.Location = new System.Drawing.Point(1096, 170);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(263, 549);
+            this.panel6.Size = new System.Drawing.Size(197, 446);
             this.panel6.TabIndex = 3;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(109, 288);
+            this.label11.Location = new System.Drawing.Point(82, 234);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 20);
+            this.label11.Size = new System.Drawing.Size(46, 17);
             this.label11.TabIndex = 37;
             this.label11.Text = "Artist";
             // 
@@ -372,9 +412,10 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(86, 259);
+            this.label10.Location = new System.Drawing.Point(64, 210);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(102, 20);
+            this.label10.Size = new System.Drawing.Size(89, 17);
             this.label10.TabIndex = 36;
             this.label10.Text = "Song name";
             // 
@@ -385,10 +426,11 @@
             this.iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconPictureBox5.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox5.IconSize = 143;
-            this.iconPictureBox5.Location = new System.Drawing.Point(67, 96);
+            this.iconPictureBox5.IconSize = 107;
+            this.iconPictureBox5.Location = new System.Drawing.Point(50, 78);
+            this.iconPictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.iconPictureBox5.Name = "iconPictureBox5";
-            this.iconPictureBox5.Size = new System.Drawing.Size(143, 160);
+            this.iconPictureBox5.Size = new System.Drawing.Size(107, 130);
             this.iconPictureBox5.TabIndex = 35;
             this.iconPictureBox5.TabStop = false;
             // 
@@ -401,10 +443,11 @@
             this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.IconSize = 44;
-            this.iconPictureBox2.Location = new System.Drawing.Point(0, 23);
+            this.iconPictureBox2.IconSize = 36;
+            this.iconPictureBox2.Location = new System.Drawing.Point(0, 19);
+            this.iconPictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(54, 44);
+            this.iconPictureBox2.Size = new System.Drawing.Size(40, 36);
             this.iconPictureBox2.TabIndex = 4;
             this.iconPictureBox2.TabStop = false;
             // 
@@ -414,8 +457,9 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Top;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(144, 20);
+            this.label4.Size = new System.Drawing.Size(125, 17);
             this.label4.TabIndex = 2;
             this.label4.Text = "Song Infomation";
             // 
@@ -428,9 +472,10 @@
             this.panel10.Controls.Add(this.btn_play);
             this.panel10.Controls.Add(this.btn_next);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel10.Location = new System.Drawing.Point(0, 384);
+            this.panel10.Location = new System.Drawing.Point(0, 312);
+            this.panel10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(263, 165);
+            this.panel10.Size = new System.Drawing.Size(197, 134);
             this.panel10.TabIndex = 0;
             // 
             // btn_repeat
@@ -442,10 +487,11 @@
             this.btn_repeat.IconColor = System.Drawing.Color.Black;
             this.btn_repeat.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btn_repeat.IconSize = 30;
-            this.btn_repeat.Location = new System.Drawing.Point(205, 78);
+            this.btn_repeat.Location = new System.Drawing.Point(154, 63);
+            this.btn_repeat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_repeat.Name = "btn_repeat";
-            this.btn_repeat.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btn_repeat.Size = new System.Drawing.Size(40, 30);
+            this.btn_repeat.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.btn_repeat.Size = new System.Drawing.Size(30, 24);
             this.btn_repeat.TabIndex = 5;
             this.btn_repeat.UseVisualStyleBackColor = true;
             // 
@@ -458,10 +504,11 @@
             this.btn_back.IconColor = System.Drawing.Color.Black;
             this.btn_back.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btn_back.IconSize = 30;
-            this.btn_back.Location = new System.Drawing.Point(67, 78);
+            this.btn_back.Location = new System.Drawing.Point(50, 63);
+            this.btn_back.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_back.Name = "btn_back";
-            this.btn_back.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btn_back.Size = new System.Drawing.Size(40, 30);
+            this.btn_back.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.btn_back.Size = new System.Drawing.Size(30, 24);
             this.btn_back.TabIndex = 6;
             this.btn_back.UseVisualStyleBackColor = true;
             // 
@@ -474,10 +521,11 @@
             this.btn_shuffle.IconColor = System.Drawing.Color.Black;
             this.btn_shuffle.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btn_shuffle.IconSize = 30;
-            this.btn_shuffle.Location = new System.Drawing.Point(21, 78);
+            this.btn_shuffle.Location = new System.Drawing.Point(16, 63);
+            this.btn_shuffle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_shuffle.Name = "btn_shuffle";
-            this.btn_shuffle.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btn_shuffle.Size = new System.Drawing.Size(40, 30);
+            this.btn_shuffle.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.btn_shuffle.Size = new System.Drawing.Size(30, 24);
             this.btn_shuffle.TabIndex = 4;
             this.btn_shuffle.UseVisualStyleBackColor = true;
             // 
@@ -490,10 +538,11 @@
             this.btn_play.IconColor = System.Drawing.Color.Black;
             this.btn_play.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btn_play.IconSize = 40;
-            this.btn_play.Location = new System.Drawing.Point(113, 78);
+            this.btn_play.Location = new System.Drawing.Point(85, 63);
+            this.btn_play.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_play.Name = "btn_play";
-            this.btn_play.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btn_play.Size = new System.Drawing.Size(45, 35);
+            this.btn_play.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.btn_play.Size = new System.Drawing.Size(34, 28);
             this.btn_play.TabIndex = 3;
             this.btn_play.UseVisualStyleBackColor = true;
             // 
@@ -506,10 +555,11 @@
             this.btn_next.IconColor = System.Drawing.Color.Black;
             this.btn_next.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btn_next.IconSize = 30;
-            this.btn_next.Location = new System.Drawing.Point(159, 78);
+            this.btn_next.Location = new System.Drawing.Point(119, 63);
+            this.btn_next.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_next.Name = "btn_next";
-            this.btn_next.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btn_next.Size = new System.Drawing.Size(40, 30);
+            this.btn_next.Padding = new System.Windows.Forms.Padding(15, 0, 15, 0);
+            this.btn_next.Size = new System.Drawing.Size(30, 24);
             this.btn_next.TabIndex = 2;
             this.btn_next.UseVisualStyleBackColor = true;
             // 
@@ -518,9 +568,10 @@
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(230, 209);
+            this.label1.Location = new System.Drawing.Point(173, 170);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 20);
+            this.label1.Size = new System.Drawing.Size(67, 17);
             this.label1.TabIndex = 4;
             this.label1.Text = "Settings";
             // 
@@ -533,10 +584,11 @@
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 44;
-            this.iconPictureBox1.Location = new System.Drawing.Point(236, 232);
+            this.iconPictureBox1.IconSize = 36;
+            this.iconPictureBox1.Location = new System.Drawing.Point(177, 188);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(56, 44);
+            this.iconPictureBox1.Size = new System.Drawing.Size(42, 36);
             this.iconPictureBox1.TabIndex = 5;
             this.iconPictureBox1.TabStop = false;
             // 
@@ -544,9 +596,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(313, 285);
+            this.label2.Location = new System.Drawing.Point(235, 232);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 20);
+            this.label2.Size = new System.Drawing.Size(80, 17);
             this.label2.TabIndex = 6;
             this.label2.Text = "Language";
             // 
@@ -554,9 +607,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(348, 340);
+            this.label3.Location = new System.Drawing.Point(261, 276);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(511, 20);
+            this.label3.Size = new System.Drawing.Size(438, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Choose your language, apply changes by restarting your application";
             // 
@@ -566,18 +620,20 @@
             this.comboBox1.Items.AddRange(new object[] {
             "English (default)",
             "Vietnamese"});
-            this.comboBox1.Location = new System.Drawing.Point(894, 340);
+            this.comboBox1.Location = new System.Drawing.Point(670, 276);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
+            this.comboBox1.Size = new System.Drawing.Size(92, 21);
             this.comboBox1.TabIndex = 8;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(313, 397);
+            this.label6.Location = new System.Drawing.Point(235, 323);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 20);
+            this.label6.Size = new System.Drawing.Size(77, 17);
             this.label6.TabIndex = 9;
             this.label6.Text = "Auto Play";
             // 
@@ -585,9 +641,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(348, 455);
+            this.label7.Location = new System.Drawing.Point(261, 370);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(465, 20);
+            this.label7.Size = new System.Drawing.Size(397, 17);
             this.label7.TabIndex = 10;
             this.label7.Text = "You don\'t need to move to the next audio, we\'ll do that for you";
             // 
@@ -595,9 +652,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(313, 506);
+            this.label8.Location = new System.Drawing.Point(235, 411);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 20);
+            this.label8.Size = new System.Drawing.Size(78, 17);
             this.label8.TabIndex = 11;
             this.label8.Text = "Download";
             // 
@@ -605,9 +663,10 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(325, 541);
+            this.label9.Location = new System.Drawing.Point(244, 440);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(81, 20);
+            this.label9.Size = new System.Drawing.Size(70, 17);
             this.label9.TabIndex = 12;
             this.label9.Text = "Location";
             this.label9.Click += new System.EventHandler(this.label9_Click);
@@ -615,48 +674,28 @@
             // txt_location
             // 
             this.txt_location.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txt_location.Location = new System.Drawing.Point(368, 570);
+            this.txt_location.Location = new System.Drawing.Point(276, 463);
+            this.txt_location.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txt_location.Name = "txt_location";
-            this.txt_location.Size = new System.Drawing.Size(534, 22);
+            this.txt_location.Size = new System.Drawing.Size(402, 20);
             this.txt_location.TabIndex = 13;
             // 
             // btn_changeLocation
             // 
-            this.btn_changeLocation.Location = new System.Drawing.Point(927, 566);
+            this.btn_changeLocation.Location = new System.Drawing.Point(695, 460);
+            this.btn_changeLocation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_changeLocation.Name = "btn_changeLocation";
-            this.btn_changeLocation.Size = new System.Drawing.Size(134, 31);
+            this.btn_changeLocation.Size = new System.Drawing.Size(100, 25);
             this.btn_changeLocation.TabIndex = 14;
             this.btn_changeLocation.Text = "Change Location";
             this.btn_changeLocation.UseVisualStyleBackColor = true;
             // 
-            // btn_upload
-            // 
-            this.btn_upload.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_upload.FlatAppearance.BorderSize = 0;
-            this.btn_upload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_upload.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_upload.IconChar = FontAwesome.Sharp.IconChar.Upload;
-            this.btn_upload.IconColor = System.Drawing.Color.Black;
-            this.btn_upload.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btn_upload.IconSize = 30;
-            this.btn_upload.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_upload.Location = new System.Drawing.Point(0, 165);
-            this.btn_upload.Name = "btn_upload";
-            this.btn_upload.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btn_upload.Size = new System.Drawing.Size(200, 55);
-            this.btn_upload.TabIndex = 6;
-            this.btn_upload.Text = "Upload";
-            this.btn_upload.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_upload.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_upload.UseVisualStyleBackColor = true;
-            this.btn_upload.Click += new System.EventHandler(this.btn_upload_Click);
-            // 
             // settings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1724, 758);
+            this.ClientSize = new System.Drawing.Size(1293, 616);
             this.Controls.Add(this.btn_changeLocation);
             this.Controls.Add(this.txt_location);
             this.Controls.Add(this.label9);
@@ -671,6 +710,7 @@
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelMenu);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "settings";
             this.Text = "settings";
             this.Load += new System.EventHandler(this.settings_Load);

@@ -39,3 +39,35 @@ D:\Học tập\Lap trinh mang can ban\HopAmNhac\RhythmBox\RhythmBox\RhythmBox\ob
 D:\Học tập\Lap trinh mang can ban\HopAmNhac\RhythmBox\RhythmBox\RhythmBox\obj\Debug\RhythmBox.resetPassword.resources
 D:\Học tập\Lap trinh mang can ban\HopAmNhac\RhythmBox\RhythmBox\RhythmBox\obj\Debug\RhythmBox.signUpGoogle.resources
 D:\Học tập\Lap trinh mang can ban\HopAmNhac\RhythmBox\RhythmBox\RhythmBox\obj\Debug\RhythmBox.UploadTrack.resources
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\bin\Debug\RhythmBox.exe.config
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\bin\Debug\RhythmBox.exe
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\bin\Debug\RhythmBox.pdb
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\bin\Debug\FontAwesome.Sharp.dll
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\bin\Debug\Krypton.Toolkit.dll
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\bin\Debug\Newtonsoft.Json.dll
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\bin\Debug\Krypton.Toolkit.xml
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\bin\Debug\Newtonsoft.Json.xml
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.csproj.AssemblyReference.cache
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.csproj.SuggestedBindingRedirects.cache
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.Album.resources
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.Artist.resources
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.enterCodeResetPassword.resources
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.forgotPassword.resources
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.MainPage.resources
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.playlistPage.resources
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.Profile.resources
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.resetPassword.resources
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.searchPage.resources
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.settings.resources
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.SignIn.resources
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.SignIn_UpgradeForm.resources
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.SignUp.resources
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.Properties.Resources.resources
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.signUpGoogle.resources
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.UploadTrack.resources
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.csproj.GenerateResource.cache
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.csproj.CoreCompileInputs.cache
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.csproj.CopyComplete
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.exe
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.pdb
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.SignUp_UpgradeForm.resources

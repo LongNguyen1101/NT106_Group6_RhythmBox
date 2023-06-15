@@ -40,6 +40,9 @@
     <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
+    <Reference Include="Krypton.Toolkit, Version=70.22.11.312, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Krypton.Toolkit.70.22.11.312\lib\net472\Krypton.Toolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -47,6 +50,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -127,6 +131,12 @@
     <Compile Include="SignIn.Designer.cs">
       <DependentUpon>SignIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="SignIn_UpgradeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignIn_UpgradeForm.Designer.cs">
+      <DependentUpon>SignIn_UpgradeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SignUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +150,12 @@
     </Compile>
     <Compile Include="signUpGoogle.Designer.cs">
       <DependentUpon>signUpGoogle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignUp_UpgradeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignUp_UpgradeForm.Designer.cs">
+      <DependentUpon>SignUp_UpgradeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="TokenManager.cs" />
     <Compile Include="UploadTrack.cs">
@@ -181,6 +197,9 @@
     <EmbeddedResource Include="SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SignIn_UpgradeForm.resx">
+      <DependentUpon>SignIn_UpgradeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +214,9 @@
     </Compile>
     <EmbeddedResource Include="signUpGoogle.resx">
       <DependentUpon>signUpGoogle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignUp_UpgradeForm.resx">
+      <DependentUpon>SignUp_UpgradeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UploadTrack.resx">
       <DependentUpon>UploadTrack.cs</DependentUpon>
