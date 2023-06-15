@@ -33,6 +33,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnCloseWindow = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lbMessageIncorrect = new System.Windows.Forms.Label();
             this.btnShowHidePass = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -45,7 +46,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbMessageIncorrect = new System.Windows.Forms.Label();
             this.panelTitleBar.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -112,6 +112,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(403, 440);
             this.panel2.TabIndex = 5;
+            // 
+            // lbMessageIncorrect
+            // 
+            this.lbMessageIncorrect.AutoSize = true;
+            this.lbMessageIncorrect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbMessageIncorrect.Location = new System.Drawing.Point(34, 252);
+            this.lbMessageIncorrect.Name = "lbMessageIncorrect";
+            this.lbMessageIncorrect.Size = new System.Drawing.Size(167, 15);
+            this.lbMessageIncorrect.TabIndex = 13;
+            this.lbMessageIncorrect.Text = "Email or password is incorrect!";
             // 
             // btnShowHidePass
             // 
@@ -181,6 +191,7 @@
             this.linkForgotPass.TabIndex = 7;
             this.linkForgotPass.TabStop = true;
             this.linkForgotPass.Text = "Forgot password";
+            this.linkForgotPass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkForgotPass_LinkClicked);
             // 
             // label3
             // 
@@ -251,16 +262,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(563, 601);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
-            // 
-            // lbMessageIncorrect
-            // 
-            this.lbMessageIncorrect.AutoSize = true;
-            this.lbMessageIncorrect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbMessageIncorrect.Location = new System.Drawing.Point(34, 252);
-            this.lbMessageIncorrect.Name = "lbMessageIncorrect";
-            this.lbMessageIncorrect.Size = new System.Drawing.Size(167, 15);
-            this.lbMessageIncorrect.TabIndex = 13;
-            this.lbMessageIncorrect.Text = "Email or password is incorrect!";
             // 
             // SignIn_UpgradeForm
             // 

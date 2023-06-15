@@ -128,5 +128,10 @@ namespace RhythmBox
                 return;
             }
         }
+
+        private void linkForgotPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            new ForgotPassword_UpgradeForm().ShowDialog();
+        }
     }
 }

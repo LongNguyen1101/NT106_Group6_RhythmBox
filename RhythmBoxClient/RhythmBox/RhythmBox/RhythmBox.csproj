@@ -83,11 +83,23 @@
     <Compile Include="enterCodeResetPassword.Designer.cs">
       <DependentUpon>enterCodeResetPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="enterOTP_UpgradeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="enterOTP_UpgradeForm.Designer.cs">
+      <DependentUpon>enterOTP_UpgradeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forgotPassword.Designer.cs">
       <DependentUpon>forgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword_UpgradeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword_UpgradeForm.Designer.cs">
+      <DependentUpon>ForgotPassword_UpgradeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainPage.cs">
       <SubType>Form</SubType>
@@ -112,6 +124,12 @@
     </Compile>
     <Compile Include="resetPassword.Designer.cs">
       <DependentUpon>resetPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPassword_UpgradeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResetPassword_UpgradeForm.Designer.cs">
+      <DependentUpon>ResetPassword_UpgradeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="searchPage.cs">
       <SubType>Form</SubType>
@@ -173,8 +191,14 @@
     <EmbeddedResource Include="enterCodeResetPassword.resx">
       <DependentUpon>enterCodeResetPassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="enterOTP_UpgradeForm.resx">
+      <DependentUpon>enterOTP_UpgradeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forgotPassword.resx">
       <DependentUpon>forgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgotPassword_UpgradeForm.resx">
+      <DependentUpon>ForgotPassword_UpgradeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainPage.resx">
       <DependentUpon>MainPage.cs</DependentUpon>
@@ -187,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="resetPassword.resx">
       <DependentUpon>resetPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResetPassword_UpgradeForm.resx">
+      <DependentUpon>ResetPassword_UpgradeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="searchPage.resx">
       <DependentUpon>searchPage.cs</DependentUpon>

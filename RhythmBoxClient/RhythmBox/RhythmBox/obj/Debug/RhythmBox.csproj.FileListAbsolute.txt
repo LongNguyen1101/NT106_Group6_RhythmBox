@@ -71,3 +71,6 @@ E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debu
 E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.exe
 E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.pdb
 E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.SignUp_UpgradeForm.resources
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.enterOTP_UpgradeForm.resources
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.ForgotPassword_UpgradeForm.resources
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.ResetPassword_UpgradeForm.resources
