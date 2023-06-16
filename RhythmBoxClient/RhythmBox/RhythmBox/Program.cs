@@ -16,7 +16,7 @@ namespace RhythmBox
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SignIn_UpgradeForm());
+            Application.Run(new MainPage());
         }
     }
 }

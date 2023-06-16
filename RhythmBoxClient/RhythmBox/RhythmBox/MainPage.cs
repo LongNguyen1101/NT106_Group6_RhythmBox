@@ -3,216 +3,716 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Channels;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using NAudio.Wave;
+using Newtonsoft.Json.Linq;
+
 namespace RhythmBox
 {
 
     public partial class MainPage : Form
     {
-        private int borderSize = 2;
-        private Size formSize;
-        private IconButton currentBtn;
-        private Panel leftBorderBtn;
-        private Form currentChildForm;
-        private struct RGBColors
-        {
-            public static Color color1 = Color.FromArgb(172, 126, 241);
-            public static Color color2 = Color.FromArgb(249, 118, 176);
-            public static Color color3 = Color.FromArgb(253, 138, 114);
-            public static Color color4 = Color.FromArgb(95, 77, 221);
-            public static Color color5 = Color.FromArgb(249, 88, 155);
-            public static Color color6 = Color.FromArgb(24, 161, 251);
-        }
-        private void DisableButton()
-        {
-            if (currentBtn != null)
-            {
-                currentBtn.BackColor = Color.FromArgb(31, 30, 68);
-                currentBtn.ForeColor = Color.Gainsboro;
-                currentBtn.TextAlign = ContentAlignment.MiddleLeft;
-                currentBtn.IconColor = Color.Gainsboro;
-                currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-                currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            }
-        }
-        private void AdjustForm()
-        {
-            switch (this.WindowState)
-            {
-                case FormWindowState.Maximized: //Maximized form (After)
-                    this.Padding = new Padding(8, 8, 8, 0);
-                    break;
-                case FormWindowState.Normal: //Restored form (After)
-                    if (this.Padding.Top != borderSize)
-                        this.Padding = new Padding(borderSize);
-                    break;
-            }
-        }
-        private void OpenChildForm(Form childForm)
-        {
-            //open only form
-            if (currentChildForm != null)
-            {
-                currentChildForm.Close();
-            }
-            currentChildForm = childForm;
-            //End
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panelDesktop.Controls.Add(childForm);
-            panelDesktop.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-            //lblTitleChildForm.Text = childForm.Text;
-        }
-        private void ActivateButton(object senderBtn, Color color)
-        {
-            if (senderBtn != null)
-            {
-                DisableButton();
-                //Button
-                currentBtn = (IconButton)senderBtn;
-                currentBtn.BackColor = Color.FromArgb(37, 36, 81);
-                currentBtn.ForeColor = color;
-                currentBtn.TextAlign = ContentAlignment.MiddleCenter;
-                currentBtn.IconColor = color;
-                currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
-                currentBtn.ImageAlign = ContentAlignment.MiddleRight;
-                //Left border button
-                leftBorderBtn.BackColor = color;
-                leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
-                leftBorderBtn.Visible = true;
-                leftBorderBtn.BringToFront();
-                //Current Child Form Icon
-                //iconCurrentChildForm.IconChar = currentBtn.IconChar;
-                //iconCurrentChildForm.IconColor = color;
-            }
-        }
+        FlowLayoutPanel panelRecentlyPlayed, panelTopTrack, panelTopAlbum, panelTopArtist;
+        TableLayoutPanel tableRecentlyPlayed, tableTopTrack, tableTopAlbum, tableTopArtist;
+        Label labelRecentlyPlayed, labelTopTrack, labelTopAlbum, labelTopArtist;
+        string pageColor = "#a9dedc";
+        string baseUrl = "https://rhythmboxserver.azurewebsites.net/api";
+        HttpClient client = new HttpClient();
+        string token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJsb25nbmd1eWVuaG9hbmcxMTAxMUBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiZXhwIjoxNjg2OTc0MTMyfQ.cEqxEJA7KmAADhJioCDSCAhwG9xbOs38Nxf81icSAXESTeBbVliLAlXj5PPoScfGWVxxbrfwv-DAp-ysHoXt9A";
+        private bool isPlaying = false;
+        private bool isLooping = false;
+        private bool isRandom = false;
+        private Thread playbackThread;
+        private WaveOutEvent waveOut;
+        private System.Windows.Forms.Timer trackBarTimer;
+        private Mp3FileReader mp3Reader;
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-        private void btnMaximize_Click(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Normal)
-                WindowState = FormWindowState.Maximized;
-            else
-                WindowState = FormWindowState.Normal;
-        }
-        private void btnMinimize_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
-        //Remove transparent border in maximized state
-        private void FormMainMenu_Resize(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Maximized)
-                FormBorderStyle = FormBorderStyle.None;
-            else
-                FormBorderStyle = FormBorderStyle.Sizable;
-        }
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
         public MainPage()
         {
             InitializeComponent();
+
         }
-        
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            formSize = this.ClientSize;
+            btn_home.ForeColor = Color.Black;
+            btn_home.IconColor = Color.Black;
+
+            this.SizeChanged += MainForm_SizeChanged;
+            splitContainerPage.FixedPanel = FixedPanel.Panel2;
+            panelController.Padding = new Padding(0);
+            lbTrackTitle.TextAlign = ContentAlignment.MiddleCenter;
+
+            trackBarTimer = new System.Windows.Forms.Timer();
+            trackBarTimer.Interval = 100; 
+            trackBarTimer.Tick += TrackBarTimer_Tick;
+            trackBar.Scroll += new EventHandler(TrackBar_Scroll);
+            trackBar.Minimum = 0;
+
+            addTable();
+            addPanel();
+            addLabel();
+
+            tableRecentlyPlayed.Controls.Add(labelRecentlyPlayed, 0, 0);
+            tableRecentlyPlayed.Controls.Add(panelRecentlyPlayed, 0, 1);
+
+            tableTopTrack.Controls.Add(labelTopTrack, 0, 0);
+            tableTopTrack.Controls.Add(panelTopTrack, 0, 1);
+
+            tableTopAlbum.Controls.Add(labelTopAlbum, 0, 0);
+            tableTopAlbum.Controls.Add(panelTopAlbum, 0, 1);
+
+            tableTopArtist.Controls.Add(labelTopArtist, 0, 0);
+            tableTopArtist.Controls.Add(panelTopArtist, 0, 1);
+
+            //Add Table to FlowLayoutPanel
+            flowLayoutPanelShow.Controls.Add(tableRecentlyPlayed);
+            flowLayoutPanelShow.Controls.Add(tableTopTrack);
+            flowLayoutPanelShow.Controls.Add(tableTopAlbum);
+            flowLayoutPanelShow.Controls.Add(tableTopArtist);
+
+            flowLayoutPanelShow.BackColor = ColorTranslator.FromHtml(pageColor);
+
+            getRecentlyPlayed();
+            getTopTrack();
+            getTopArtist();
+            getTopAlbum();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void addTable()
         {
+            tableRecentlyPlayed = new TableLayoutPanel();
+            tableRecentlyPlayed.BackColor = System.Drawing.ColorTranslator.FromHtml(pageColor);
+            tableRecentlyPlayed.Width = flowLayoutPanelShow.Width;
+            tableRecentlyPlayed.AutoSize = true;
+            tableRecentlyPlayed.RowCount = 2;
+            tableRecentlyPlayed.RowStyles.Add(new RowStyle(SizeType.Absolute, 60));
+            tableRecentlyPlayed.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
 
+            tableTopTrack = new TableLayoutPanel();
+            tableTopTrack.BackColor = ColorTranslator.FromHtml(pageColor);
+            tableTopTrack.Width = flowLayoutPanelShow.Width;
+            tableTopTrack.AutoSize = true;
+            tableTopTrack.RowCount = 2;
+            tableTopTrack.RowStyles.Add(new RowStyle(SizeType.Absolute, 60));
+            tableTopTrack.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
+
+            tableTopAlbum = new TableLayoutPanel();
+            tableTopAlbum.BackColor = System.Drawing.ColorTranslator.FromHtml(pageColor);
+            tableTopAlbum.Width = flowLayoutPanelShow.Width;
+            tableTopAlbum.AutoSize = true;
+            tableTopAlbum.RowCount = 2;
+            tableTopAlbum.RowStyles.Add(new RowStyle(SizeType.Absolute, 60));
+            tableTopAlbum.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
+
+            tableTopArtist = new TableLayoutPanel();
+            tableTopArtist.BackColor = System.Drawing.ColorTranslator.FromHtml(pageColor);
+            tableTopArtist.Width = flowLayoutPanelShow.Width;
+            tableTopArtist.AutoSize = true;
+            tableTopArtist.RowCount = 2;
+            tableTopArtist.RowStyles.Add(new RowStyle(SizeType.Absolute, 60));
+            tableTopArtist.RowStyles.Add(new RowStyle(SizeType.Percent, 100));
         }
 
-        private void btn_home_Click(object sender, EventArgs e)
+        private void addPanel()
         {
-            btn_home.Enabled = false;
+            panelRecentlyPlayed = new FlowLayoutPanel();
+            panelRecentlyPlayed.FlowDirection = FlowDirection.LeftToRight;
+            panelRecentlyPlayed.AutoScroll = true;
+            panelRecentlyPlayed.BackColor = ColorTranslator.FromHtml(pageColor);
+            panelRecentlyPlayed.Width = flowLayoutPanelShow.Width;
+            panelRecentlyPlayed.Dock = DockStyle.Top;
+            panelRecentlyPlayed.Height = 500;
+            panelRecentlyPlayed.AutoSize = true;
+            
+
+            panelTopTrack = new FlowLayoutPanel();
+            panelTopTrack.FlowDirection = FlowDirection.LeftToRight;
+            panelTopTrack.AutoScroll = true;
+            panelTopTrack.BackColor = ColorTranslator.FromHtml(pageColor);
+            panelTopTrack.Width = flowLayoutPanelShow.Width;
+            panelTopTrack.Height = 500;
+            panelTopTrack.AutoSize = true;
+
+            panelTopAlbum = new FlowLayoutPanel();
+            panelTopAlbum.FlowDirection = FlowDirection.LeftToRight;
+            panelTopAlbum.AutoScroll = true;
+            panelTopAlbum.BackColor = System.Drawing.ColorTranslator.FromHtml(pageColor);
+            panelTopAlbum.Width = flowLayoutPanelShow.Width;
+            panelTopAlbum.Height = 500;
+            panelTopAlbum.AutoSize = true;
+
+            panelTopArtist = new FlowLayoutPanel();
+            panelTopArtist.FlowDirection = FlowDirection.LeftToRight;
+            panelTopArtist.AutoScroll = true;
+            panelTopArtist.BackColor = System.Drawing.ColorTranslator.FromHtml(pageColor);
+            panelTopArtist.Width = flowLayoutPanelShow.Width;
+            panelTopArtist.Height = 500;
+            panelTopArtist.AutoSize = true;
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void addLabel()
         {
+            labelRecentlyPlayed = new Label();
+            labelRecentlyPlayed.Text = "Rencently Played";
+            labelRecentlyPlayed.Dock = DockStyle.Fill;
+            labelRecentlyPlayed.Font = new Font("Arial", 20, FontStyle.Bold);
+            labelRecentlyPlayed.ForeColor = Color.Black; // check
+            labelRecentlyPlayed.Location = new Point(5, 5);
 
+            labelTopTrack = new Label();
+            labelTopTrack.Text = "Top Track";
+            labelTopTrack.AutoSize = true;
+            labelTopTrack.Font = new Font("Arial", 20, FontStyle.Bold);
+            labelTopTrack.ForeColor = Color.Black; // check
+            labelTopTrack.Location = new Point(5, 5);
+
+            labelTopAlbum = new Label();
+            labelTopAlbum.Text = "Top Album";
+            labelTopAlbum.AutoSize = true;
+            labelTopAlbum.Font = new Font("Arial", 20, FontStyle.Bold);
+            labelTopAlbum.ForeColor = Color.Black; // check
+            labelTopAlbum.Location = new Point(5, 5);
+
+            labelTopArtist = new Label();
+            labelTopArtist.Text = "Top Album";
+            labelTopArtist.AutoSize = true;
+            labelTopArtist.Font = new Font("Arial", 20, FontStyle.Bold);
+            labelTopArtist.ForeColor = Color.Black; // check
+            labelTopArtist.Location = new Point(5, 5);
         }
 
-        private void btn_user_Click(object sender, EventArgs e)
+        private void MainForm_SizeChanged(object sender, EventArgs e)
+        {
+            int panelWidth = flowLayoutPanelShow.ClientSize.Width - flowLayoutPanelShow.Padding.Horizontal;
+
+            foreach (Control panel in flowLayoutPanelShow.Controls)
+            {
+                panel.Width = panelWidth;
+            }
+
+            tableRecentlyPlayed.Width = flowLayoutPanelShow.Width;
+
+            panelController.Location = CalculateGroupBoxPosition();
+        }
+
+        private Point CalculateGroupBoxPosition()
+        {
+            int x = (splitContainerPage.Panel2.ClientSize.Width - panelController.Width) / 2;
+            int y = (splitContainerPage.Panel2.ClientSize.Height - panelController.Height) / 2;
+            return new Point(x, y);
+        }
+
+        private async void getRecentlyPlayed()
+        {
+            try
+            {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                HttpResponseMessage response = await client.GetAsync($"{baseUrl}/Home/recentlyPlayed");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+
+                    JArray content = JArray.Parse(jsonResponse);
+
+                    displayRecentlyPlayed(content);
+                }
+                else
+                {
+                    MessageBox.Show(response.StatusCode.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error from getting tracks {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void getTopTrack()
+        {
+            try
+            {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                HttpResponseMessage response = await client.GetAsync($"{baseUrl}/Home/track");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+
+                    JArray content = JArray.Parse(jsonResponse);
+
+                    displayTrack(content);
+                }
+                else
+                {
+                    MessageBox.Show(response.StatusCode.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error from getting tracks {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void getTopAlbum()
+        {
+            try
+            {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                HttpResponseMessage response = await client.GetAsync($"{baseUrl}/Home/album");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+
+                    JArray content = JArray.Parse(jsonResponse);
+
+                    displayTopAlbum(content);
+                }
+                else
+                {
+                    MessageBox.Show(response.StatusCode.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error from getting tracks {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private async void getTopArtist()
+        {
+            try
+            {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                HttpResponseMessage response = await client.GetAsync($"{baseUrl}/Home/artist");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+
+                    JArray content = JArray.Parse(jsonResponse);
+
+                    displayTopArtist(content);
+                }
+                else
+                {
+                    MessageBox.Show(response.StatusCode.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error from getting tracks {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void displayTrack(JArray tracks)
+        {
+            foreach (JObject track in tracks)
+            {
+                Panel childPanel = new Panel();
+                childPanel.BackColor = ColorTranslator.FromHtml(pageColor);
+                childPanel.Width = 300;
+                childPanel.Height = 400;
+
+                Image image;
+                byte[] imageData = track["TrackImage"].ToObject<byte[]>();
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    image = Image.FromStream(ms);
+                }
+
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                pictureBox.Dock = DockStyle.Fill;
+                pictureBox.Image = image;
+
+                Label label = new Label();
+                label.Text = track["Title"].ToString();
+                label.TextAlign = ContentAlignment.MiddleCenter;
+                label.Dock = DockStyle.Bottom;
+
+                childPanel.Click += (sender, e) =>
+                {
+                    setUpWhilePlaying(track["TrackID"].ToObject<int>(), track["Title"].ToString(), image);
+                };
+
+                pictureBox.Click += (sender, e) =>
+                {
+                    setUpWhilePlaying(track["TrackID"].ToObject<int>(), track["Title"].ToString(), image);
+                };
+
+                label.Click += (sender, e) =>
+                {
+                    setUpWhilePlaying(track["TrackID"].ToObject<int>(), track["Title"].ToString(), image);
+                };
+
+                pictureBox.MouseEnter += (sender, e) =>
+                {
+                    pictureBox.Image = MakeImageSemiTransparent(pictureBox.Image);
+                };
+
+                pictureBox.MouseLeave += (sender, e) =>
+                {
+                    pictureBox.Image = image;
+                };
+
+                childPanel.Controls.Add(label);
+                childPanel.Controls.Add(pictureBox);
+
+                panelTopTrack.Controls.Add(childPanel);
+            }
+        }
+
+        private void displayRecentlyPlayed(JArray tracks)
+        {
+            foreach (JObject track in tracks)
+            {
+                Panel childPanel = new Panel();
+                childPanel.BackColor = ColorTranslator.FromHtml(pageColor);
+                childPanel.Width = 300;
+                childPanel.Height = 400;
+
+                Image image;
+                byte[] imageData = track["TrackImage"].ToObject<byte[]>();
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    image = Image.FromStream(ms);
+                }
+
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                pictureBox.Dock = DockStyle.Fill;
+                pictureBox.Image = image;
+
+                Label label = new Label();
+                label.Text = track["Title"].ToString();
+                label.TextAlign = ContentAlignment.MiddleCenter;
+                label.Dock = DockStyle.Bottom;
+
+                childPanel.Click += (sender, e) =>
+                {
+                    setUpWhilePlaying(track["TrackID"].ToObject<int>(), track["Title"].ToString(), image);
+                };
+
+                pictureBox.Click += (sender, e) =>
+                {
+                    setUpWhilePlaying(track["TrackID"].ToObject<int>(), track["Title"].ToString(), image);
+                };
+
+                label.Click += (sender, e) =>
+                {
+                    setUpWhilePlaying(track["TrackID"].ToObject<int>(), track["Title"].ToString(), image);
+                };
+
+                pictureBox.MouseEnter += (sender, e) =>
+                {
+                    pictureBox.Image = MakeImageSemiTransparent(pictureBox.Image);
+                };
+
+                pictureBox.MouseLeave += (sender, e) =>
+                {
+                    pictureBox.Image = image;
+                };
+
+                childPanel.Controls.Add(label);
+                childPanel.Controls.Add(pictureBox);
+
+                panelRecentlyPlayed.Controls.Add(childPanel);
+            }
+        }
+
+        private void displayTopAlbum(JArray albums)
+        {
+            foreach (JObject album in albums)
+            {
+                Panel childPanel = new Panel();
+                childPanel.BackColor = ColorTranslator.FromHtml(pageColor);
+                childPanel.Width = 300;
+                childPanel.Height = 400;
+
+                Image image;
+                byte[] imageData = album["AlbumImage"].ToObject<byte[]>();
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    image = Image.FromStream(ms);
+                }
+
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                pictureBox.Dock = DockStyle.Fill;
+                pictureBox.Image = image;
+
+                Label label = new Label();
+                label.Text = album["Title"].ToString();
+                label.TextAlign = ContentAlignment.MiddleCenter;
+                label.Dock = DockStyle.Bottom;
+
+                childPanel.Controls.Add(label);
+                childPanel.Controls.Add(pictureBox);
+
+                childPanel.Click += (sender, e) =>
+                {
+                    Panel clickedPanel = (Panel)sender;
+                    Task.Run(() => MessageBox.Show("Hello"));
+                };
+
+                pictureBox.Click += (sender, e) =>
+                {
+                    
+                };
+
+                panelTopTrack.Controls.Add(childPanel);
+            }
+        }
+
+        private void displayTopArtist(JArray artists)
+        {
+            foreach (JObject artist in artists)
+            {
+                Panel childPanel = new Panel();
+                childPanel.BackColor = ColorTranslator.FromHtml(pageColor);
+                childPanel.Width = 300;
+                childPanel.Height = 400;
+
+                Image image;
+                byte[] imageData = artist["ArtistImage"].ToObject<byte[]>();
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    image = Image.FromStream(ms);
+                }
+
+                PictureBox pictureBox = new PictureBox();
+                pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+                pictureBox.Dock = DockStyle.Fill;
+                pictureBox.Image = image;
+
+                Label label = new Label();
+                label.Text = artist["FullName"].ToString();
+                label.TextAlign = ContentAlignment.MiddleCenter;
+                label.Dock = DockStyle.Bottom;
+
+                childPanel.Controls.Add(label);
+                childPanel.Controls.Add(pictureBox);
+
+                panelTopArtist.Controls.Add(childPanel);
+            }
+        }
+
+        private async Task<(TimeSpan, byte[])?> getTrack(int trackId)
+        {
+            try
+            {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                HttpResponseMessage response = await client.GetAsync($"{baseUrl}/Play/trackID?trackID={trackId}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+
+                    JObject content = JObject.Parse(jsonResponse);
+
+                    return (content["Item3"].ToObject<TimeSpan>(), content["Item4"].ToObject<byte[]>());
+                }
+                else
+                {
+                    MessageBox.Show(response.StatusCode.ToString());
+                }
+                return null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error from getting tracks {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return null;
+            }
+        }
+
+        private async void playTrack(int trackId)
+        {
+            isPlaying = true;
+
+            var data = await Task.Run(() => getTrack(trackId).Result);
+
+            trackBar.Maximum = (int)data.Value.Item1.TotalSeconds;
+            labelDuration.Text = data.Value.Item1.ToString().Replace("00:", "");
+
+            playbackThread = new Thread(() =>
+            {
+                byte[] audioData = data.Value.Item2;
+
+                MemoryStream stream = new MemoryStream(audioData);
+                mp3Reader = new Mp3FileReader(stream);
+                waveOut = new WaveOutEvent();
+                    
+                waveOut.Init(mp3Reader);
+                waveOut.Play();
+
+                isPlaying = true;
+
+                while (waveOut.PlaybackState == PlaybackState.Playing && isPlaying)
+                {
+                    Thread.Sleep(100);
+                }
+
+                waveOut.Stop();
+            });
+
+            playbackThread.Start();
+        }
+
+        private void stopPlayTrack()
         {
             
+            if (isPlaying)
+            {
+                if (playbackThread !=  null) playbackThread.Abort();
+                waveOut.Dispose();
+                mp3Reader.Dispose();
+                trackBarTimer.Stop();
+            }
+            isPlaying = false;
         }
 
-        private void btn_logout_Click(object sender, EventArgs e)
+        private void displayTitle(string title, Image image)
         {
-            new SignIn().Show();
-            this.Close();
+            pictureBoxCover.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxCover.Dock = DockStyle.Fill;
+            pictureBoxCover.Image = image;
+
+            lbTrackTitle.Text = title;
         }
 
-        private void panel5_Paint(object sender, PaintEventArgs e)
+        private void MainPage_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            stopPlayTrack();
         }
 
-        private void panel7_Paint(object sender, PaintEventArgs e)
+        private void iconPlay_Click(object sender, EventArgs e)
         {
-
+            if (isPlaying)
+            {
+                isPlaying = false;
+                iconPlay.IconChar = IconChar.Play;
+                if (waveOut != null) waveOut.Pause();
+            }
+            else
+            {
+                if (waveOut == null) return;
+                isPlaying = true;
+                iconPlay.IconChar = IconChar.Pause;
+                if (waveOut != null) waveOut.Play();
+            }
         }
 
-        private void btn_profile_Click(object sender, EventArgs e)
+        private void setUpWhilePlaying(int id, string title, Image image)
         {
-            new Profile().Show();
-            this.Hide();
+            if (isPlaying) stopPlayTrack();
+            playTrack(id);
+            displayTitle(title, image);
+            iconPlay.IconChar = IconChar.Pause;
+            trackBarTimer.Start();
         }
 
-        private void btn_settings_Click(object sender, EventArgs e)
+        private void TrackBarTimer_Tick(object sender, EventArgs e)
         {
-            new settings().Show();
-            this.Hide() ;
+            if (waveOut != null && waveOut.PlaybackState == PlaybackState.Playing)
+            {
+                TimeSpan currentTime = mp3Reader.CurrentTime;
+
+                labelTrackRunning.Text = currentTime.ToString(@"mm\:ss");
+                trackBar.Value = (int)currentTime.TotalSeconds;
+
+                if (mp3Reader.Position >= mp3Reader.Length)
+                {
+                    if (isLooping)
+                    {
+                        mp3Reader.Position = 0;
+                        waveOut.Play();
+                    }
+                    else
+                    {
+                        iconPlay.IconChar = IconChar.Play;
+                        stopPlayTrack();
+                    }
+                }
+            }
         }
 
-        private void btn_search_Click(object sender, EventArgs e)
+        private void TrackBar_Scroll(object sender, EventArgs e)
         {
-            new searchPage().Show();
-            this.Hide();
+            if (waveOut != null && waveOut.PlaybackState == PlaybackState.Playing)
+            {
+                int trackBarValue = trackBar.Value;
+
+                TimeSpan newPosition = TimeSpan.FromSeconds(trackBarValue);
+
+                mp3Reader.CurrentTime = newPosition;
+            }
         }
 
-        private void btn_playlist_Click(object sender, EventArgs e)
+        private Image MakeImageSemiTransparent(Image image)
         {
-            new playlistPage().Show();
-            this.Hide();
+            Bitmap bitmap = new Bitmap(image);
+
+            for (int y = 0; y < bitmap.Height; y++)
+            {
+                for (int x = 0; x < bitmap.Width; x++)
+                {
+                    Color pixelColor = bitmap.GetPixel(x, y);
+                    Color newColor = Color.FromArgb(128, pixelColor.R, pixelColor.G, pixelColor.B);
+                    bitmap.SetPixel(x, y, newColor);
+                }
+            }
+
+            return bitmap;
         }
 
-        private void btn_artist_Click(object sender, EventArgs e)
+        private void iconLooping_Click(object sender, EventArgs e)
         {
-            new Artist().Show();
-            this.Hide();
+            if (isLooping)
+            {
+                isLooping = false;
+                iconLooping.IconColor = Color.DimGray;
+            }
+            else
+            {
+                isLooping = true;
+                iconLooping.IconColor = Color.Black;
+            }
         }
 
-        private void btn_album_Click(object sender, EventArgs e)
+        private void iconRandom_Click(object sender, EventArgs e)
         {
-            new Album().Show();
-            this.Hide();
+            isRandom = !isRandom;
+
+            if (isLooping)
+            {
+                iconRandom.IconColor = Color.DimGray;
+            }
+            else
+            {
+                iconRandom.IconColor = Color.Black;
+            }
+
         }
 
-        private void btn_upload_Click(object sender, EventArgs e)
-        {
-            new UploadTrack ().Show();
-            this.Hide();
-        }
+
     }
 }
