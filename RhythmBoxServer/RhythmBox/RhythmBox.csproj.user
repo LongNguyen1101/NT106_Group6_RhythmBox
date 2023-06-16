@@ -2,5 +2,6 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ActiveDebugProfile>https</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\Long Nguyen\Desktop\Lập trình mạng căn bản\NT106_Group6_RhythmBox\RhythmBoxServer\RhythmBox\Properties\PublishProfiles\RhythmBoxServer - Zip Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

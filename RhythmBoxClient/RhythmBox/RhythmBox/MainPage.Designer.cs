@@ -312,13 +312,12 @@
             // btn_user
             // 
             this.btn_user.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_user.Enabled = false;
             this.btn_user.FlatAppearance.BorderSize = 0;
             this.btn_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_user.ForeColor = System.Drawing.Color.Black;
+            this.btn_user.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btn_user.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
-            this.btn_user.IconColor = System.Drawing.Color.Black;
+            this.btn_user.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btn_user.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btn_user.IconSize = 30;
             this.btn_user.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;

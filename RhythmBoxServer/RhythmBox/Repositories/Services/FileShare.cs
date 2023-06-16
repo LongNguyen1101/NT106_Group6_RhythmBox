@@ -139,7 +139,7 @@ namespace RhythmBox.Repositories
 
 			ShareFileClient file = directory.GetFileClient($"{path[2]}/{path[3]}");
 
-            if (!await file.ExistsAsync()) throw new FileNotFoundException("File not dound");
+            if (!await file.ExistsAsync()) throw new FileNotFoundException("File not found");
 
             // Download the file
             ShareFileDownloadInfo download = await file.DownloadAsync();

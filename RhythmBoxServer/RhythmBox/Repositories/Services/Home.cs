@@ -20,22 +20,28 @@ namespace RhythmBox.Repositories.Services
             _userService = userService;
         }
 
-        public string getAlbums()
+        public async Task<List<(int, string?, byte[])>?> getAlbums()
         {
-            object data = _dbContext.Albums.ToList().Select(async albs =>
+            var albums = await Task.Run(() => _dbContext.Albums
+                                                        .Select(se => new { se.AlbumsId, se.Title, se.AlbumImage })
+                                                        .Take(10)
+                                                        .ToList());
+
+            if (albums != null)
             {
-                byte[] albumImage = await _fileShare.fileAlbumCoverDownloadAsync(albs.AlbumImage!);
-                return new
+                List<(int, string?, byte[])> list = new List<(int, string?, byte[])>();
+
+                await Task.Run(async () =>
                 {
-                    AlbumID = albs.AlbumsId,
-                    Title = albs.Title,
-                    AlbumImage = albumImage
-                };
-            }).Take(10);
+                    foreach (var album in albums)
+                    {
+                        list.Add((album.AlbumsId, album.Title, await _fileShare.fileAlbumCoverDownloadAsync(album.AlbumImage!)));
+                    }
+                });
 
-
-            var jsonString = JsonConvert.SerializeObject(data);
-            return jsonString!;
+                return list;
+            }
+            else return null;
         }
 
         public string getArtists()

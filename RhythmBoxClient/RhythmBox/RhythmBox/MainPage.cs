@@ -45,8 +45,8 @@ namespace RhythmBox
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            btn_home.ForeColor = Color.Black;
-            btn_home.IconColor = Color.Black;
+            btn_home.ForeColor = Color.FromArgb(192, 255, 255);
+            btn_home.IconColor = Color.FromArgb(192, 255, 255);
 
             this.SizeChanged += MainForm_SizeChanged;
             splitContainerPage.FixedPanel = FixedPanel.Panel2;

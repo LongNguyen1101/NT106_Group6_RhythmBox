@@ -23,9 +23,24 @@ namespace RhythmBox.Repositories.Controller
         }
 
         [HttpGet("album")]
-        public ActionResult AlbumLoad()
+        public async Task<ActionResult> AlbumLoad()
         {
-            return Ok(_home.getAlbums());
+            try
+            {
+                var content = await _home.getAlbums();
+
+                if (content != null)
+                {
+                    string json = JsonConvert.SerializeObject(content);
+
+                    return Ok(json);
+                }
+                else return BadRequest("Error");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpGet("artist")]
@@ -45,11 +60,13 @@ namespace RhythmBox.Repositories.Controller
         {
             return Ok(_home.getRecentlyPlayed());
         }
+
         [HttpGet("profile")]
         public ActionResult ProfileLoad()
         {
             return Ok(_home.getProfile());
         }
+
         [HttpPost("postProfile")]
         public ActionResult ProfileUpdate([FromBody] NewProfile user) 
         {

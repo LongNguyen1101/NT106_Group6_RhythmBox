@@ -4,7 +4,7 @@ namespace RhythmBox.Repositories.Interface
 {
     public interface IHome
     {
-        public string getAlbums();
+        Task<List<(int, string?, byte[])>?> getAlbums();
         public string getArtists();
         public string getTracks();
         public string getRecentlyPlayed();
