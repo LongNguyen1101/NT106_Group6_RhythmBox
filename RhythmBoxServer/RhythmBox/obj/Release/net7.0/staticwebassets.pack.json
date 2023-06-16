@@ -1,75 +1,75 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Long Nguyen\\Desktop\\Lập trình mạng căn bản\\NT106_Group6_RhythmBox\\RhythmBoxServer\\RhythmBox\\obj\\Release\\net7.0\\scopedcss\\projectbundle\\RhythmBox.bundle.scp.css",
-      "PackagePath": "staticwebassets\\RhythmBox.bundle.scp.css"
+      "Id": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBoxServer/RhythmBox/obj/Release/net7.0/scopedcss/projectbundle/RhythmBox.bundle.scp.css",
+      "PackagePath": "staticwebassets/RhythmBox.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\Long Nguyen\\Desktop\\Lập trình mạng căn bản\\NT106_Group6_RhythmBox\\RhythmBoxServer\\RhythmBox\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
-      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+      "Id": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBoxServer/RhythmBox/wwwroot/css/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\Long Nguyen\\Desktop\\Lập trình mạng căn bản\\NT106_Group6_RhythmBox\\RhythmBoxServer\\RhythmBox\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
-      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+      "Id": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBoxServer/RhythmBox/wwwroot/css/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/css/bootstrap/bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\Long Nguyen\\Desktop\\Lập trình mạng căn bản\\NT106_Group6_RhythmBox\\RhythmBoxServer\\RhythmBox\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
-      "PackagePath": "staticwebassets\\css\\open-iconic"
+      "Id": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBoxServer/RhythmBox/wwwroot/css/open-iconic/FONT-LICENSE",
+      "PackagePath": "staticwebassets/css/open-iconic"
     },
     {
-      "Id": "C:\\Users\\Long Nguyen\\Desktop\\Lập trình mạng căn bản\\NT106_Group6_RhythmBox\\RhythmBoxServer\\RhythmBox\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
-      "PackagePath": "staticwebassets\\css\\open-iconic"
+      "Id": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBoxServer/RhythmBox/wwwroot/css/open-iconic/ICON-LICENSE",
+      "PackagePath": "staticwebassets/css/open-iconic"
     },
     {
-      "Id": "C:\\Users\\Long Nguyen\\Desktop\\Lập trình mạng căn bản\\NT106_Group6_RhythmBox\\RhythmBoxServer\\RhythmBox\\wwwroot\\css\\open-iconic\\README.md",
-      "PackagePath": "staticwebassets\\css\\open-iconic\\README.md"
+      "Id": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBoxServer/RhythmBox/wwwroot/css/open-iconic/README.md",
+      "PackagePath": "staticwebassets/css/open-iconic/README.md"
     },
     {
-      "Id": "C:\\Users\\Long Nguyen\\Desktop\\Lập trình mạng căn bản\\NT106_Group6_RhythmBox\\RhythmBoxServer\\RhythmBox\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
-      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
+      "Id": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBoxServer/RhythmBox/wwwroot/css/open-iconic/font/css/open-iconic-bootstrap.min.css",
+      "PackagePath": "staticwebassets/css/open-iconic/font/css/open-iconic-bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\Long Nguyen\\Desktop\\Lập trình mạng căn bản\\NT106_Group6_RhythmBox\\RhythmBoxServer\\RhythmBox\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
-      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
+      "Id": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBoxServer/RhythmBox/wwwroot/css/open-iconic/font/fonts/open-iconic.eot",
+      "PackagePath": "staticwebassets/css/open-iconic/font/fonts/open-iconic.eot"
     },
     {
-      "Id": "C:\\Users\\Long Nguyen\\Desktop\\Lập trình mạng căn bản\\NT106_Group6_RhythmBox\\RhythmBoxServer\\RhythmBox\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
-      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
+      "Id": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBoxServer/RhythmBox/wwwroot/css/open-iconic/font/fonts/open-iconic.otf",
+      "PackagePath": "staticwebassets/css/open-iconic/font/fonts/open-iconic.otf"
     },
     {
-      "Id": "C:\\Users\\Long Nguyen\\Desktop\\Lập trình mạng căn bản\\NT106_Group6_RhythmBox\\RhythmBoxServer\\RhythmBox\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
-      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
+      "Id": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBoxServer/RhythmBox/wwwroot/css/open-iconic/font/fonts/open-iconic.svg",
+      "PackagePath": "staticwebassets/css/open-iconic/font/fonts/open-iconic.svg"
     },
     {
-      "Id": "C:\\Users\\Long Nguyen\\Desktop\\Lập trình mạng căn bản\\NT106_Group6_RhythmBox\\RhythmBoxServer\\RhythmBox\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
-      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
+      "Id": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBoxServer/RhythmBox/wwwroot/css/open-iconic/font/fonts/open-iconic.ttf",
+      "PackagePath": "staticwebassets/css/open-iconic/font/fonts/open-iconic.ttf"
     },
     {
-      "Id": "C:\\Users\\Long Nguyen\\Desktop\\Lập trình mạng căn bản\\NT106_Group6_RhythmBox\\RhythmBoxServer\\RhythmBox\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
-      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+      "Id": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBoxServer/RhythmBox/wwwroot/css/open-iconic/font/fonts/open-iconic.woff",
+      "PackagePath": "staticwebassets/css/open-iconic/font/fonts/open-iconic.woff"
     },
     {
-      "Id": "C:\\Users\\Long Nguyen\\Desktop\\Lập trình mạng căn bản\\NT106_Group6_RhythmBox\\RhythmBoxServer\\RhythmBox\\wwwroot\\css\\site.css",
-      "PackagePath": "staticwebassets\\css\\site.css"
+      "Id": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBoxServer/RhythmBox/wwwroot/css/site.css",
+      "PackagePath": "staticwebassets/css/site.css"
     },
     {
-      "Id": "C:\\Users\\Long Nguyen\\Desktop\\Lập trình mạng căn bản\\NT106_Group6_RhythmBox\\RhythmBoxServer\\RhythmBox\\wwwroot\\favicon.png",
-      "PackagePath": "staticwebassets\\favicon.png"
+      "Id": "/Users/longnguyen/Desktop/Trường/SEM 4/Lập trình mạng CB/Đồ án/SourceServer/NT106_Group6_RhythmBox/RhythmBoxServer/RhythmBox/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
     },
     {
-      "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.RhythmBox.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj/Release/net7.0/staticwebassets/msbuild.RhythmBox.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.build.RhythmBox.props",
+      "Id": "obj/Release/net7.0/staticwebassets/msbuild.build.RhythmBox.props",
       "PackagePath": "build\\RhythmBox.props"
     },
     {
-      "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.RhythmBox.props",
+      "Id": "obj/Release/net7.0/staticwebassets/msbuild.buildMultiTargeting.RhythmBox.props",
       "PackagePath": "buildMultiTargeting\\RhythmBox.props"
     },
     {
-      "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.buildTransitive.RhythmBox.props",
+      "Id": "obj/Release/net7.0/staticwebassets/msbuild.buildTransitive.RhythmBox.props",
       "PackagePath": "buildTransitive\\RhythmBox.props"
     }
   ],
