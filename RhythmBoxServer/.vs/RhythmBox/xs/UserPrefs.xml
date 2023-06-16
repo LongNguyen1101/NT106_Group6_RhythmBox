@@ -1,19 +1,21 @@
 ﻿<Properties StartupConfiguration="{AD269B11-7B94-49DF-A325-7CE854B60E76}|Default">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.RhythmBox PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workbench ActiveDocument="RhythmBox/Repositories/Services/Home.cs">
     <Files>
-      <File FileName="RhythmBox/Repositories/Interface/ITrack.cs" Line="14" Column="24" />
+      <File FileName="RhythmBox/Repositories/Interface/IPlay.cs" />
+      <File FileName="RhythmBox/Repositories/Controller/PlayController.cs" />
+      <File FileName="RhythmBox/Repositories/Services/Play.cs" />
+      <File FileName="RhythmBox/Repositories/Services/Home.cs" Line="28" Column="37" />
+      <File FileName="RhythmBox/Repositories/Interface/IHome.cs" />
+      <File FileName="RhythmBox/Models/Playlist.cs" />
+      <File FileName="RhythmBox/Repositories/Services/Playlists.cs" />
       <File FileName="RhythmBox/Repositories/Interface/IPlaylist.cs" />
-      <File FileName="RhythmBox/Repositories/Services/Track.cs" Line="33" Column="2" />
-      <File FileName="RhythmBox/Repositories/Services/Search.cs" />
-      <File FileName="RhythmBox/Repositories/Interface/IHome.cs" Line="1" Column="1" />
-      <File FileName="RhythmBox/Models/DTO/NewProfile.cs" Line="1" Column="19" />
-      <File FileName="RhythmBox/Repositories/Services/Home.cs" Line="127" Column="35" />
+      <File FileName="RhythmBox/Repositories/Controller/PlaylistController.cs" Line="34" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -37,5 +39,5 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.RhythmBox PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
 </Properties>
