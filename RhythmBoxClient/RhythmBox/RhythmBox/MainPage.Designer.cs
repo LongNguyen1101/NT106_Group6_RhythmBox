@@ -80,11 +80,12 @@
             // flowLayoutPanelShow
             // 
             this.flowLayoutPanelShow.AutoScroll = true;
+            this.flowLayoutPanelShow.BackColor = System.Drawing.Color.WhiteSmoke;
             this.flowLayoutPanelShow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelShow.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanelShow.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.flowLayoutPanelShow.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanelShow.Name = "flowLayoutPanelShow";
-            this.flowLayoutPanelShow.Size = new System.Drawing.Size(1067, 524);
+            this.flowLayoutPanelShow.Size = new System.Drawing.Size(1067, 521);
             this.flowLayoutPanelShow.TabIndex = 1;
             // 
             // panelLibrary
@@ -108,7 +109,7 @@
             this.panelCover.Controls.Add(this.pictureBoxCover);
             this.panelCover.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelCover.Location = new System.Drawing.Point(0, 526);
-            this.panelCover.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelCover.Margin = new System.Windows.Forms.Padding(2);
             this.panelCover.Name = "panelCover";
             this.panelCover.Size = new System.Drawing.Size(157, 134);
             this.panelCover.TabIndex = 0;
@@ -116,7 +117,7 @@
             // pictureBoxCover
             // 
             this.pictureBoxCover.Location = new System.Drawing.Point(20, 14);
-            this.pictureBoxCover.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBoxCover.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBoxCover.Name = "pictureBoxCover";
             this.pictureBoxCover.Size = new System.Drawing.Size(117, 107);
             this.pictureBoxCover.TabIndex = 12;
@@ -382,7 +383,7 @@
             // 
             this.splitContainerPage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerPage.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerPage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainerPage.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainerPage.Name = "splitContainerPage";
             this.splitContainerPage.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -394,7 +395,7 @@
             // 
             this.splitContainerPage.Panel2.Controls.Add(this.panelTrackControl);
             this.splitContainerPage.Size = new System.Drawing.Size(1067, 662);
-            this.splitContainerPage.SplitterDistance = 524;
+            this.splitContainerPage.SplitterDistance = 521;
             this.splitContainerPage.SplitterWidth = 3;
             this.splitContainerPage.TabIndex = 1;
             // 
@@ -406,9 +407,9 @@
             this.panelTrackControl.Controls.Add(this.lbTrackTitle);
             this.panelTrackControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelTrackControl.Location = new System.Drawing.Point(0, 0);
-            this.panelTrackControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelTrackControl.Margin = new System.Windows.Forms.Padding(2);
             this.panelTrackControl.Name = "panelTrackControl";
-            this.panelTrackControl.Size = new System.Drawing.Size(1067, 135);
+            this.panelTrackControl.Size = new System.Drawing.Size(1067, 138);
             this.panelTrackControl.TabIndex = 15;
             // 
             // panelController
@@ -422,7 +423,7 @@
             this.panelController.Controls.Add(this.iconButton2);
             this.panelController.Controls.Add(this.iconButton5);
             this.panelController.Location = new System.Drawing.Point(115, 14);
-            this.panelController.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelController.Margin = new System.Windows.Forms.Padding(2);
             this.panelController.Name = "panelController";
             this.panelController.Size = new System.Drawing.Size(837, 88);
             this.panelController.TabIndex = 14;
@@ -443,7 +444,7 @@
             // 
             this.trackBar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.trackBar.Location = new System.Drawing.Point(51, 41);
-            this.trackBar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.trackBar.Margin = new System.Windows.Forms.Padding(2);
             this.trackBar.Name = "trackBar";
             this.trackBar.Size = new System.Drawing.Size(729, 45);
             this.trackBar.TabIndex = 12;
@@ -562,7 +563,7 @@
             // 
             this.splitContainerControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainerControl.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainerControl.Name = "splitContainerControl";
             // 
             // splitContainerControl.Panel1

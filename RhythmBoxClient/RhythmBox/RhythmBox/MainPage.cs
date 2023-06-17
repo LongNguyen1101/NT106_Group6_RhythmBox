@@ -28,7 +28,7 @@ namespace RhythmBox
         string pageColor = "#a9dedc";
         string baseUrl = "https://rhythmboxserver.azurewebsites.net/api";
         HttpClient client = new HttpClient();
-        string token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJsb25nbmd1eWVuaG9hbmcxMTAxMUBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiZXhwIjoxNjg2OTc0MTMyfQ.cEqxEJA7KmAADhJioCDSCAhwG9xbOs38Nxf81icSAXESTeBbVliLAlXj5PPoScfGWVxxbrfwv-DAp-ysHoXt9A";
+        string token = "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJsb25nbmd1eWVuaG9hbmcxMTAxMUBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJVc2VyIiwiZXhwIjoxNjg3MDYxNzA4fQ.Ooo2fWFVXppmtgwiuqhbLmV1Gh387_0KyNaK6TABrCrjLk1OLYhIQBlO7WWfo9jmuOjJb7TDujRMNpyXllNT2A";
         private bool isPlaying = false;
         private bool isLooping = false;
         private bool isRandom = false;
