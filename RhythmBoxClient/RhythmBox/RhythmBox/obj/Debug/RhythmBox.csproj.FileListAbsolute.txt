@@ -123,3 +123,17 @@ C:\Users\Long Nguyen\Desktop\Lập trình mạng căn bản\NT106_Group6_RhythmB
 C:\Users\Long Nguyen\Desktop\Lập trình mạng căn bản\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\bin\Debug\System.Security.AccessControl.xml
 C:\Users\Long Nguyen\Desktop\Lập trình mạng căn bản\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\bin\Debug\System.Security.Principal.Windows.xml
 C:\Users\Long Nguyen\Desktop\Lập trình mạng căn bản\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\obj\Debug\RhythmBox.csproj.CopyComplete
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\bin\Debug\Microsoft.Win32.Registry.dll
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\bin\Debug\NAudio.Asio.dll
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\bin\Debug\NAudio.Core.dll
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\bin\Debug\NAudio.dll
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\bin\Debug\NAudio.Midi.dll
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\bin\Debug\NAudio.Wasapi.dll
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\bin\Debug\NAudio.WinForms.dll
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\bin\Debug\NAudio.WinMM.dll
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\bin\Debug\System.Security.AccessControl.dll
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\bin\Debug\System.Security.Principal.Windows.dll
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\bin\Debug\Microsoft.Win32.Registry.xml
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\bin\Debug\NAudio.xml
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\bin\Debug\System.Security.AccessControl.xml
+E:\C#\github\NT106_Group6_RhythmBox\RhythmBoxClient\RhythmBox\RhythmBox\bin\Debug\System.Security.Principal.Windows.xml
