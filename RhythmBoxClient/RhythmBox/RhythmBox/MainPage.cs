@@ -128,36 +128,27 @@ namespace RhythmBox
         {
             panelRecentlyPlayed = new FlowLayoutPanel();
             panelRecentlyPlayed.FlowDirection = FlowDirection.LeftToRight;
-            panelRecentlyPlayed.AutoScroll = true;
             panelRecentlyPlayed.BackColor = ColorTranslator.FromHtml(pageColor);
             panelRecentlyPlayed.Width = flowLayoutPanelShow.Width;
             panelRecentlyPlayed.Dock = DockStyle.Top;
-            panelRecentlyPlayed.Height = 500;
             panelRecentlyPlayed.AutoSize = true;
-            
 
             panelTopTrack = new FlowLayoutPanel();
             panelTopTrack.FlowDirection = FlowDirection.LeftToRight;
-            panelTopTrack.AutoScroll = true;
             panelTopTrack.BackColor = ColorTranslator.FromHtml(pageColor);
             panelTopTrack.Width = flowLayoutPanelShow.Width;
-            panelTopTrack.Height = 500;
             panelTopTrack.AutoSize = true;
 
             panelTopAlbum = new FlowLayoutPanel();
             panelTopAlbum.FlowDirection = FlowDirection.LeftToRight;
-            panelTopAlbum.AutoScroll = true;
             panelTopAlbum.BackColor = System.Drawing.ColorTranslator.FromHtml(pageColor);
             panelTopAlbum.Width = flowLayoutPanelShow.Width;
-            panelTopAlbum.Height = 500;
             panelTopAlbum.AutoSize = true;
 
             panelTopArtist = new FlowLayoutPanel();
             panelTopArtist.FlowDirection = FlowDirection.LeftToRight;
-            panelTopArtist.AutoScroll = true;
             panelTopArtist.BackColor = System.Drawing.ColorTranslator.FromHtml(pageColor);
             panelTopArtist.Width = flowLayoutPanelShow.Width;
-            panelTopArtist.Height = 500;
             panelTopArtist.AutoSize = true;
         }
 
@@ -167,28 +158,28 @@ namespace RhythmBox
             labelRecentlyPlayed.Text = "Rencently Played";
             labelRecentlyPlayed.Dock = DockStyle.Fill;
             labelRecentlyPlayed.Font = new Font("Arial", 20, FontStyle.Bold);
-            labelRecentlyPlayed.ForeColor = Color.Black; // check
+            labelRecentlyPlayed.ForeColor = Color.Black; 
             labelRecentlyPlayed.Location = new Point(5, 5);
 
             labelTopTrack = new Label();
             labelTopTrack.Text = "Top Track";
             labelTopTrack.AutoSize = true;
             labelTopTrack.Font = new Font("Arial", 20, FontStyle.Bold);
-            labelTopTrack.ForeColor = Color.Black; // check
+            labelTopTrack.ForeColor = Color.Black; 
             labelTopTrack.Location = new Point(5, 5);
 
             labelTopAlbum = new Label();
             labelTopAlbum.Text = "Top Album";
             labelTopAlbum.AutoSize = true;
             labelTopAlbum.Font = new Font("Arial", 20, FontStyle.Bold);
-            labelTopAlbum.ForeColor = Color.Black; // check
+            labelTopAlbum.ForeColor = Color.Black;
             labelTopAlbum.Location = new Point(5, 5);
 
             labelTopArtist = new Label();
-            labelTopArtist.Text = "Top Album";
+            labelTopArtist.Text = "Top Artist";
             labelTopArtist.AutoSize = true;
             labelTopArtist.Font = new Font("Arial", 20, FontStyle.Bold);
-            labelTopArtist.ForeColor = Color.Black; // check
+            labelTopArtist.ForeColor = Color.Black;
             labelTopArtist.Location = new Point(5, 5);
         }
 
@@ -362,16 +353,6 @@ namespace RhythmBox
                     setUpWhilePlaying(track["TrackID"].ToObject<int>(), track["Title"].ToString(), image);
                 };
 
-                pictureBox.MouseEnter += (sender, e) =>
-                {
-                    pictureBox.Image = MakeImageSemiTransparent(pictureBox.Image);
-                };
-
-                pictureBox.MouseLeave += (sender, e) =>
-                {
-                    pictureBox.Image = image;
-                };
-
                 childPanel.Controls.Add(label);
                 childPanel.Controls.Add(pictureBox);
 
@@ -420,16 +401,6 @@ namespace RhythmBox
                     setUpWhilePlaying(track["TrackID"].ToObject<int>(), track["Title"].ToString(), image);
                 };
 
-                pictureBox.MouseEnter += (sender, e) =>
-                {
-                    pictureBox.Image = MakeImageSemiTransparent(pictureBox.Image);
-                };
-
-                pictureBox.MouseLeave += (sender, e) =>
-                {
-                    pictureBox.Image = image;
-                };
-
                 childPanel.Controls.Add(label);
                 childPanel.Controls.Add(pictureBox);
 
@@ -447,7 +418,7 @@ namespace RhythmBox
                 childPanel.Height = 400;
 
                 Image image;
-                byte[] imageData = album["AlbumImage"].ToObject<byte[]>();
+                byte[] imageData = album["Item3"].ToObject<byte[]>();
                 using (MemoryStream ms = new MemoryStream(imageData))
                 {
                     image = Image.FromStream(ms);
@@ -459,25 +430,14 @@ namespace RhythmBox
                 pictureBox.Image = image;
 
                 Label label = new Label();
-                label.Text = album["Title"].ToString();
+                label.Text = album["Item2"].ToString();
                 label.TextAlign = ContentAlignment.MiddleCenter;
                 label.Dock = DockStyle.Bottom;
 
                 childPanel.Controls.Add(label);
                 childPanel.Controls.Add(pictureBox);
 
-                childPanel.Click += (sender, e) =>
-                {
-                    Panel clickedPanel = (Panel)sender;
-                    Task.Run(() => MessageBox.Show("Hello"));
-                };
-
-                pictureBox.Click += (sender, e) =>
-                {
-                    
-                };
-
-                panelTopTrack.Controls.Add(childPanel);
+                panelTopAlbum.Controls.Add(childPanel);
             }
         }
 
@@ -665,23 +625,6 @@ namespace RhythmBox
 
                 mp3Reader.CurrentTime = newPosition;
             }
-        }
-
-        private Image MakeImageSemiTransparent(Image image)
-        {
-            Bitmap bitmap = new Bitmap(image);
-
-            for (int y = 0; y < bitmap.Height; y++)
-            {
-                for (int x = 0; x < bitmap.Width; x++)
-                {
-                    Color pixelColor = bitmap.GetPixel(x, y);
-                    Color newColor = Color.FromArgb(128, pixelColor.R, pixelColor.G, pixelColor.B);
-                    bitmap.SetPixel(x, y, newColor);
-                }
-            }
-
-            return bitmap;
         }
 
         private void iconLooping_Click(object sender, EventArgs e)

@@ -424,10 +424,12 @@
             // 
             this.labelTrackRunning.AutoSize = true;
             this.labelTrackRunning.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTrackRunning.Location = new System.Drawing.Point(18, 55);
+            this.labelTrackRunning.Location = new System.Drawing.Point(42, 55);
             this.labelTrackRunning.Name = "labelTrackRunning";
-            this.labelTrackRunning.Size = new System.Drawing.Size(0, 20);
+            this.labelTrackRunning.Size = new System.Drawing.Size(29, 20);
             this.labelTrackRunning.TabIndex = 13;
+            this.labelTrackRunning.Text = "-|--";
+            this.labelTrackRunning.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // trackBar
             // 
@@ -441,10 +443,11 @@
             // 
             this.labelDuration.AutoSize = true;
             this.labelDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDuration.Location = new System.Drawing.Point(1195, 55);
+            this.labelDuration.Location = new System.Drawing.Point(1168, 53);
             this.labelDuration.Name = "labelDuration";
-            this.labelDuration.Size = new System.Drawing.Size(0, 20);
+            this.labelDuration.Size = new System.Drawing.Size(29, 20);
             this.labelDuration.TabIndex = 14;
+            this.labelDuration.Text = "-|--";
             // 
             // iconRandom
             // 
